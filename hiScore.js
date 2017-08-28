@@ -9,12 +9,26 @@ function NewScore(userName, score) {
   highScoreList.push(this);
 }
 
-var highScoreList = [];
-numbers.sort(function(a,b) {
-  return a - b;
+var test1 = new NewScore('bob', 23);
+var test2 = new NewScore('Al', 2);
+var test3 = new NewScore('Jane', 45);
+var test4 = new NewScore('Sara', 5);
+var test5 = new NewScore('Vince', 15);
+
+highScoreList.sort(function(a,b) {
+  return a.score - b.score;
 });
 
-[i].score
+
+//
+// function compare(a,b) {
+//   if (a.score)
+// }
+
+// var highScoreList = [];
+
+//
+// [i].score
 
 // X create an object that is the score & userName
 //     ordered list = no need for position number (automatic)
