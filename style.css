@@ -29,3 +29,19 @@ td {
 .lockedIn {
   font-size: 42px;
 }
+
+.ourProfiles {
+  padding: 50px 0 20px 50px;
+}
+
+.profile {
+  padding-bottom: 30px;
+}
+
+img {
+  display: inline;
+}
+
+.displayInline {
+  display: inline;
+}
