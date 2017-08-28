@@ -12,12 +12,18 @@ function NewScore(userName, score) {
 highScoreList.sort(function(a,b) {
   return a.score - b.score;
 });
-var table = document.getElementById('hiScoreTable');
-var tr = document.createElement('tr');
-var name = document.createElement('td');
-name.innerText = name;
-var score = document.createElement('td');
-hiScoreTable.appendChild(tr);
+for (var i = 0; i < highScoreList.length; i++) {
+  var table = document.getElementById('hiScoreTable');
+  var tr = document.createElement('tr');
+  var name = document.createElement('td');
+  name.innerText = highScoreList[i].userName;
+  tr.appendChild(name);
+  var score = document.createElement('td');
+  score.innerText = highScoreList[i].score;
+  tr.appendChild(score);
+  table.appendChild(tr);
+};
+
 //
 // var test1 = new NewScore('bob', 23);
 // var test2 = new NewScore('Al', 2);
