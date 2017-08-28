@@ -4,6 +4,8 @@ var vowels = ['A', 'E', 'I', 'O', 'U'];
 
 var consonants = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'];
 
+var numberOfLettersSelected = 0;
+
 var letterCount = 4;
 
 var gameCount = 61;
@@ -18,8 +20,9 @@ function startLetterTimer() {
     letterCountDisplay.innerHTML = letterCount;
     if (letterCount <= 0) {
       clearInterval(counter);
-       //counter ended; generate new letters and remove old letters
       resetLetterTimer();
+      upcomingBecomesCurrent();
+      generateUpcomingLetters();
     }
   }
 }
@@ -28,8 +31,6 @@ function resetLetterTimer() {
   letterCount = 4;
   startLetterTimer();
 }
-
-//letter timer above, game timer below
 
 function startGameTimer() {
 
@@ -43,6 +44,28 @@ function startGameTimer() {
       clearInterval(counter);
        //counter ended; end game: store the user's score in localStorage, redirect to high score page
     }
+  }
+}
+
+function addListeners () {
+  for (var i = 1; i < 6; i ++) {
+    var cell = document.getElementById('current ' + i);
+    cell.addEventListener('click', lockIn);
+  }
+}
+
+function lockIn(event) {
+  var which = event.target.getAttribute('column');
+  var lock = document.getElementById('lockedIn ' + which);
+  lock.innerHTML = event.target.innerHTML;
+  numberOfLettersSelected ++;
+}
+
+function upcomingBecomesCurrent() {
+  for (var i = 1; i < 6; i++) {
+    var upcoming = document.getElementById('upcoming ' + i).innerHTML;
+    var current = document.getElementById('current ' + i);
+    current.innerHTML = upcoming;
   }
 }
 
@@ -66,6 +89,8 @@ function generateRandomLetter() {
 }
 
 generateUpcomingLetters();
+
+addListeners();
 
 startLetterTimer();
 

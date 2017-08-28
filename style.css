@@ -21,3 +21,11 @@ td {
 .current {
   font-size: 42px;
 }
+
+.current:hover {
+  cursor: pointer;
+}
+
+.lockedIn {
+  font-size: 42px;
+}
