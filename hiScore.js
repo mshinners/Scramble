@@ -1,6 +1,5 @@
 'use strict';
 
-var winners = [{userName:'Sara', score: 19}, {userName:'Bob', score:23}];
 var highScoreList = [];
 //score constructor
 function NewScore(userName, score) {
@@ -8,14 +7,13 @@ function NewScore(userName, score) {
   this.score = score;
   highScoreList.push(this);
 }
-
 //function sorts the high scores
 if (localStorage.highScoreList) {
   highScoreList = JSON.parse(localStorage.highScoreList);
 }
 new NewScore(winners[winners.length - 1].userName, winners[winners.length - 1].score);
 highScoreList.sort(function(a,b) {
-  return a.score - b.score;
+  return b.score - a.score;
 });
 //creates the high score table
 for (var i = 0; i < highScoreList.length; i++) {
@@ -31,6 +29,9 @@ for (var i = 0; i < highScoreList.length; i++) {
   score.innerText = highScoreList[i].score;
   tr.appendChild(score);
   table.appendChild(tr);
+};
+if (highScoreList.length >= 10) {
+  highScoreList.pop();
 };
 var highScoreData = JSON.stringify(highScoreList);
 localStorage.highScoreList = highScoreData;
