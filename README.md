@@ -12,3 +12,5 @@ Nathan Moore
 Michael Shinners
 
 v1.0 8/28/17
+
+animation credit to daneden/aniamte.css. github.com/animate.css

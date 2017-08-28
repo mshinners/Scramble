@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link href="css/style.css type= "text/css" "rel="stylesheet"/>
+    <link href="https://daneden.github.io/animate.css/"/>
     <title>Scramble Home</title>
   </head>
   <body>
@@ -10,9 +11,9 @@
       <h1>SCRAMBLE<H1>
     </header>
       <article>
-        <h3>Scramble welcome script</h3>
+        <h2>Scramble welcome script</h2>
       <article>
-        <p id="rules" onclick="myFunction()">click <b>HERE</b> for the rules for the game.</p>
+        <p id="rules" onclick="myFunction()">click <b>HERE</b> for the rules.</p>
         <table>
         </table>
         <form action="" method="get">
@@ -21,17 +22,16 @@
           <input type="submit" value="Save">
         </form>
         <section>
-        <button type="submit" form="nameform" value="Submit" href="game.html">PLAY</button>
-      </section>
+        <a href="game.html"><button type="button">PLAY</button></a>
+        </section>
         <footer>
-          <h2> high score </h2>
-          <a href="hiScore.html"></a>
+          <a href="hiScore.html"><button type="button"><h3>HIGH SCORE</h3></button></a>
         </footer>
-  </body>
+    </body>
   <script src="app.js"></script>
-  <script scr=" hiScore.js" scr =".js"></script>
+  <script src=" hiScore.js" src =".js"></script>
  <script>function myFunction() {
-   document.getElementById('rules').innerHTML= "Enter your name and save"
+   document.getElementById('rules').innerHTML=  "Enter your name and save.<br> Click play to play.<br> Click the letters to spell a word.<br> You have one minute to make a word.<br>If your word is valid it will be scored.<br> "
  }
  </script>
  </html>
