@@ -1,6 +1,5 @@
 'use strict';
 
-var winners = [{userName:'Sara', score: 19}, {userName:'Bob', score:53}];
 var highScoreList = [];
 //score constructor
 function NewScore(userName, score) {
