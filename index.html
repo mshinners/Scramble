@@ -12,7 +12,7 @@
       <article>
         <h3>Scramble welcome script</h3>
       <article>
-        <p id="rules" onclick="myFunction()">click <b>HERE</b> for the rules for the game.</p>
+        <p id="rules" onclick="myFunction()">click <b>HERE</b> for the rules.</p>
         <table>
         </table>
         <form action="" method="get">
@@ -21,17 +21,16 @@
           <input type="submit" value="Save">
         </form>
         <section>
-        <button type="submit" form="nameform" value="Submit" href="game.html">PLAY</button>
+        <button type="submit"value="Submit" href="game.html">PLAY</button>
       </section>
         <footer>
-          <h2> high score </h2>
-          <a href="hiScore.html"></a>
+          <a href="hiScore.html"><h2> high score </h2></a>
         </footer>
   </body>
   <script src="app.js"></script>
   <script src=" hiScore.js" src =".js"></script>
  <script>function myFunction() {
-   document.getElementById('rules').innerHTML= "Enter your name and save"
+   document.getElementById('rules').innerHTML=  "Enter your name and save.<br> Click play to play.<br> Click the letters to spell a word.<br> You have one minute to make a word.<br>If your word is valid it will be scored.<br> "
  }
  </script>
  </html>
