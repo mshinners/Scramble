@@ -27,6 +27,8 @@ var x = {letter: 'X', letterScore: 8};
 var y = {letter: 'Y', letterScore: 4};
 var z = {letter: 'Z', letterScore: 10};
 
+var allLetters = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z];
+
 var vowels = [a, e, i, o, u];
 
 var consonants = [b, c, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, w, x, y, z];
@@ -71,7 +73,7 @@ function startGameTimer() {
     gameCountDisplay.innerHTML = gameCount;
     if (gameCount <= 0) {
       clearInterval(counter);
-      //endGame();
+      endGame();
     }
   }
 }
@@ -93,7 +95,7 @@ function lockIn(event) {
   event.target.setAttribute('style', 'visibility: hidden;');
   numberOfLettersSelected ++;
   if (numberOfLettersSelected === 5) {
-    // endGame();
+    endGame();
   } else {
     upcomingBecomesCurrent();
     generateUpcomingLetters();
@@ -104,14 +106,19 @@ function lockIn(event) {
 function calculateFinalScore() {
   score += gameCount;
   for (var i = 1; i < 6; i++) {
-    var ithLetter = document.getElementById('lockedIn ' + i);
-    score += ith;
+    var ithLetter = document.getElementById('lockedIn ' + i).innerHTML;
+    for (var j = 0; j < 26; j++) {
+      if (allLetters[j].letter === ithLetter) {
+        score += allLetters[j].letterScore;
+      }
+    }
   }
 }
 
 function endGame() {
   //add to the if condition that the word must be legal
   if (numberOfLettersSelected === 5) {
+    calculateFinalScore();
   }
 }
 
