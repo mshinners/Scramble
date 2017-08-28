@@ -42,7 +42,7 @@ function startGameTimer() {
     gameCountDisplay.innerHTML = gameCount;
     if (gameCount <= 0) {
       clearInterval(counter);
-       //counter ended; end game: store the user's score in localStorage, redirect to high score page
+      //endGame();
     }
   }
 }
@@ -55,10 +55,21 @@ function addListeners () {
 }
 
 function lockIn(event) {
-  var which = event.target.getAttribute('column');
+  var which = event.target.getAttribute('currentColumn');
   var lock = document.getElementById('lockedIn ' + which);
+  var upcomingPartner = document.getElementById('upcoming ' + which);
   lock.innerHTML = event.target.innerHTML;
+  event.target.removeEventListener('click', lockIn);
+  upcomingPartner.setAttribute('style', 'visibility: hidden;');
+  event.target.setAttribute('style', 'visibility: hidden;');
   numberOfLettersSelected ++;
+  if (numberOfLettersSelected === 5) {
+    // endGame();
+  } else {
+    upcomingBecomesCurrent();
+    generateUpcomingLetters();
+    letterCount = 4;
+  }
 }
 
 function upcomingBecomesCurrent() {
