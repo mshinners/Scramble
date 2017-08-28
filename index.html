@@ -7,21 +7,31 @@
   </head>
   <body>
     <header>
+      <h1>SCRAMBLE<H1>
     </header>
-    <atricle>
-      <a href=game.html></a>
       <article>
+        <h3>Scramble welcome script</h3>
+      <article>
+        <p id="rules" onclick="myFunction()">click <b>HERE</b> for the rules for the game.</p>
         <table>
         </table>
-        <form>
-
+        <form action="" method="get">
+          <label for="GET-name">Player Name:</label>
+          <input id="GET-name" type="text" name="name">
+          <input type="submit" value="Save">
         </form>
-        <button type="submit" form="nameform" value="Submit">PLAY</button>
-
+        <section>
+        <button type="submit" form="nameform" value="Submit" href="game.html">PLAY</button>
+      </section>
         <footer>
+          <h2> high score </h2>
           <a href="hiScore.html"></a>
         </footer>
   </body>
-  <<script src="app.js" scr=" hiScore.js" scr =".js"></script>
-
-</html>
+  <script src="app.js"></script>
+  <script scr=" hiScore.js" scr =".js"></script>
+ <script>function myFunction() {
+   document.getElementById('rules').innerHTML= "Enter your name and save"
+ }
+ </script>
+ </html>
