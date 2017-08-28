@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+.greeting {
+  text-align: center;
+}
+
+table {
+  margin: auto;
+}
+
+td {
+  padding: 10px;
+}
