@@ -4,13 +4,14 @@ header, aside, section, footer, {
 * {
   box-sizing: border-box;
 }
-
 @font-face {
   font-family: "scramble";
   font-style: normal;
-
-  src: url(fonts/scramble.ttf);
-
+  src: url(scramble.ttf);
+}
+body {
+  background-image: url("background.jpg");
+  opacity: 1.5;
 }
 h1{
   font-family: "scramble";
@@ -21,16 +22,22 @@ h1{
   font-family: "scramble";
   font-style: normal;
   font-size: 80px;
+  border: 2px solid black;
+  padding: 30px;
 }
 .upcoming{
   font-family: "scramble";
   font-style: normal;
   font-size: 80px;
+  border: 2px solid black;
+  padding: 30px;
 }
 .lockedin{
   font-family: "scramble";
   font-style: normal;
   font-size: 80px;
+  border: 2px solid black;
+  padding: 30px;
 }
 h3{
   color: red;
