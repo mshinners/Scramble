@@ -112,10 +112,8 @@ function startGameTimer() {
 }
 
 function endGame() {
-  //get the div where the letterTime is & make it invisible
   var lett = document.getElementById('letterTimer');
   lett.setAttribute('style', 'visibility: hidden;');
-  //get the div where the gameTime is & make it invisible
   var game = document.getElementById('gameTimer');
   game.setAttribute('style', 'visibility: hidden;');
   //add to the if condition that the word must be legal
@@ -123,7 +121,6 @@ function endGame() {
     calculateFinalScore();
     makePlayerObject();
   }
-  //set both timers to 1000 (& continue counting down by 1- will go for 1000 seconds)
   letterCount = 1000;
   gameCount = 1000;
 }
@@ -131,20 +128,15 @@ function endGame() {
 function calculateFinalScore() {
   score += gameCount;
   for (var i = 1; i < 6; i++) {
-    //iterate through lockedIn tiles and get the letter in each td
     var ithLetter = document.getElementById('lockedIn ' + i).innerHTML;
     for (var j = 0; j < 26; j++) {
-      //iterate through array of letter objects & find which letter value matches letter of lockedIn td
       if (allLetters[j].letter === ithLetter) {
-        //add the points for that letter to the score
         score += allLetters[j].letterScore;
       }
     }
   }
 }
 
-//add click event listener to the five letter choice tds by their id
-//assign lockIn event handler
 function addListeners () {
   for (var i = 1; i < 6; i ++) {
     var cell = document.getElementById('current ' + i);
@@ -154,19 +146,12 @@ function addListeners () {
 
 //target = the td (tile) that was clicked on
 function lockIn(event) {
-  //get the currentColumn attribute (unique to each td) of the target
   var which = event.target.getAttribute('currentColumn');
-  //get element by lockedIn id (lockedIn# matches currentColumn#)- td in first row of second table
   var lock = document.getElementById('lockedIn ' + which);
-  //get element by upcoming id (upcoming# matches lockedIn#)- td in first row of first table
   var upcomingPartner = document.getElementById('upcoming ' + which);
-  //set innerHTML of lockedIn td to innerHTML of td that was clicked
   lock.innerHTML = event.target.innerHTML;
-  //remove the eventListener from the td that was clicked
   event.target.removeEventListener('click', lockIn);
-  //make the upcomingPartner td invisible
   upcomingPartner.setAttribute('style', 'visibility: hidden;');
-  //make the no-longer-clickable td invisible
   event.target.setAttribute('style', 'visibility: hidden;');
   numberOfLettersSelected ++;
   if (numberOfLettersSelected === 5) {
@@ -178,57 +163,6 @@ function lockIn(event) {
   }
 }
 
-function calculateFinalScore() {
-  score += gameCount;
-  for (var i = 1; i < 6; i++) {
-    var ithLetter = document.getElementById('lockedIn ' + i).innerHTML;
-    for (var j = 0; j < 26; j++) {
-      if (allLetters[j].letter === ithLetter) {
-        score += allLetters[j].letterScore;
-      }
-    }
-  }
-}
-
-function endGame() {
-  var lett = document.getElementById('letterTimer');
-  lett.setAttribute('style', 'visibility: hidden;');
-  var game = document.getElementById('gameTimer');
-  game.setAttribute('style', 'visibility: hidden;');
-  letterCount = 1000;
-  gameCount = 1000;
-  //add to the if condition that the word must be legal
-  if (numberOfLettersSelected === 5) {
-    calculateFinalScore();
-    makePlayerObject();
-  }
-}
-
-function upcomingBecomesCurrent() {
-  for (var i = 1; i < 6; i++) {
-    var upcoming = document.getElementById('upcoming ' + i).innerHTML;
-    var current = document.getElementById('current ' + i);
-    current.innerHTML = upcoming;
-  }
-}
-
-function generateUpcomingLetters() {
-  for (var i = 1; i < 6; i++) {
-    var cell = document.getElementById('upcoming ' + i);
-    cell.innerHTML = generateRandomLetter();
-  }
-}
-
-function generateRandomLetter() {
-  var vowelOrConsonant = Math.floor(Math.random() * 5);
-  if (vowelOrConsonant <= 1) {
-    var randomVowel = Math.floor(Math.random() * vowels.length);
-    return vowels[randomVowel].letter;
-  } else {
-    var randomConsonant = Math.floor(Math.random() * consonants.length);
-    return consonants[randomConsonant].letter;
-  }
-}
 function makePlayerObject(){
   var userNameList = JSON.parse(localStorage.nameArray);
   var playerName = userNameList[userNameList.length - 1];
