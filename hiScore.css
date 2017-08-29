@@ -1,0 +1,22 @@
+header, body, footer {
+  display: block;
+}
+body {
+  background-image: url("background.jpg");
+  opacity: 1.5;
+}
+@font-face {
+  font-family: "scramble";
+  font-style: normal;
+  src: url(scramble.ttf);
+}
+.h1{
+  font-family: "scramble";
+  font-style: normal;
+  font-size: 60px;
+  color: gray;
+   -webkit-text-stroke-color: orange;
+}
+th{
+  color: red;
+}
