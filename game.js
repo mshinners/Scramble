@@ -41,6 +41,8 @@ var gameCount = 61;
 
 var score = 0;
 
+var winners = [];
+
 function startLetterTimer() {
 
   var counter = setInterval(timer, 1000);
@@ -152,6 +154,20 @@ function generateRandomLetter() {
     var randomConsonant = Math.floor(Math.random() * consonants.length);
     return consonants[randomConsonant].letter;
   }
+}
+function makePlayerObject(){
+  var userNameList = JSON.parse(localStorage.nameArray);
+  var playerName = [userNameList.length - 1];
+  if (localStorage.winners){
+    winners = JSON.parse(localStorage.winners);
+  }
+
+  function Newplayer(playerName, score){
+    this.userName = playerName;
+    this.score = score;
+    winners.push(this);
+  }
+  localStorage.winners = JSON.stringify(winners);
 }
 
 generateUpcomingLetters();
