@@ -62,6 +62,13 @@ function resetLetterTimer() {
   startLetterTimer();
 }
 
+function generateFirstLetters() {
+  for (var i = 1; i < 6; i++) {
+    var firstLetters = document.getElementById('current' + i);
+    firstLetters.innerHTML = generateRandomLetter();
+  }
+}
+
 function upcomingBecomesCurrent() {
   for (var i = 1; i < 6; i++) {
     var upcoming = document.getElementById('upcoming ' + i).innerHTML;
