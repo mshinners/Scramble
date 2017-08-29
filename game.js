@@ -64,7 +64,7 @@ function resetLetterTimer() {
 
 function generateFirstLetters() {
   for (var i = 1; i < 6; i++) {
-    var firstLetters = document.getElementById('current' + i);
+    var firstLetters = document.getElementById('current ' + i);
     firstLetters.innerHTML = generateRandomLetter();
   }
 }
