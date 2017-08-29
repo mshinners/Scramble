@@ -11,17 +11,19 @@ var people = [michelle, michael, nathan, shannon];
 //target = the 'learn more' link
 function createProfile(event) {
   var profile = document.getElementsByClassName(event.target.id)[0];
+  event.target.removeEventListener('click', createProfile);
   //get the correct Person object
   for (var i = 0; i < people.length; i++){
     if (event.target.id === people[i].name.toLowerCase()){
       target = people[i];
-      console.log(target);
     }
   }
   var theName = document.createElement('p');
   theName.innerText = target.name;
+  theName.setAttribute('class', 'displayInline');
   var blurb = document.createElement('p');
   blurb.innerText = target.blurb;
+  blurb.setAttribute('class', 'displayInline');
   profile.appendChild(theName);
   profile.appendChild(blurb);
 }

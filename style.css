@@ -44,4 +44,13 @@ img {
 
 .displayInline {
   display: inline;
+  float: right;
+}
+
+.learnMore {
+  float: left;
+}
+
+.learnMore:hover {
+  cursor: pointer;
 }
