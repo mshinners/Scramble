@@ -22,17 +22,6 @@ function createProfile(event) {
       target = people[i];
     }
   }
-};
-
-function removeProfile(event) {
-  var devProfile = document.getElementById(event.target.id);
-  //get the correct Person object
-  for (var i = 0; i < people.length; i++){
-    if (event.target.id === people[i].dev.toLowerCase()){
-      target = people[i];
-    }
-  }
-
   var paragraph = document.createElement('div');
   paragraph.setAttribute('class', 'displayInline');
   var faveWord = document.createElement('p');
@@ -43,7 +32,16 @@ function removeProfile(event) {
   paragraph.appendChild(blurb);
   profile.appendChild(paragraph);
 }
-
+function removeProfile(event) {
+  var devProfile = document.getElementById(event.target.id);
+  //get the correct Person object
+  for (var i = 0; i < people.length; i++){
+    if (event.target.id === people[i].dev.toLowerCase()){
+      target = people[i];
+      console.log(removeProfile);
+    }
+  }
+};
 // function changeText() {
 //   event.target.innerText = 'Learn more';
 // }

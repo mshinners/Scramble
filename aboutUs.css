@@ -15,9 +15,13 @@ body {
   height: 900px;
 }
 h1{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 5px;
   font-family: "scramble";
   font-style: normal;
   font-size: 60px;
+  /*background-color:#E3CE9F;*/
 }
 .current{
   font-family: "scramble";
@@ -78,10 +82,6 @@ td {
   font-size: 42px;
 }
 
-h1 {
-  text-align: center;
-  margin-top: 50px;
-}
 
 /*.ourProfiles {
   margin-top: 0px;
@@ -94,54 +94,65 @@ h1 {
 }
 img {
   display: inline;
-  width: 200px;
+  width: 280px;
   opacity: 1.0;
 }
 img:hover {
   opacity: 0.5;
 }
 .michelle {
-  margin: 10px;
-  padding: 10px;
+  margin: 5px;
+  margin-top: 5px;
+  padding: 5px;
+  padding-top: 5px;
   display: inline;
   float: left;
 }
 .michael {
-  clear: left;
-  margin: 10px;
-  padding: 10px;
+  /*clear: left;*/
+  margin: 5px;
+  margin-top: 5px;
+  padding: 5px;
+  padding-top: 5px;
   display: inline;
   float: left;
 }
 .nathan {
-  margin: 10px;
-  padding: 10px;
+  margin: 5px;
+  margin-top: 5px;
+  padding: 5px;
+  padding-top: 5px;
   display: inline;
   float: right;
 }
 .shannon {
-  clear: left;
-  margin: 10px;
-  padding: 10px;
+  /*clear: left;*/
+  margin: 5px;
+  margin-top: 5px;
+  padding: 5px;
+  padding-top: 5px;
   display: inline;
   float: right;
 }
-
 
 .displayInline {
   width: 65%;
   display: inline-block;
   overflow: auto;
 }
-
-.learnMore {
-  clear: left;
-  text-transform: capitalize;
-  display: inline;
-  padding: 5px;
-  margin: 5px;
+.topSector {
+  width: 100%;
+  float: left;
 }
-
-.learnMore:hover{
-  cursor: pointer;
+.bottomSector {
+  width: 100%;
+  float: right;
+}
+p {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-family: "scramble";
+  font-style: normal;
+  font-size: 18px;
+  background-color:#E3CE9F;
 }
