@@ -8,8 +8,7 @@ header, aside, section, footer, {
 @font-face {
   font-family: "scramble";
   font-style: normal;
-
-  src: url(fonts/scramble.tff);
+  src: url(scramble.ttf);
 
 }
 h1{
