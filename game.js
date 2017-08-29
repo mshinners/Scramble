@@ -127,6 +127,7 @@ function endGame() {
   //add to the if condition that the word must be legal
   if (numberOfLettersSelected === 5) {
     calculateFinalScore();
+    makePlayerObject();
   }
 }
 
@@ -157,7 +158,7 @@ function generateRandomLetter() {
 }
 function makePlayerObject(){
   var userNameList = JSON.parse(localStorage.nameArray);
-  var playerName = [userNameList.length - 1];
+  var playerName = userNameList[userNameList.length - 1];
   if (localStorage.winners){
     winners = JSON.parse(localStorage.winners);
   }
@@ -167,6 +168,8 @@ function makePlayerObject(){
     this.score = score;
     winners.push(this);
   }
+
+  new Newplayer(playerName,score);
   localStorage.winners = JSON.stringify(winners);
 }
 
