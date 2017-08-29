@@ -8,7 +8,6 @@ var shannon = {name:'Shannon', blurb: 'This is what Shannon says'};
 //Store objects in an array
 var people = [michelle, michael, nathan, shannon];
 
-
 //get all of the elements with a class name of profile & add an eventListener
 var learnMore = document.getElementsByClassName('learnMore');
 for (var i = 0; i < people.length; i++){
@@ -27,13 +26,9 @@ function createProfile(event) {
       target = people[i];
     }
   }
-  var theName = document.createElement('p');
-  theName.innerText = target.name;
-  theName.setAttribute('class', 'displayInline');
   var blurb = document.createElement('p');
   blurb.innerText = target.blurb;
   blurb.setAttribute('class', 'displayInline');
-  profile.appendChild(theName);
   profile.appendChild(blurb);
 }
 

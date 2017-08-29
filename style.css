@@ -44,11 +44,11 @@ img {
 
 .displayInline {
   display: inline;
-  float: right;
 }
 
 .learnMore {
-  float: left;
+  text-transform: capitalize;
+  display: inline;
 }
 
 .learnMore:hover{
