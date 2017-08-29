@@ -10,7 +10,7 @@ var people = [michelle, michael, nathan, shannon];
 
 //target = the 'learn more' link
 function createProfile(event) {
-  var profile = document.getElementsByClassName(event.target.id);
+  var profile = document.getElementsByClassName(event.target.id)[0];
   //get the correct Person object
   for (var i = 0; i < people.length; i++){
     if (event.target.id === people[i].name.toLowerCase()){
