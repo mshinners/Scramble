@@ -12,6 +12,7 @@ header, aside, section, footer, {
 body {
   background-image: url("background.jpg");
   opacity: 1.5;
+  height: 900px;
 }
 h1{
   font-family: "scramble";
