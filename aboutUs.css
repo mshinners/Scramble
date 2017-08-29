@@ -1,0 +1,104 @@
+header, aside, section, footer, {
+  display: block
+}
+* {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "scramble";
+  font-style: normal;
+  src: url(scramble.ttf);
+}
+body {
+  background-image: url("background.jpg");
+  opacity: 1.5;
+}
+h1{
+  font-family: "scramble";
+  font-style: normal;
+  font-size: 60px;
+}
+.current{
+  font-family: "scramble";
+  font-style: normal;
+  font-size: 80px;
+  border: 2px solid black;
+  padding: 30px;
+}
+.upcoming{
+  font-family: "scramble";
+  font-style: normal;
+  font-size: 80px;
+  border: 2px solid black;
+  padding: 30px;
+}
+.lockedin{
+  font-family: "scramble";
+  font-style: normal;
+  font-size: 80px;
+  border: 2px solid black;
+  padding: 30px;
+}
+h3{
+  color: red;
+}
+.greeting {
+  text-align: center;
+}
+
+table {
+  margin: auto;
+}
+
+td {
+  padding: 10px;
+}
+
+.upcoming {
+  font-size: 42px;
+}
+
+.current {
+  font-size: 42px;
+}
+
+.current:hover {
+  cursor: pointer;
+}
+
+.lockedIn {
+  font-size: 42px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.ourProfiles {
+  padding: 50px 0 20px 50px;
+}
+
+.profile {
+  padding-bottom: 30px;
+}
+
+img {
+  display: inline;
+  width: 30%;
+}
+
+.displayInline {
+  width: 65%;
+  display: inline-block;
+  overflow: auto;
+}
+
+.learnMore {
+  text-transform: capitalize;
+  display: inline;
+}
+
+.learnMore:hover{
+  cursor: pointer;
+}
