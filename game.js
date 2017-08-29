@@ -176,6 +176,8 @@ function lockIn(event) {
   }
 }
 
+generateFirstLetters();
+
 generateUpcomingLetters();
 
 addListeners();
