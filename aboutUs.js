@@ -1,10 +1,10 @@
 'use strict';
 var target;
 //each create an object with our name, favorite word, & blurb about us?
-var michelle = {name:'Michelle', blurb: 'This is what Michelle says'};
-var michael = {name:'Michael', blurb: 'This is what Michael says'};
-var nathan = {name:'Nathan', blurb: 'This is what Nathan says'};
-var shannon = {name:'Shannon', blurb: 'This is what Shannon says'};
+var michelle = {name:'Michelle', faveWord: 'word', blurb: 'This is what Michelle says'};
+var michael = {name:'Michael', faveWord: 'word', blurb: 'This is what Michael says'};
+var nathan = {name:'Nathan', faveWord: 'word', blurb: 'This is what Nathan says'};
+var shannon = {name:'Shannon', faveWord: 'word', blurb: 'This is what Shannon says'};
 //Store objects in an array
 var people = [michelle, michael, nathan, shannon];
 
@@ -26,10 +26,15 @@ function createProfile(event) {
       target = people[i];
     }
   }
+  var paragraph = document.createElement('div');
+  paragraph.setAttribute('class', 'displayInline');
+  var faveWord = document.createElement('p');
+  faveWord.innerText = target.faveWord;
+  paragraph.appendChild(faveWord);
   var blurb = document.createElement('p');
   blurb.innerText = target.blurb;
-  blurb.setAttribute('class', 'displayInline');
-  profile.appendChild(blurb);
+  paragraph.appendChild(blurb);
+  profile.appendChild(paragraph);
 }
 
 function changeText() {
