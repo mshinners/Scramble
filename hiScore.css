@@ -10,12 +10,13 @@ body {
   font-style: normal;
   src: url(scramble.ttf);
 }
+header{
+  background-color: F0D499;
+}
 .h1{
   font-family: "scramble";
   font-style: normal;
   font-size: 60px;
-  color: gray;
-   -webkit-text-stroke-color: orange;
 }
 th{
   color: red;
