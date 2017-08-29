@@ -7,8 +7,10 @@ if (localStorage.nameArray) {
 }
 
 function showRules() {
-  var getRules = document.getElementById('rules');
-  getRules.innerHTML = 'Enter your name and save. Click play to play. Click the letters to spell a word. You have one minute to make a word. If your word is valid it will be scored.';
+  var show = document.getElementById('listOfRules');
+  show.setAttribute('style', 'visibility:visible;');
+  var rules = document.getElementById('rules');
+  rules.setAttribute('style', 'visibility:hidden;');
 }
 
 var submitName = document.getElementById('nameEntry');
@@ -16,7 +18,6 @@ submitName.addEventListener('submit', logName);
 
 function logName(event){
   event.preventDefault();
-
   var nameField = document.getElementById('GET-name');
   userNameList.push(nameField.value);
   console.log(JSON.stringify(userNameList));
