@@ -11,40 +11,44 @@
       <div class="nav">
         <table class="navTable">
           <tr>
-            <td><a href="hiScore.html">HIGH SCORES</a></td>
-            <td><a href="aboutUs.html">ABOUT US</a></td>
+            <td>
+              <a href="hiScore.html">HIGH SCORES</a>
+            </td>
+            <td>
+              <a href="aboutUs.html">ABOUT US</a>
+            </td>
           </tr>
         </table>
       </div>
-      <h1>SCRAMBLE<h1>
+      <h1>SCRAMBLE</h1>
     </header>
-        <h2 id="welcome">Welcome to SCRAMBLE, the fast-paced word constructing game for the whole family!</h2>
-        <form id="nameEntry">
-          <table>
-            <tr>
-              <td>
-                <label>Enter your name:</label>
-                <input id="GET-name" type="text" name="name" required>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input id="save" type="submit" value="PLAY GAME!">
-              </td>
-            </tr>
-          </table>
-        </form>
-        <footer>
-          <button id="rules" onclick="showRules()" type="button"><h3>Show Rules</h3></button>
-          <ul id="listOfRules" style="visibility:hidden;">
-            <li>You will have 60 seconds to construct a 5-letter word. Go for maximum points!</li>
-            <li>Your final score is a combination of the word's value and the amount of time left on the clock, so work quickly!</li>
-            <li>Every 3 seconds, you will have your choice of up to five random letters to choose from to form your word. Click on them to lock in your letter with its position into your final word.</li>
-            <li>Each time your new letter choices become available, up to five new random letters will appear. Keep an eye on these; they will become your next available choices!</li>
-            <li>Choose your letters carefully! Once you lock in a letter in a position, there's no turning back!</li>
-            <li>If you run out of time or use an incorrect word, your score will be zero.</li>
-          </ul>
-        </footer>
+    <h2 id="welcome">Welcome to SCRAMBLE, the fast-paced word constructing game for the whole family!</h2>
+    <form id="nameEntry">
+      <table>
+        <tr>
+          <td>
+            <label>Enter your name:</label>
+            <input id="GET-name" type="text" name="name" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input id="save" type="submit" value="PLAY GAME!">
+          </td>
+        </tr>
+      </table>
+    </form>
+    <footer>
+      <button id="rules" onclick="showRules()" type="button"><h3>Show Rules</h3></button>
+      <ul id="listOfRules" style="visibility:hidden;">
+        <li>You will have 60 seconds to construct a 5-letter word. Go for maximum points!</li>
+        <li>Your final score is a combination of the word's value and the amount of time left on the clock, so work quickly!</li>
+        <li>Every 3 seconds, you will have your choice of up to five random letters to choose from to form your word. Click on them to lock in your letter with its position into your final word.</li>
+        <li>Each time your new letter choices become available, up to five new random letters will appear. Keep an eye on these; they will become your next available choices!</li>
+        <li>Choose your letters carefully! Once you lock in a letter in a position, there's no turning back!</li>
+        <li>If you run out of time or use an incorrect word, your score will be zero.</li>
+      </ul>
+    </footer>
     </body>
   <script src="index.js" ></script>
  </html>
