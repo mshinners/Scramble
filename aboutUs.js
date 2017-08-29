@@ -1,28 +1,24 @@
 'use strict';
 var target;
 //each create an object with our name, favorite word, & blurb about us?
-var michelle = {name:'Michelle', faveWord: 'word', blurb: 'This is what Michelle says'};
-var michael = {name:'Michael', faveWord: 'word', blurb: 'This is what Michael says'};
-var nathan = {name:'Nathan', faveWord: 'word', blurb: 'This is what Nathan says'};
-var shannon = {name:'Shannon', faveWord: 'word', blurb: 'This is what Shannon says'};
+var michelle = {dev:'Michelle', faveWord: 'word', blurb: 'This is what Michelle says'};
+var michael = {dev:'Michael', faveWord: 'word', blurb: 'This is what Michael says'};
+var nathan = {dev:'Nathan', faveWord: 'word', blurb: 'This is what Nathan says'};
+var shannon = {dev:'Shannon', faveWord: 'word', blurb: 'This is what Shannon says'};
 //Store objects in an array
 var people = [michelle, michael, nathan, shannon];
 
 //get all of the elements with a class name of profile & add an eventListener
-var learnMore = document.getElementsByClassName('learnMore');
+var aboutUs = document.getElementsByTagName('img');
 for (var i = 0; i < people.length; i++){
-  learnMore[i].addEventListener('click', createProfile);
-  learnMore[i].addEventListener('mouseover', changeText);
-  learnMore[i].addEventListener('mouseout', originalText);
+  aboutUs[i].addEventListener('mouseover', createProfile);
+  aboutUs[i].addEventListener('mouseout', removeProfile);
 }
-
-//target = the 'learn more' link
 function createProfile(event) {
-  var profile = document.getElementsByClassName(event.target.id)[0];
-  event.target.removeEventListener('click', createProfile);
+  var devProfile = document.getElementById(event.target.id);
   //get the correct Person object
   for (var i = 0; i < people.length; i++){
-    if (event.target.id === people[i].name.toLowerCase()){
+    if (event.target.id === people[i].dev.toLowerCase()){
       target = people[i];
     }
   }
@@ -36,11 +32,20 @@ function createProfile(event) {
   paragraph.appendChild(blurb);
   profile.appendChild(paragraph);
 }
-
-function changeText() {
-  event.target.innerText = 'Learn more';
-}
+function removeProfile(event) {
+  var devProfile = document.getElementById(event.target.id);
+  //get the correct Person object
+  for (var i = 0; i < people.length; i++){
+    if (event.target.id === people[i].dev.toLowerCase()){
+      target = people[i];
+      console.log(removeProfile);
+    }
+  }
+};
+// function changeText() {
+//   event.target.innerText = 'Learn more';
+// }
 
 function originalText() {
   event.target.innerText = event.target.id;
-}
+};
