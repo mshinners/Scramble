@@ -42,7 +42,6 @@ var gameCount = 61;
 var score = 0;
 
 function startLetterTimer() {
-
   var counter = setInterval(timer, 1000);
 
   function timer() {
@@ -63,8 +62,33 @@ function resetLetterTimer() {
   startLetterTimer();
 }
 
-function startGameTimer() {
+function upcomingBecomesCurrent() {
+  for (var i = 1; i < 6; i++) {
+    var upcoming = document.getElementById('upcoming ' + i).innerHTML;
+    var current = document.getElementById('current ' + i);
+    current.innerHTML = upcoming;
+  }
+}
 
+function generateUpcomingLetters() {
+  for (var i = 1; i < 6; i++) {
+    var cell = document.getElementById('upcoming ' + i);
+    cell.innerHTML = generateRandomLetter();
+  }
+}
+
+function generateRandomLetter() {
+  var vowelOrConsonant = Math.floor(Math.random() * 5);
+  if (vowelOrConsonant <= 1) {
+    var randomVowel = Math.floor(Math.random() * vowels.length);
+    return vowels[randomVowel].letter;
+  } else {
+    var randomConsonant = Math.floor(Math.random() * consonants.length);
+    return consonants[randomConsonant].letter;
+  }
+}
+
+function startGameTimer() {
   var counter = setInterval(timer, 1000);
 
   function timer() {
@@ -74,6 +98,31 @@ function startGameTimer() {
     if (gameCount <= 0) {
       clearInterval(counter);
       endGame();
+    }
+  }
+}
+
+function endGame() {
+  var lett = document.getElementById('letterTimer');
+  lett.setAttribute('style', 'visibility: hidden;');
+  var game = document.getElementById('gameTimer');
+  game.setAttribute('style', 'visibility: hidden;');
+  letterCount = 1000;
+  gameCount = 1000;
+  //add to the if condition that the word must be legal
+  if (numberOfLettersSelected === 5) {
+    calculateFinalScore();
+  }
+}
+
+function calculateFinalScore() {
+  score += gameCount;
+  for (var i = 1; i < 6; i++) {
+    var ithLetter = document.getElementById('lockedIn ' + i).innerHTML;
+    for (var j = 0; j < 26; j++) {
+      if (allLetters[j].letter === ithLetter) {
+        score += allLetters[j].letterScore;
+      }
     }
   }
 }
@@ -100,57 +149,6 @@ function lockIn(event) {
     upcomingBecomesCurrent();
     generateUpcomingLetters();
     letterCount = 4;
-  }
-}
-
-function calculateFinalScore() {
-  score += gameCount;
-  for (var i = 1; i < 6; i++) {
-    var ithLetter = document.getElementById('lockedIn ' + i).innerHTML;
-    for (var j = 0; j < 26; j++) {
-      if (allLetters[j].letter === ithLetter) {
-        score += allLetters[j].letterScore;
-      }
-    }
-  }
-}
-
-function endGame() {
-  var lett = document.getElementById('letterTimer');
-  lett.setAttribute('style', 'visibility: hidden;');
-  var game = document.getElementById('gameTimer');
-  game.setAttribute('style', 'visibility: hidden;');
-  letterCount = 1000;
-  gameCount = 1000;
-  //add to the if condition that the word must be legal
-  if (numberOfLettersSelected === 5) {
-    calculateFinalScore();
-  }
-}
-
-function upcomingBecomesCurrent() {
-  for (var i = 1; i < 6; i++) {
-    var upcoming = document.getElementById('upcoming ' + i).innerHTML;
-    var current = document.getElementById('current ' + i);
-    current.innerHTML = upcoming;
-  }
-}
-
-function generateUpcomingLetters() {
-  for (var i = 1; i < 6; i++) {
-    var cell = document.getElementById('upcoming ' + i);
-    cell.innerHTML = generateRandomLetter();
-  }
-}
-
-function generateRandomLetter() {
-  var vowelOrConsonant = Math.floor(Math.random() * 5);
-  if (vowelOrConsonant <= 1) {
-    var randomVowel = Math.floor(Math.random() * vowels.length);
-    return vowels[randomVowel].letter;
-  } else {
-    var randomConsonant = Math.floor(Math.random() * consonants.length);
-    return consonants[randomConsonant].letter;
   }
 }
 
