@@ -2,15 +2,9 @@
 
 var highScoreList = [];
 
-//function sorts the high scores
 if (localStorage.winners) {
   highScoreList = JSON.parse(localStorage.winners);
 }
-
-//creates the high score table
-
-var highScoreData = JSON.stringify(highScoreList);
-localStorage.winners = highScoreData;
 
 function printHiScores() {
   highScoreList.sort(function(a,b) {
@@ -29,9 +23,9 @@ function printHiScores() {
     score.innerText = highScoreList[i].score;
     tr.appendChild(score);
     table.appendChild(tr);
-  };
-  if (highScoreList.length >= 10) {
-    highScoreList.pop();
+    if (highScoreList.length >= 11) {
+      highScoreList.pop();
+    };
   };
 }
 
