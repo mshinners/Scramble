@@ -46,7 +46,10 @@ h3{
 .greeting {
   text-align: center;
 }
-
+.learnMoreWindow {
+  width: 200px;
+  height: 200px;
+}
 table {
   margin: auto;
 }
@@ -128,8 +131,11 @@ img:hover {
 }
 
 .learnMore {
+  clear: left;
   text-transform: capitalize;
   display: inline;
+  padding: 5px;
+  margin: 5px;
 }
 
 .learnMore:hover{
