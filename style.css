@@ -9,7 +9,7 @@ header, aside, section, footer, {
   font-family: "scramble";
   font-style: normal;
 
-  src: url(fonts/scramble.tff);
+  src: url(fonts/scramble.ttf);
 
 }
 h1{
@@ -17,17 +17,17 @@ h1{
   font-style: normal;
   font-size: 60px;
 }
-#current{
+.current{
   font-family: "scramble";
   font-style: normal;
   font-size: 80px;
 }
-#upcoming{
+.upcoming{
   font-family: "scramble";
   font-style: normal;
   font-size: 80px;
 }
-#lockedin{
+.lockedin{
   font-family: "scramble";
   font-style: normal;
   font-size: 80px;
