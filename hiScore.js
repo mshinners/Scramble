@@ -6,9 +6,6 @@ if (localStorage.winners) {
   highScoreList = JSON.parse(localStorage.winners);
 }
 
-var highScoreData = JSON.stringify(highScoreList);
-localStorage.winners = highScoreData;
-
 function printHiScores() {
   highScoreList.sort(function(a,b) {
     return b.score - a.score;
