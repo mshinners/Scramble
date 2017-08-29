@@ -53,4 +53,4 @@ There is no charge for any of the above.
 You are specifically prohibited from charging, or requesting
 donations, for any such copies, however made; and from
 distributing the software and/or documentation with other products
-(commercial or otherwise) without prior written permission.
+(commercial or otherwise) without prior written permission. 
