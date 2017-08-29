@@ -8,6 +8,15 @@ var shannon = {name:'Shannon', blurb: 'This is what Shannon says'};
 //Store objects in an array
 var people = [michelle, michael, nathan, shannon];
 
+
+//get all of the elements with a class name of profile & add an eventListener
+var learnMore = document.getElementsByClassName('learnMore');
+for (var i = 0; i < people.length; i++){
+  learnMore[i].addEventListener('click', createProfile);
+  learnMore[i].addEventListener('mouseover', changeText);
+  learnMore[i].addEventListener('mouseout', originalText);
+}
+
 //target = the 'learn more' link
 function createProfile(event) {
   var profile = document.getElementsByClassName(event.target.id)[0];
@@ -28,8 +37,10 @@ function createProfile(event) {
   profile.appendChild(blurb);
 }
 
-//get all of the elements with a class name of profile & add an eventListener
-var learnMore = document.getElementsByClassName('learnMore');
-for (var i = 0; i < people.length; i++){
-  learnMore[i].addEventListener('click', createProfile);
+function changeText() {
+  event.target.innerText = 'Learn more';
+}
+
+function originalText() {
+  event.target.innerText = event.target.id;
 }
