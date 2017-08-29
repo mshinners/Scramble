@@ -116,6 +116,12 @@ function calculateFinalScore() {
 }
 
 function endGame() {
+  var lett = document.getElementById('letterTimer');
+  lett.setAttribute('style', 'visibility: hidden;');
+  var game = document.getElementById('gameTimer');
+  game.setAttribute('style', 'visibility: hidden;');
+  letterCount = 1000;
+  gameCount = 1000;
   //add to the if condition that the word must be legal
   if (numberOfLettersSelected === 5) {
     calculateFinalScore();
