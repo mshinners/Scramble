@@ -9,16 +9,13 @@ var shannon = {dev:'Shannon', faveWord: 'word', blurb: 'This is what Shannon say
 var people = [michelle, michael, nathan, shannon];
 
 //get all of the elements with a class name of profile & add an eventListener
-var learnMore = document.getElementsByClassName('profile');
+var aboutUs = document.getElementsByClassName('profile');
 for (var i = 0; i < people.length; i++){
-  learnMore[i].addEventListener('click', createProfile);
-  learnMore[i].addEventListener('mouseover', changeText);
-  learnMore[i].addEventListener('mouseout', originalText);
-}
+  aboutUs[i].addEventListener('click', createProfile);
 
 //target = the 'learn more' link
 function createProfile(event) {
-  var profile = document.getElementsByClassName(event.target.id)[0];
+  var devProfile = document.getElementsByClassName(event.target.id)[0];
   event.target.removeEventListener('click', createProfile);
   //get the correct Person object
   for (var i = 0; i < people.length; i++){
