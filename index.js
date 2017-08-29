@@ -2,8 +2,8 @@
 
 var userNameList = [];
 
-if (localStorage.userNameList) {
-  userNameList = JSON.parse(localStorage.userNameList);
+if (localStorage.nameArray) {
+  userNameList = JSON.parse(localStorage.nameArray);
 }
 
 function showRules() {
@@ -21,5 +21,5 @@ function logName(event){
   userNameList.push(nameField.value);
   console.log(JSON.stringify(userNameList));
   localStorage.nameArray = JSON.stringify(userNameList);
-
+  window.location = 'game.html';
 }
