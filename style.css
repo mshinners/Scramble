@@ -1,7 +1,40 @@
+header, aside, section, footer, {
+  display: block
+}
 * {
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "scramble";
+  font-style: normal;
+
+  src: url(fonts/scramble.tff);
+
+}
+h1{
+  font-family: "scramble";
+  font-style: normal;
+  font-size: 60px;
+}
+#current{
+  font-family: "scramble";
+  font-style: normal;
+  font-size: 80px;
+}
+#upcoming{
+  font-family: "scramble";
+  font-style: normal;
+  font-size: 80px;
+}
+#lockedin{
+  font-family: "scramble";
+  font-style: normal;
+  font-size: 80px;
+}
+h3{
+  color: red;
+}
 .greeting {
   text-align: center;
 }
