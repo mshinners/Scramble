@@ -9,20 +9,30 @@ var shannon = {dev:'Shannon', faveWord: 'word', blurb: 'This is what Shannon say
 var people = [michelle, michael, nathan, shannon];
 
 //get all of the elements with a class name of profile & add an eventListener
-var aboutUs = document.getElementsByClassName('profile');
+var aboutUs = document.getElementsByTagName('img');
 for (var i = 0; i < people.length; i++){
-  aboutUs[i].addEventListener('click', createProfile);
-
-//target = the 'learn more' link
+  aboutUs[i].addEventListener('mouseover', createProfile);
+  aboutUs[i].addEventListener('mouseout', removeProfile);
+}
 function createProfile(event) {
-  var devProfile = document.getElementsByClassName(event.target.id)[0];
-  event.target.removeEventListener('click', createProfile);
+  var devProfile = document.getElementById(event.target.id);
   //get the correct Person object
   for (var i = 0; i < people.length; i++){
     if (event.target.id === people[i].dev.toLowerCase()){
       target = people[i];
     }
   }
+};
+
+function removeProfile(event) {
+  var devProfile = document.getElementById(event.target.id);
+  //get the correct Person object
+  for (var i = 0; i < people.length; i++){
+    if (event.target.id === people[i].dev.toLowerCase()){
+      target = people[i];
+    }
+  }
+
   var paragraph = document.createElement('div');
   paragraph.setAttribute('class', 'displayInline');
   var faveWord = document.createElement('p');
@@ -40,4 +50,4 @@ function createProfile(event) {
 
 function originalText() {
   event.target.innerText = event.target.id;
-}
+};
