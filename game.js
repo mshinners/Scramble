@@ -41,6 +41,8 @@ var gameCount = 61;
 
 var score = 0;
 
+var winners = [];
+
 function startLetterTimer() {
   var counter = setInterval(timer, 1000);
 
@@ -119,6 +121,7 @@ function endGame() {
   //add to the if condition that the word must be legal
   if (numberOfLettersSelected === 5) {
     calculateFinalScore();
+    makePlayerObject();
   }
   //set both timers to 1000 (& continue counting down by 1- will go for 1000 seconds)
   letterCount = 1000;
@@ -175,6 +178,73 @@ function lockIn(event) {
   }
 }
 
+function calculateFinalScore() {
+  score += gameCount;
+  for (var i = 1; i < 6; i++) {
+    var ithLetter = document.getElementById('lockedIn ' + i).innerHTML;
+    for (var j = 0; j < 26; j++) {
+      if (allLetters[j].letter === ithLetter) {
+        score += allLetters[j].letterScore;
+      }
+    }
+  }
+}
+
+function endGame() {
+  var lett = document.getElementById('letterTimer');
+  lett.setAttribute('style', 'visibility: hidden;');
+  var game = document.getElementById('gameTimer');
+  game.setAttribute('style', 'visibility: hidden;');
+  letterCount = 1000;
+  gameCount = 1000;
+  //add to the if condition that the word must be legal
+  if (numberOfLettersSelected === 5) {
+    calculateFinalScore();
+    makePlayerObject();
+  }
+}
+
+function upcomingBecomesCurrent() {
+  for (var i = 1; i < 6; i++) {
+    var upcoming = document.getElementById('upcoming ' + i).innerHTML;
+    var current = document.getElementById('current ' + i);
+    current.innerHTML = upcoming;
+  }
+}
+
+function generateUpcomingLetters() {
+  for (var i = 1; i < 6; i++) {
+    var cell = document.getElementById('upcoming ' + i);
+    cell.innerHTML = generateRandomLetter();
+  }
+}
+
+function generateRandomLetter() {
+  var vowelOrConsonant = Math.floor(Math.random() * 5);
+  if (vowelOrConsonant <= 1) {
+    var randomVowel = Math.floor(Math.random() * vowels.length);
+    return vowels[randomVowel].letter;
+  } else {
+    var randomConsonant = Math.floor(Math.random() * consonants.length);
+    return consonants[randomConsonant].letter;
+  }
+}
+function makePlayerObject(){
+  var userNameList = JSON.parse(localStorage.nameArray);
+  var playerName = userNameList[userNameList.length - 1];
+  if (localStorage.winners){
+    winners = JSON.parse(localStorage.winners);
+  }
+
+  function Newplayer(playerName, score){
+    this.userName = playerName;
+    this.score = score;
+    winners.push(this);
+  }
+
+  new Newplayer(playerName,score);
+  localStorage.winners = JSON.stringify(winners);
+}
 generateFirstLetters();
 
 generateUpcomingLetters();
