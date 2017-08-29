@@ -121,7 +121,6 @@ function endGame() {
     calculateFinalScore();
   }
   //set both timers to 1000 (& continue counting down by 1- will go for 1000 seconds)
-  //start here?
   letterCount = 1000;
   gameCount = 1000;
 }
