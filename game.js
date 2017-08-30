@@ -254,13 +254,13 @@ function calculateFinalScore() {
     var ithLetter = document.getElementById('lockedIn ' + i).innerHTML;
     for (var j = 0; j < 26; j++) {
       if (allLetters[j].letter === ithLetter) {
-        word.push(allLetters[j].letter);
+        lettersChosen.push(allLetters[j].letter);
         wordScore = wordScore + (allLetters[j].letterScore * 4);
         totalScore = totalScore + wordScore;
       }
     }
   }
-  word = lettersChosen.join('');
+  var word = lettersChosen.join('');
   console.log(word);
 }
 
