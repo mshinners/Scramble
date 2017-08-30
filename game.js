@@ -35,13 +35,13 @@ var vowels = [a, e, i, o, u];
 
 var consonants = [b, c, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, w, x, y, z];
 
-var numberOfLettersSelected = 0;
+var numberOfLettersSelected;
 
 var letterCount = 16 - (3 * numberOfLettersSelected);
 
-var gameCount = 61;
+var gameCount;
 
-var chosenWord = 0;
+var chosenWord;
 
 var wordScore = 0;
 
@@ -58,14 +58,6 @@ function timer() {
     clearInterval(counter);
     endGame();
   }
-}
-
-var button = document.getElementById('button');
-button.addEventListener('click', makeNewTiles);
-
-function makeNewTiles() {
-  generateUpcomingLetters();
-  letterCount = 16 - (3 * numberOfLettersSelected);
 }
 
 function startLetterTimer() {
@@ -85,12 +77,23 @@ function startLetterTimer() {
   }
 }
 
+function generateRandomLetter() {
+  var vowelOrConsonant = Math.floor(Math.random() * 5);
+  if (vowelOrConsonant <= 1) {
+    var randomVowel = Math.floor(Math.random() * vowels.length);
+    return vowels[randomVowel].letter;
+  } else {
+    var randomConsonant = Math.floor(Math.random() * consonants.length);
+    return consonants[randomConsonant].letter;
+  }
+}
+
 function resetLetterTimer() {
   letterCount = 16 - (3 * numberOfLettersSelected);
   startLetterTimer();
 }
 
-function generateFirstLetters() {
+function generateCurrentLetters() {
   for (var i = 1; i < 6; i++) {
     var firstLetters = document.getElementById('current ' + i);
     firstLetters.innerHTML = generateRandomLetter();
@@ -112,15 +115,35 @@ function generateUpcomingLetters() {
   }
 }
 
-function generateRandomLetter() {
-  var vowelOrConsonant = Math.floor(Math.random() * 5);
-  if (vowelOrConsonant <= 1) {
-    var randomVowel = Math.floor(Math.random() * vowels.length);
-    return vowels[randomVowel].letter;
-  } else {
-    var randomConsonant = Math.floor(Math.random() * consonants.length);
-    return consonants[randomConsonant].letter;
-  }
+function makeNewTiles() {
+  generateUpcomingLetters();
+  upcomingBecomesCurrent();
+  letterCount = 16 - (3 * numberOfLettersSelected);
+}
+
+function initiateGame () {
+  generateCurrentLetters();
+  generateUpcomingLetters();
+  resetLetterTimer();
+  numberOfLettersSelected = 0;
+  gameCount = 61;
+  letterCount = 16 - (3 * numberOfLettersSelected);
+}
+
+function makeEndgameNavOptions() {
+  var results = document.getElementById('results');
+  var playAgain = document.createElement('button');
+  playAgain.setAttribute('type', 'button');
+  playAgain.innerHTML = 'Play Again!';
+  playAgain.setAttribute('onclick', 'initiateGame()');
+  results.appendChild(playAgain);
+  var link = document.createElement('a');
+  link.setAttribute('href', 'hiScore.html');
+  results.appendChild(link);
+  var highScore = document.createElement('button');
+  highScore.innerHTML = 'View the High Scores';
+  highScore.setAttribute('type', 'button');
+  link.appendChild(highScore);
 }
 
 function endGame() {
@@ -138,6 +161,7 @@ function endGame() {
   } else {
     printTimerZero();
   }
+  makeEndgameNavOptions();
 }
 
 function printValid() {
@@ -177,13 +201,6 @@ function calculateFinalScore() {
         totalScore += allLetters[j].letterScore;
       }
     }
-  }
-}
-
-function addListeners () {
-  for (var i = 1; i < 6; i ++) {
-    var cell = document.getElementById('current ' + i);
-    cell.addEventListener('click', lockIn);
   }
 }
 
@@ -236,10 +253,15 @@ function makePlayerObject(){
   new userScore(playerName,totalScore);
   localStorage.winners = JSON.stringify(winners);
 }
-generateFirstLetters();
 
-generateUpcomingLetters();
+function addListeners () {
+  for (var i = 1; i < 6; i ++) {
+    var cell = document.getElementById('current ' + i);
+    cell.addEventListener('click', lockIn);
+  }
+  var button = document.getElementById('newLettersButton');
+  button.addEventListener('click', makeNewTiles);
+}
 
 addListeners();
-
-startLetterTimer();
+initiateGame();
