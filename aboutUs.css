@@ -10,7 +10,7 @@ header, aside, section, footer, {
   src: url(scramble.ttf);
 }
 body {
-  background-image: url("background.jpg");
+  background-image: url("imgs/background.jpg");
   background-size: cover;
 }
 h1{
