@@ -2,7 +2,7 @@ header, body, footer {
   display: block;
 }
 body {
-  background-image: url(https://www.scrapiniec.pl/userdata/gfx/3a634b4d354f8b95847997574e628f96.jpg);
+  background-image: url("imgs/background.jpg");
   background-size: cover;
 }
 @font-face {
@@ -45,8 +45,8 @@ table{
    border: 20px double black;
    border-radius: 12px;
    box-shadow: 3px 3px 2px grey;
-   width: 900px;
-   margin-left: 300px;
+   width: 80%;
+   margin: auto;
 }
 .button1{
   background-color: #570000;
@@ -67,7 +67,7 @@ table{
 }
 #buttonPosition{
   float: right;
-  margin-right: 100px;
+  margin-right: 10%;
 }
 mark{
   background-color: #E3CE9F;
