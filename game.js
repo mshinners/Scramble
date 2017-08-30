@@ -49,6 +49,26 @@ var totalScore = 0;
 
 var winners = [];
 
+//get selected tile, remove it from the lockedIn row, and show the tile options rotating through again
+//set event listener on each td of 'lockedIn' row
+//when event fires, remove the innerText of that td
+//set visibility:visible on the 'upcoming' & 'current' tds
+var lockedInTiles = document.getElementsByClassName('lockedIn');
+for (var i = 0; i < lockedInTiles.length; i++){
+  lockedInTiles[i].addEventListener('click', removeTile);
+}
+
+function removeTile(event) {
+  event.target.innerText = '';
+  //target = <td class="lockedIn" id="lockedIn 1" lockedIn="1">innerText</td>
+  // var upcomingTiles = document.getElementsByClassName('upcoming');
+  // for (var i = 1; i < upcomingTiles.length; i++) {
+  //   if event.target
+  // }
+  var upcoming = document.getElementById()
+  .setAttribute('style', 'visibility: visible');
+}
+
 //starts the game timer.
 var counter = setInterval(timer, 1000);
 

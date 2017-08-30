@@ -1,6 +1,6 @@
 'use strict';
 
-var highScoreList = [{userName: 'Jon Snow', score: 24},{userName: 'Peter Parker', score: 12},{userName: 'Silver Surfer', score: 18}];
+var highScoreList = [];
 
 if (localStorage.winners) {
   highScoreList = JSON.parse(localStorage.winners);
