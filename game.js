@@ -49,7 +49,6 @@ var totalScore = 0;
 
 var winners = [];
 
-//starts the game timer.
 var gameCounter;
 
 function timer() {
@@ -146,13 +145,16 @@ function deleteGameResults () {
   results.removeChild(link);
   var playAgain = document.getElementById('playAgain');
   results.removeChild(playAgain);
+  for (var i = 1; i < 6; i++) {
+    var cell = document.getElementById('lockedIn ' + i);
+    cell.innerHTML = '';
+  }
   initiateGame();
 }
 
 function initiateGame () {
   generateCurrentLetters();
   generateUpcomingLetters();
-  resetLetterTimer();
   invisibleToVisible();
   numberOfLettersSelected = 0;
   gameCount = 61;
@@ -300,3 +302,4 @@ function addListeners () {
 
 addListeners();
 initiateGame();
+resetLetterTimer();
