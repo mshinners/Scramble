@@ -123,10 +123,13 @@ function endGame() {
   lett.setAttribute('style', 'visibility: hidden;');
   var game = document.getElementById('gameTimer');
   game.setAttribute('style', 'visibility: hidden;');
-  //add to the if condition that the word must be legal
   if (numberOfLettersSelected === 5 && wordIsLegal()) {
     calculateFinalScore();
     makePlayerObject();
+  } else if (numberOfLettersSelected === 5) {
+    // tell the user that their word is no good and their score is zero
+  } else {
+    // tell the user that they ran out of time and their score is zero
   }
 }
 
