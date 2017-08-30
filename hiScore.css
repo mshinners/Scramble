@@ -25,9 +25,10 @@ h1{
 #content{
   text-align: center;
 }
-th{padding-top: 10px;
+th{
   color: #570000;
-  font-family: sans-serif;
+  font-family: "scramble";
+  font-style: normal;
   font-size: 40px;
   font-weight: bolder;
   border-bottom: 3px solid black;
@@ -38,17 +39,19 @@ td {
    color: black;
    font-size: 25px;
    font-weight: bold;
+   text-align: center;
 }
 table{
    border: 20px double black;
    border-radius: 12px;
    box-shadow: 3px 3px 2px grey;
-   width: 700px;
+   width: 750px;
+   margin-left: 300px;
 }
 .button1{
   background-color: #570000;
   border:none;
-  color: white;
+  color: #fbf4e3;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -61,12 +64,13 @@ table{
   border-radius: 12px;
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
-  position: relative;
+  /*position: relative;*/
 }
 #buttonPosition{
-  position:relative;
-  left: 200px;
+  /*position:relative;*/
+  float: right;
+  margin-right: 200px;
 }
-/*mark {
+mark{
   background-color: #E3CE9F;
-}*/
+}
