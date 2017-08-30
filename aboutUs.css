@@ -50,14 +50,6 @@ h3{
 .greeting {
   text-align: center;
 }
-.learnMoreWindow {
-  width: 500px;
-  height: 200px;
-  position: absolute;
-  top: 300px;
-  left: 350px;
-  border: 2px solid black;
-}
 table {
   margin: auto;
 }
@@ -148,11 +140,19 @@ img:hover {
   width: 100%;
   float: right;
 }
-p {
+h5 {
   margin-bottom: 5px;
   margin-top: 5px;
   font-family: "scramble";
   font-style: normal;
   font-size: 18px;
   background-color:#E3CE9F;
+}
+#learnMoreWindow {
+  width: 500px;
+  height: 200px;
+  position: absolute;
+  top: 300px;
+  left: 450px;
+  border: 2px solid black;
 }

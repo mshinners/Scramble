@@ -22,7 +22,7 @@ function createProfile(event) {
       target = people[i];
     }
   }
-  var paragraph = document.getElementsByClassName('learnMoreWindow');
+  var paragraph = document.getElementById('learnMoreWindow');
   paragraph.setAttribute('class', 'displayInline');
   var faveWord = document.createElement('p');
   faveWord.innerText = target.faveWord;
@@ -33,19 +33,22 @@ function createProfile(event) {
   profile.appendChild(paragraph);
 }
 function removeProfile(event) {
-  var devProfile = document.getElementById(event.target.id);
-  //get the correct Person object
-  for (var i = 0; i < people.length; i++){
-    if (event.target.id === people[i].dev.toLowerCase()){
-      target = people[i];
-      console.log(removeProfile);
-    }
-  }
+  // var devProfile = document.getElementById(event.target.id);
+  // //get the correct Person object
+  // for (var i = 0; i < people.length; i++){
+  //   if (event.target.id === people[i].dev.toLowerCase()){
+  //     target = people[i];
+  //     // console.log(removeProfile);
+  paragraph.removeChild(faveWord);
+  paragraph.removeChild(blurb);
+  profile.removeChild(paragraph);
+    // }
+  // }
 };
 // function changeText() {
 //   event.target.innerText = 'Learn more';
 // }
 
-function originalText() {
-  event.target.innerText = event.target.id;
-};
+// function originalText() {
+//   event.target.innerText = event.target.id;
+// };
