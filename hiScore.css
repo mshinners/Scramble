@@ -11,13 +11,23 @@ body {
   src: url(scramble.ttf);
 }
 header{
-  background-color: F0D499;
+  padding-bottom: 100px;
 }
-.h1{
+h1{
   font-family: "scramble";
   font-style: normal;
-  font-size: 60px;
+  font-size: 80px;
+  background-color: #E3CE9F;
+  display: inline;
 }
-th{
-  color: red;
+#content{
+  text-align: center;
+}
+th{padding-top: 10px;
+  color: #570000;
+  font-family: monospace;
+  font-size: 40px;
+}
+table, th, td {
+   border: 1px solid black;
 }
