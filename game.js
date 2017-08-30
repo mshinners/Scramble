@@ -49,6 +49,19 @@ var totalScore = 0;
 
 var winners = [];
 
+//starts the game timer.
+var counter = setInterval(timer, 1000);
+
+function timer() {
+  gameCount --;
+  var gameCountDisplay = document.getElementById('gameTimer');
+  gameCountDisplay.innerHTML = gameCount;
+  if (gameCount <= 0) {
+    clearInterval(counter);
+    endGame();
+  }
+}
+
 var button = document.getElementById('button');
 button.addEventListener('click', makeNewTiles);
 
@@ -112,21 +125,8 @@ function generateRandomLetter() {
   }
 }
 
-function startGameTimer() {
-  var counter = setInterval(timer, 1000);
-
-  function timer() {
-    gameCount --;
-    var gameCountDisplay = document.getElementById('gameTimer');
-    gameCountDisplay.innerHTML = gameCount;
-    if (gameCount <= 0) {
-      clearInterval(counter);
-      endGame();
-    }
-  }
-}
-
 function endGame() {
+  clearInterval(counter);
   var lett = document.getElementById('letterTimer');
   lett.setAttribute('style', 'visibility: hidden;');
   var game = document.getElementById('gameTimer');
@@ -134,10 +134,11 @@ function endGame() {
   if (numberOfLettersSelected === 5 && wordIsLegal()) {
     calculateFinalScore();
     makePlayerObject();
+    printValid();
   } else if (numberOfLettersSelected === 5) {
-    // tell the user that their word is no good and their score is zero
+    printInvalid();
   } else {
-    // tell the user that they ran out of time and their score is zero
+    printTimerZero();
   }
 }
 
@@ -150,7 +151,7 @@ function printValid() {
   results.appendChild(p);
 }
 
-function printNotValid() {
+function printInvalid() {
   var allNames = JSON.parse(localStorage.nameArray);
   var playerName = allNames[allNames.length - 1];
   var results = document.getElementById('results');
@@ -244,5 +245,3 @@ generateUpcomingLetters();
 addListeners();
 
 startLetterTimer();
-
-startGameTimer();
