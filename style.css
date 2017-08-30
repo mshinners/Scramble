@@ -1,5 +1,5 @@
-header, aside, section, footer, {
-  display: block
+/*header, aside, section, footer, {
+  display: block*/
 }
 * {
   box-sizing: border-box;
@@ -29,21 +29,27 @@ body {
   border-radius: 12px;
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
-
-
+}
+#rules{
+  float: right;
+  margin-right: 200px;
 }
 label{
   font-family: "scramble";
   font-style: normal;
-  font-size: 20px;  
+  font-size: 25px;
 }
 h1{
   font-family: "scramble";
   font-style: normal;
-  font-size: 60px;
+  font-size: 80px;
 }
-
-
+mark{
+  background-color: #E3CE9F;
+}
+#nameEntry{
+  
+}
 .greeting {
   text-align: center;
 }
