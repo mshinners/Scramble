@@ -49,13 +49,18 @@ var totalScore = 0;
 
 var winners = [];
 
+// var word = [];
+
 var button = document.getElementById('button');
 button.addEventListener('click', makeNewTiles);
 
-function makeNewTiles(){
+function makeNewTiles() {
   generateUpcomingLetters();
   letterCount = 16 - (3 * numberOfLettersSelected);
 }
+
+//when a tile is chosen add the letter value to the word array
+//once user has chosen 5 tiles join all the items in the array
 
 function startLetterTimer() {
 
@@ -139,6 +144,33 @@ function endGame() {
   } else {
     // tell the user that they ran out of time and their score is zero
   }
+}
+
+function printValid() {
+  var allNames = JSON.parse(localStorage.nameArray);
+  var playerName = allNames[allNames.length - 1];
+  var results = document.getElementById('results');
+  var p = document.createElement('p');
+  p.innerText = playerName + ', your score was: ' + totalScore;
+  results.appendChild(p);
+}
+
+function printNotValid() {
+  var allNames = JSON.parse(localStorage.nameArray);
+  var playerName = allNames[allNames.length - 1];
+  var results = document.getElementById('results');
+  var p = document.createElement('p');
+  p.innerText = playerName + ', the word you spelled is not an accepted Scramble word.';
+  results.appendChild(p);
+}
+
+function printTimerZero() {
+  var allNames = JSON.parse(localStorage.nameArray);
+  var playerName = allNames[allNames.length - 1];
+  var results = document.getElementById('results');
+  var p = document.createElement('p');
+  p.innerText = playerName + ', you ran out of time!';
+  results.appendChild(p);
 }
 
 function calculateFinalScore() {
