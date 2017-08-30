@@ -204,6 +204,9 @@ function makeEndgameNavOptions() {
 
 function endGame() {
   clearInterval(gameCounter);
+  for (var i = 0; i < lockedInTiles.length; i++){
+    lockedInTiles[i].removeEventListener('click', removeTile);
+  }
   var lett = document.getElementById('letterTimer');
   lett.setAttribute('style', 'visibility: hidden;');
   var game = document.getElementById('gameTimer');
