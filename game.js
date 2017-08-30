@@ -252,6 +252,8 @@ function calculateFinalScore() {
   totalScore += gameCount;
   for (var i = 1; i < 6; i++) {
     var ithLetter = document.getElementById('lockedIn ' + i).innerHTML;
+    word.push(ithLetter);
+    console.log(word);
     for (var j = 0; j < 26; j++) {
       if (allLetters[j].letter === ithLetter) {
         wordScore = wordScore + (allLetters[j].letterScore * 4);
