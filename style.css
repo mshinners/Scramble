@@ -48,7 +48,12 @@ mark{
   background-color: #E3CE9F;
 }
 #nameEntry{
-  
+
+}
+#listOfRules{
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
 }
 .greeting {
   text-align: center;
