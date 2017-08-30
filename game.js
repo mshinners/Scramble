@@ -49,7 +49,7 @@ var totalScore = 0;
 
 var winners = [];
 
-var word = [];
+var lettersChosen = [];
 
 var lockedInTiles = document.getElementsByClassName('lockedIn');
 for (var i = 0; i < lockedInTiles.length; i++){
@@ -260,7 +260,7 @@ function calculateFinalScore() {
       }
     }
   }
-  word.join('');
+  word = lettersChosen.join('');
   console.log(word);
 }
 
