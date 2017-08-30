@@ -3,8 +3,8 @@ var target;
 //each create an object with our name, favorite word, & blurb about us?
 var michelle = {dev:'Michelle', faveWord: 'Three', blurb: 'Coding is fun!'};
 var michael = {dev:'Michael', faveWord: 'Acrid', blurb: 'Dad Jokes Rule!'};
-var nathan = {dev:'Nathan', faveWord: 'Szygy', blurb: 'Your Momma!'};
-var shannon = {dev:'Shannon', faveWord: 'their', blurb: 'Thanks for playing!'};
+var nathan = {dev:'Nathan', faveWord: 'Szygy', blurb: 'Hi Momma!'};
+var shannon = {dev:'Shannon', faveWord: 'Their', blurb: 'Thanks for playing!'};
 //Store objects in an array
 var people = [michelle, michael, nathan, shannon];
 
