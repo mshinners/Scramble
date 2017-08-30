@@ -49,6 +49,23 @@ var totalScore = 0;
 
 var winners = [];
 
+var lockedInTiles = document.getElementsByClassName('lockedIn');
+for (var i = 0; i < lockedInTiles.length; i++){
+  lockedInTiles[i].addEventListener('click', removeTile);
+}
+
+function removeTile(event) {
+  numberOfLettersSelected --;
+  event.target.innerText = '';
+  var number = event.target.getAttribute('lockedIn');
+  var upcoming = document.getElementById('upcoming ' + number);
+  var current = document.getElementById('current ' + number);
+  current.addEventListener('click', lockIn);
+  upcoming.setAttribute('style', 'visibility: visible');
+  current.setAttribute('style', 'visibility: visible');
+}
+
+//starts the game timer.
 var gameCounter;
 
 function timer() {
@@ -145,16 +162,13 @@ function deleteGameResults () {
   results.removeChild(link);
   var playAgain = document.getElementById('playAgain');
   results.removeChild(playAgain);
-  for (var i = 1; i < 6; i++) {
-    var cell = document.getElementById('lockedIn ' + i);
-    cell.innerHTML = '';
-  }
   initiateGame();
 }
 
 function initiateGame () {
   generateCurrentLetters();
   generateUpcomingLetters();
+  resetLetterTimer();
   invisibleToVisible();
   numberOfLettersSelected = 0;
   gameCount = 61;
@@ -302,4 +316,3 @@ function addListeners () {
 
 addListeners();
 initiateGame();
-resetLetterTimer();
