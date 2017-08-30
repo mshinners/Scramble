@@ -3,8 +3,7 @@ header, body, footer {
 }
 body {
   background-image: url(https://www.scrapiniec.pl/userdata/gfx/3a634b4d354f8b95847997574e628f96.jpg);
-  /*background-image: url("background.jpg");
-  opacity: 1.5;*/
+  background-size: cover;
 }
 @font-face {
   font-family: "scramble";
@@ -18,7 +17,6 @@ h1{
   font-family: "scramble";
   font-style: normal;
   font-size: 80px;
-  /*background-color: #E3CE9F;*/
   display: inline;
 }
 #content{
@@ -34,9 +32,24 @@ td {
    border: 3px solid black;
    font-family: monospace;
    color: black;
-   font-size: 20px;
+   font-size: 25px;
    font-weight: bold;
 }
 table{
    border: 15px double black;
+}
+.button1{
+  background-color: #570000;
+  border:none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 2px grey;
 }
