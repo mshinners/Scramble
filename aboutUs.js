@@ -23,28 +23,44 @@ function createProfile(event) {
     }
   }
   var paragraph = document.getElementById('learnMoreWindow');
-  paragraph.setAttribute('class', 'displayInline');
+  // paragraph.setAttribute('class', 'displayInline');
   var faveWord = document.createElement('p');
   faveWord.innerText = target.faveWord;
   paragraph.appendChild(faveWord);
   var blurb = document.createElement('p');
   blurb.innerText = target.blurb;
   paragraph.appendChild(blurb);
-  profile.appendChild(paragraph);
-}
+  devProfile.appendChild(paragraph);
+};
 function removeProfile(event) {
+  var devProfile = document.getElementById(event.target.id);
+  for (var i = 0; i < people.length; i++){
+    if (event.target.id === people[i].dev.toLowerCase()){
+      devProfile.removeChild(paragraph);
+    }
+  }
+      // cutProfile.removeChild(faveWord);
+      // cutProfile.removeChild(blurb);
+  // var cutProfile = document.getElementById(event.target.id);
+  var paragraph = document.getElementById('learnMoreWindow');
+  // paragraph.setAttribute('class', 'displayInline');
+  var faveWord = document.createElement('p');
+  faveWord.innerText = target.faveWord;
+  paragraph.appendChild(faveWord);
+  var blurb = document.createElement('p');
+  blurb.innerText = target.blurb;//get the correct Person object
+}
+
+  // var cutProfile = document.getElementById('learnMoreWindow');
   // var devProfile = document.getElementById(event.target.id);
   // //get the correct Person object
   // for (var i = 0; i < people.length; i++){
   //   if (event.target.id === people[i].dev.toLowerCase()){
   //     target = people[i];
   //     // console.log(removeProfile);
-  paragraph.removeChild(faveWord);
-  paragraph.removeChild(blurb);
-  profile.removeChild(paragraph);
     // }
   // }
-};
+//
 // function changeText() {
 //   event.target.innerText = 'Learn more';
 // }
