@@ -11,8 +11,7 @@ header, aside, section, footer, {
 }
 body {
   background-image: url("background.jpg");
-  opacity: 1.5;
-  height: 900px;
+  background-size: cover;
 }
 h1{
   text-align: center;
@@ -21,7 +20,6 @@ h1{
   font-family: "scramble";
   font-style: normal;
   font-size: 60px;
-  /*background-color:#E3CE9F;*/
 }
 .current{
   font-family: "scramble";
