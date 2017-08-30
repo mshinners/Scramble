@@ -55,7 +55,7 @@ button.addEventListener('click', makeNewTiles);
 
 function makeNewTiles(){
   generateUpcomingLetters();
-  resetLetterTimer();
+  letterCount = 16 - (3 * numberOfLettersSelected);
 }
 
 function startLetterTimer() {
