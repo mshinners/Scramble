@@ -61,12 +61,11 @@ for (var i = 0; i < lockedInTiles.length; i++){
 function removeTile(event) {
   event.target.innerText = '';
   //target = <td class="lockedIn" id="lockedIn 1" lockedIn="1">innerText</td>
-  // var upcomingTiles = document.getElementsByClassName('upcoming');
-  // for (var i = 1; i < upcomingTiles.length; i++) {
-  //   if event.target
-  // }
-  var upcoming = document.getElementById()
-  .setAttribute('style', 'visibility: visible');
+  var number = event.target.getAttribute('lockedIn');
+  var upcoming = document.getElementById('upcoming ' + number);
+  var current = document.getElementById('current ' + number);
+  // var upcoming = document.getElementById()
+  // .setAttribute('style', 'visibility: visible');
 }
 
 //starts the game timer.
