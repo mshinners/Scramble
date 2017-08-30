@@ -69,28 +69,28 @@ function removeTile(event) {
 }
 
 //starts the game timer.
-var counter = setInterval(timer, 1000);
+var gameCounter;
 
 function timer() {
   gameCount --;
   var gameCountDisplay = document.getElementById('gameTimer');
   gameCountDisplay.innerHTML = gameCount;
   if (gameCount <= 0) {
-    clearInterval(counter);
+    clearInterval(gameCounter);
     endGame();
   }
 }
 
 function startLetterTimer() {
 
-  var counter = setInterval(timer, 250);
+  var letterCounter = setInterval(timer, 250);
 
   function timer() {
     letterCount --;
     var letterCountDisplay = document.getElementById('letterTimer');
     letterCountDisplay.innerHTML = letterCount;
     if (letterCount <= 0) {
-      clearInterval(counter);
+      clearInterval(letterCounter);
       resetLetterTimer();
       upcomingBecomesCurrent();
       generateUpcomingLetters();
@@ -142,23 +142,53 @@ function makeNewTiles() {
   letterCount = 16 - (3 * numberOfLettersSelected);
 }
 
+function invisibleToVisible () {
+  for (var i = 1; i < 6; i++) {
+    var cell = document.getElementById('upcoming ' + i);
+    cell.setAttribute('style', 'visibility: visible;');
+  }
+  for (var i = 1; i < 6; i++) {
+    var cell = document.getElementById('current ' + i);
+    cell.setAttribute('style', 'visibility: visible;');
+  }
+  var letter = document.getElementById('letterTimer');
+  letter.setAttribute('style', 'visibility: visible;');
+  var game = document.getElementById('gameTimer');
+  game.setAttribute('style', 'visibility: visible;');
+}
+
+function deleteGameResults () {
+  var results = document.getElementById('results');
+  var p = document.getElementById('userMessage');
+  results.removeChild(p);
+  var link = document.getElementById('link');
+  results.removeChild(link);
+  var playAgain = document.getElementById('playAgain');
+  results.removeChild(playAgain);
+  initiateGame();
+}
+
 function initiateGame () {
   generateCurrentLetters();
   generateUpcomingLetters();
   resetLetterTimer();
+  invisibleToVisible();
   numberOfLettersSelected = 0;
   gameCount = 61;
   letterCount = 16 - (3 * numberOfLettersSelected);
+  gameCounter = setInterval(timer, 1000);
 }
 
 function makeEndgameNavOptions() {
   var results = document.getElementById('results');
   var playAgain = document.createElement('button');
+  playAgain.setAttribute('id', 'playAgain');
   playAgain.setAttribute('type', 'button');
   playAgain.innerHTML = 'Play Again!';
-  playAgain.setAttribute('onclick', 'initiateGame()');
+  playAgain.setAttribute('onclick', 'deleteGameResults()');
   results.appendChild(playAgain);
   var link = document.createElement('a');
+  link.setAttribute('id', 'link');
   link.setAttribute('href', 'hiScore.html');
   results.appendChild(link);
   var highScore = document.createElement('button');
@@ -168,7 +198,7 @@ function makeEndgameNavOptions() {
 }
 
 function endGame() {
-  clearInterval(counter);
+  clearInterval(gameCounter);
   var lett = document.getElementById('letterTimer');
   lett.setAttribute('style', 'visibility: hidden;');
   var game = document.getElementById('gameTimer');
@@ -191,6 +221,7 @@ function printValid() {
   var results = document.getElementById('results');
   var p = document.createElement('p');
   p.innerText = playerName + ', your score was: ' + totalScore;
+  p.setAttribute('id', 'userMessage');
   results.appendChild(p);
 }
 
@@ -200,6 +231,7 @@ function printInvalid() {
   var results = document.getElementById('results');
   var p = document.createElement('p');
   p.innerText = 'Sorry, ' + chosenWord + ' is not an accepted Scramble word.';
+  p.setAttribute('id', 'userMessage');
   results.appendChild(p);
 }
 
@@ -209,6 +241,7 @@ function printTimerZero() {
   var results = document.getElementById('results');
   var p = document.createElement('p');
   p.innerText = playerName + ', you ran out of time!';
+  p.setAttribute('id', 'userMessage');
   results.appendChild(p);
 }
 
