@@ -49,23 +49,20 @@ var totalScore = 0;
 
 var winners = [];
 
-//get selected tile, remove it from the lockedIn row, and show the tile options rotating through again
-//set event listener on each td of 'lockedIn' row
-//when event fires, remove the innerText of that td
-//set visibility:visible on the 'upcoming' & 'current' tds
 var lockedInTiles = document.getElementsByClassName('lockedIn');
 for (var i = 0; i < lockedInTiles.length; i++){
   lockedInTiles[i].addEventListener('click', removeTile);
 }
 
 function removeTile(event) {
+  numberOfLettersSelected --;
   event.target.innerText = '';
   //target = <td class="lockedIn" id="lockedIn 1" lockedIn="1">innerText</td>
   var number = event.target.getAttribute('lockedIn');
   var upcoming = document.getElementById('upcoming ' + number);
   var current = document.getElementById('current ' + number);
-  // var upcoming = document.getElementById()
-  // .setAttribute('style', 'visibility: visible');
+  upcoming.setAttribute('style', 'visibility: visible');
+  current.setAttribute('style', 'visibility: visible');
 }
 
 //starts the game timer.
