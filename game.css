@@ -39,7 +39,8 @@ table{
   border: 10px double black;
   border-radius: 12px;
   box-shadow: 3px 3px 2px grey;
-  margin: auto;
+  width:80%;
+  height: 170;
 }
 button{
   background-color: #570000;
@@ -57,4 +58,12 @@ button{
   border-radius: 12px;
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
+}
+h3{
+  font-family: monospace;
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
 }
