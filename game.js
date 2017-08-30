@@ -57,7 +57,6 @@ for (var i = 0; i < lockedInTiles.length; i++){
 function removeTile(event) {
   numberOfLettersSelected --;
   event.target.innerText = '';
-  //target = <td class="lockedIn" id="lockedIn 1" lockedIn="1">innerText</td>
   var number = event.target.getAttribute('lockedIn');
   var upcoming = document.getElementById('upcoming ' + number);
   var current = document.getElementById('current ' + number);
@@ -261,7 +260,6 @@ function lockIn(event) {
   var lock = document.getElementById('lockedIn ' + which);
   var upcomingPartner = document.getElementById('upcoming ' + which);
   lock.innerHTML = event.target.innerHTML;
-  event.target.removeEventListener('click', lockIn);
   upcomingPartner.setAttribute('style', 'visibility: hidden;');
   event.target.setAttribute('style', 'visibility: hidden;');
   numberOfLettersSelected ++;
