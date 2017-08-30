@@ -27,40 +27,19 @@ function createProfile(event) {
   // paragraph.setAttribute('class', 'displayInline');
   var faveWord = document.createElement('p');
   faveWord.innerText = target.faveWord;
+  faveWord.setAttribute('id', 'faveWord');
   paragraph.appendChild(faveWord);
   var blurb = document.createElement('p');
   blurb.innerText = target.blurb;
+  blurb.setAttribute('id', 'blurb');
   paragraph.appendChild(blurb);
 };
 function removeProfile(event) {
   // var cutProfile = document.getElementById(event.target.id);
   var cutProfile = document.getElementById('learnMoreWindow');
-  console.log(learnMoreWindow);
+  var faveWord = document.getElementById('faveWord');
+  var blurb = document.getElementById('blurb');
+  console.log(faveWord);
   cutProfile.removeChild(faveWord);
   cutProfile.removeChild(blurb);
-  // var cutProfile = document.getElementById(event.target.id);
-  // paragraph.setAttribute('class', 'displayInline');
-  // var faveWord = document.createElement('p');
-  // faveWord.innerText = target.faveWord;
-  // paragraph.appendChild(faveWord);
-  // var blurb = document.createElement('p');
-  // blurb.innerText = target.blurb;//get the correct Person object
-}
-
-  // var cutProfile = document.getElementById('learnMoreWindow');
-  // var devProfile = document.getElementById(event.target.id);
-  // //get the correct Person object
-  // for (var i = 0; i < people.length; i++){
-  //   if (event.target.id === people[i].dev.toLowerCase()){
-  //     target = people[i];
-  //     // console.log(removeProfile);
-    // }
-  // }
-//
-// function changeText() {
-//   event.target.innerText = 'Learn more';
-// }
-
-// function originalText() {
-//   event.target.innerText = event.target.id;
-// };
+};
