@@ -207,6 +207,10 @@ function endGame() {
   for (var i = 0; i < lockedInTiles.length; i++){
     lockedInTiles[i].removeEventListener('click', removeTile);
   }
+  for (var i = 1; i < 6; i ++) {
+    var cell = document.getElementById('current ' + i);
+    cell.removeEventListener('click', lockIn);
+  }
   var lett = document.getElementById('letterTimer');
   lett.setAttribute('style', 'visibility: hidden;');
   var game = document.getElementById('gameTimer');
@@ -261,10 +265,10 @@ function calculateFinalScore() {
       if (allLetters[j].letter === ithLetter) {
         lettersChosen.push(allLetters[j].letter);
         wordScore = wordScore + (allLetters[j].letterScore * 4);
-        totalScore = totalScore + wordScore;
       }
     }
   }
+  totalScore = totalScore + wordScore;
   word = lettersChosen.join('');
 }
 
