@@ -265,10 +265,10 @@ function calculateFinalScore() {
       if (allLetters[j].letter === ithLetter) {
         lettersChosen.push(allLetters[j].letter);
         wordScore = wordScore + (allLetters[j].letterScore * 4);
-        totalScore = totalScore + wordScore;
       }
     }
   }
+  totalScore = totalScore + wordScore;
   word = lettersChosen.join('');
 }
 
