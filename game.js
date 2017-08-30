@@ -211,6 +211,15 @@ function endGame() {
     var cell = document.getElementById('current ' + i);
     cell.removeEventListener('click', lockIn);
   }
+  for (var i = 1; i < 6; i++) {
+    var upcomingCell = document.getElementById('upcoming ' + i);
+    var currentCell = document.getElementById('current ' + i);
+    upcomingCell.setAttribute('style', 'visibility: hidden;');
+    currentCell.setAttribute('style', 'visibility: hidden;');
+  }
+  var newLettersButton = document.getElementById('newLettersButton');
+  newLettersButton.setAttribute('style', 'opacity: .5;');
+  newLettersButton.removeEventListener('click', makeNewTiles);
   var lett = document.getElementById('letterTimer');
   lett.setAttribute('style', 'visibility: hidden;');
   var game = document.getElementById('gameTimer');
