@@ -47,6 +47,8 @@ var wordScore = 0;
 
 var totalScore = 0;
 
+var winners = [];
+
 //starts the game timer.
 var counter = setInterval(timer, 1000);
 
