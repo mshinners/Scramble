@@ -4,7 +4,7 @@ var target;
 var michelle = {dev:'Michelle', faveWord: 'Merge', blurb: 'Coding is fun!'};
 var michael = {dev:'Michael', faveWord: 'Pithy', blurb: 'Dad Jokes Rule!'};
 var nathan = {dev:'Nathan', faveWord: 'Djinn', blurb: 'Hi Momma!'};
-var shannon = {dev:'Shannon', faveWord: 'Amuck', blurb: 'Thanks for playing!'};
+var shannon = {dev:'Shannon', faveWord: 'sassy', blurb: 'Thanks for playing!'};
 //Store objects in an array
 var people = [michelle, michael, nathan, shannon];
 

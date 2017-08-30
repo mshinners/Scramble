@@ -49,6 +49,8 @@ var totalScore = 0;
 
 var winners = [];
 
+var word = [];
+
 var lockedInTiles = document.getElementsByClassName('lockedIn');
 for (var i = 0; i < lockedInTiles.length; i++){
   lockedInTiles[i].addEventListener('click', removeTile);
@@ -252,8 +254,8 @@ function calculateFinalScore() {
     var ithLetter = document.getElementById('lockedIn ' + i).innerHTML;
     for (var j = 0; j < 26; j++) {
       if (allLetters[j].letter === ithLetter) {
-        wordScore += allLetters[j].letterScore;
-        totalScore += allLetters[j].letterScore;
+        wordScore = wordScore + (allLetters[j].letterScore * 4);
+        totalScore = totalScore + wordScore;
       }
     }
   }
