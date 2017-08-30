@@ -134,8 +134,8 @@ function generateUpcomingLetters() {
 }
 
 function makeNewTiles() {
-  generateUpcomingLetters();
   upcomingBecomesCurrent();
+  generateUpcomingLetters();
   letterCount = 16 - (3 * numberOfLettersSelected);
 }
 
@@ -162,18 +162,22 @@ function deleteGameResults () {
   results.removeChild(link);
   var playAgain = document.getElementById('playAgain');
   results.removeChild(playAgain);
+  for (var i = 1; i < 6; i++) {
+    var cell = document.getElementById('lockedIn ' + i);
+    cell.innerHTML = '';
+  }
   initiateGame();
 }
 
 function initiateGame () {
   generateCurrentLetters();
   generateUpcomingLetters();
-  resetLetterTimer();
   invisibleToVisible();
   numberOfLettersSelected = 0;
   gameCount = 61;
   letterCount = 16 - (3 * numberOfLettersSelected);
   gameCounter = setInterval(timer, 1000);
+  addListeners();
 }
 
 function makeEndgameNavOptions() {
@@ -314,5 +318,5 @@ function addListeners () {
   button.addEventListener('click', makeNewTiles);
 }
 
-addListeners();
 initiateGame();
+resetLetterTimer();
