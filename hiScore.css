@@ -26,7 +26,7 @@ th{padding-top: 10px;
   color: #570000;
   font-family: sans-serif;
   font-size: 40px;
-  font-weight: bold;
+  font-weight: bolder;
 }
 td {
    border: 3px solid black;
@@ -36,7 +36,9 @@ td {
    font-weight: bold;
 }
 table{
-   border: 15px double black;
+   border: 25px double black;
+   border-radius: 12px;
+   box-shadow: 3px 3px 2px grey;
 }
 .button1{
   background-color: #570000;
@@ -46,10 +48,18 @@ table{
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  font-family: sans-serif;
   font-size: 20px;
+  font-weight: bold;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 12px;
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
+  position: relative;
+}
+#buttonPosition{
+  margin-left: 20%;
+  margin-top: 1%;
+
 }
