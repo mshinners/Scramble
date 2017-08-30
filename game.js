@@ -49,6 +49,21 @@ var totalScore = 0;
 
 var winners = [];
 
+var lockedInTiles = document.getElementsByClassName('lockedIn');
+for (var i = 0; i < lockedInTiles.length; i++){
+  lockedInTiles[i].addEventListener('click', removeTile);
+}
+
+function removeTile(event) {
+  numberOfLettersSelected --;
+  event.target.innerText = '';
+  var number = event.target.getAttribute('lockedIn');
+  var upcoming = document.getElementById('upcoming ' + number);
+  var current = document.getElementById('current ' + number);
+  upcoming.setAttribute('style', 'visibility: visible');
+  current.setAttribute('style', 'visibility: visible');
+}
+
 //starts the game timer.
 var gameCounter;
 
@@ -245,7 +260,6 @@ function lockIn(event) {
   var lock = document.getElementById('lockedIn ' + which);
   var upcomingPartner = document.getElementById('upcoming ' + which);
   lock.innerHTML = event.target.innerHTML;
-  event.target.removeEventListener('click', lockIn);
   upcomingPartner.setAttribute('style', 'visibility: hidden;');
   event.target.setAttribute('style', 'visibility: hidden;');
   numberOfLettersSelected ++;
