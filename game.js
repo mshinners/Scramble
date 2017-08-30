@@ -49,7 +49,6 @@ var totalScore = 0;
 
 var winners = [];
 
-//create button to generate new upcoming tiles when user clicks
 var button = document.getElementById('button');
 button.addEventListener('click', makeNewTiles);
 
