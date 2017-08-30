@@ -60,6 +60,7 @@ function removeTile(event) {
   var number = event.target.getAttribute('lockedIn');
   var upcoming = document.getElementById('upcoming ' + number);
   var current = document.getElementById('current ' + number);
+  current.addEventListener('click', lockIn);
   upcoming.setAttribute('style', 'visibility: visible');
   current.setAttribute('style', 'visibility: visible');
 }
@@ -161,16 +162,13 @@ function deleteGameResults () {
   results.removeChild(link);
   var playAgain = document.getElementById('playAgain');
   results.removeChild(playAgain);
-  for (var i = 1; i < 6; i++) {
-    var cell = document.getElementById('lockedIn ' + i);
-    cell.innerHTML = '';
-  }
   initiateGame();
 }
 
 function initiateGame () {
   generateCurrentLetters();
   generateUpcomingLetters();
+  resetLetterTimer();
   invisibleToVisible();
   numberOfLettersSelected = 0;
   gameCount = 61;
@@ -263,6 +261,7 @@ function lockIn(event) {
   var lock = document.getElementById('lockedIn ' + which);
   var upcomingPartner = document.getElementById('upcoming ' + which);
   lock.innerHTML = event.target.innerHTML;
+  event.target.removeEventListener('click', lockIn);
   upcomingPartner.setAttribute('style', 'visibility: hidden;');
   event.target.setAttribute('style', 'visibility: hidden;');
   numberOfLettersSelected ++;
@@ -317,4 +316,3 @@ function addListeners () {
 
 addListeners();
 initiateGame();
-resetLetterTimer();
