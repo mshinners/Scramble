@@ -14,18 +14,22 @@ for (var i = 0; i < people.length; i++){
   aboutUs[i].addEventListener('mouseover', createProfile);
   aboutUs[i].addEventListener('mouseout', removeProfile);
 }
+//get the correct Person object
 function createProfile(event) {
   var devProfile = document.getElementById(event.target.id);
-  //get the correct Person object
   for (var i = 0; i < people.length; i++){
     if (event.target.id === people[i].dev.toLowerCase()){
       target = people[i];
     }
   }
+  //to populate the Learn more text field
   var paragraph = document.getElementById('learnMoreWindow');
-  // paragraph.setAttribute('class', 'displayInline');
   var faveWord = document.createElement('p');
-  faveWord.innerText = 'My Favorite Five-letter Word: ' + target.faveWord;
+  faveWord.innerText = 'My Favorite Five-letter Word: ';
+  var favWordWord = document.createElement('span');
+  favWordWord.setAttribute('id', 'favWordWord');
+  favWordWord.innerText = target.faveWord;
+  faveWord.appendChild(favWordWord);
   faveWord.setAttribute('id', 'faveWord');
   paragraph.appendChild(faveWord);
   var blurb = document.createElement('p');
@@ -33,6 +37,7 @@ function createProfile(event) {
   blurb.setAttribute('id', 'blurb');
   paragraph.appendChild(blurb);
 };
+//Removes info from text
 function removeProfile(event) {
   var cutProfile = document.getElementById('learnMoreWindow');
   var faveWord = document.getElementById('faveWord');
