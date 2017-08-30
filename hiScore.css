@@ -1,0 +1,33 @@
+header, body, footer {
+  display: block;
+}
+body {
+  background-image: url("background.jpg");
+  opacity: 1.5;
+}
+@font-face {
+  font-family: "scramble";
+  font-style: normal;
+  src: url(scramble.ttf);
+}
+header{
+  padding-bottom: 100px;
+}
+h1{
+  font-family: "scramble";
+  font-style: normal;
+  font-size: 80px;
+  background-color: #E3CE9F;
+  display: inline;
+}
+#content{
+  text-align: center;
+}
+th{padding-top: 10px;
+  color: #570000;
+  font-family: monospace;
+  font-size: 40px;
+}
+table, th, td {
+   border: 1px solid black;
+}

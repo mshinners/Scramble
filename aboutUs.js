@@ -1,10 +1,10 @@
 'use strict';
 var target;
 //each create an object with our name, favorite word, & blurb about us?
-var michelle = {dev:'Michelle', faveWord: 'word', blurb: 'This is what Michelle says'};
-var michael = {dev:'Michael', faveWord: 'word', blurb: 'This is what Michael says'};
-var nathan = {dev:'Nathan', faveWord: 'word', blurb: 'This is what Nathan says'};
-var shannon = {dev:'Shannon', faveWord: 'word', blurb: 'This is what Shannon says'};
+var michelle = {dev:'Michelle', faveWord: 'Three', blurb: 'Coding is fun!'};
+var michael = {dev:'Michael', faveWord: 'Acrid', blurb: 'Dad Jokes Rule!'};
+var nathan = {dev:'Nathan', faveWord: 'Szygy', blurb: 'Your Momma!'};
+var shannon = {dev:'Shannon', faveWord: 'their', blurb: 'Thanks for playing!'};
 //Store objects in an array
 var people = [michelle, michael, nathan, shannon];
 
@@ -22,7 +22,7 @@ function createProfile(event) {
       target = people[i];
     }
   }
-  var paragraph = document.createElement('div');
+  var paragraph = document.getElementById('learnMoreWindow');
   paragraph.setAttribute('class', 'displayInline');
   var faveWord = document.createElement('p');
   faveWord.innerText = target.faveWord;
@@ -33,19 +33,22 @@ function createProfile(event) {
   profile.appendChild(paragraph);
 }
 function removeProfile(event) {
-  var devProfile = document.getElementById(event.target.id);
-  //get the correct Person object
-  for (var i = 0; i < people.length; i++){
-    if (event.target.id === people[i].dev.toLowerCase()){
-      target = people[i];
-      console.log(removeProfile);
-    }
-  }
+  // var devProfile = document.getElementById(event.target.id);
+  // //get the correct Person object
+  // for (var i = 0; i < people.length; i++){
+  //   if (event.target.id === people[i].dev.toLowerCase()){
+  //     target = people[i];
+  //     // console.log(removeProfile);
+  paragraph.removeChild(faveWord);
+  paragraph.removeChild(blurb);
+  profile.removeChild(paragraph);
+    // }
+  // }
 };
 // function changeText() {
 //   event.target.innerText = 'Learn more';
 // }
 
-function originalText() {
-  event.target.innerText = event.target.id;
-};
+// function originalText() {
+//   event.target.innerText = event.target.id;
+// };
