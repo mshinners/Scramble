@@ -144,7 +144,9 @@ h5 {
   left: 450px;
   /*border: 2px solid black;*/
   background-color:#E3CE9F;
+  visibility: hidden;
 }
+
 #favWordWord {
   font-family: "scramble";
   font-size: 40px;

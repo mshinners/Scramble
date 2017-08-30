@@ -24,6 +24,7 @@ function createProfile(event) {
   }
   //to populate the Learn more text field
   var paragraph = document.getElementById('learnMoreWindow');
+  paragraph.setAttribute('style', 'visibility: visible');
   var faveWord = document.createElement('p');
   faveWord.innerText = 'My Favorite Five-letter Word: ';
   var favWordWord = document.createElement('span');
@@ -42,6 +43,7 @@ function removeProfile(event) {
   var cutProfile = document.getElementById('learnMoreWindow');
   var faveWord = document.getElementById('faveWord');
   var blurb = document.getElementById('blurb');
+  cutProfile.setAttribute('style', 'visibility: hidden');
   cutProfile.removeChild(faveWord);
   cutProfile.removeChild(blurb);
 };
