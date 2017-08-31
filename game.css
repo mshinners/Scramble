@@ -1,7 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-image: url("imgs/background.jpg");
   background-size: cover;
 }
+
 @font-face {
   font-family: "scramble";
   font-style: normal;
@@ -12,6 +17,20 @@ body {
   src: url(scramble.ttf);
   font-style: normal;
   font-size: 80px;
+}
+
+#letterTimer {
+  width: 120px;
+  height: 20px;
+  overflow: auto;
+  border: 2px solid black;
+}
+
+#fillMeter {
+  float: left;
+  background-color: red;
+  width: 120px;
+  height: 20px;
 }
 
 .current{
