@@ -8,10 +8,6 @@ body {
   src: url(scramble.ttf);
 }
 
-meter {
-  /*appearance: none;*/
-}
-
 .greeting{
   font-family: "scramble";
   src: url(scramble.ttf);
@@ -32,7 +28,6 @@ meter {
   font-style: normal;
   font-size: 60px;
 }
-
 .lockedIn{
   font-family: "scramble";
   src: url(scramble.ttf);
@@ -40,85 +35,21 @@ meter {
   font-size: 85px;
   height: 85px;
 }
-
-.nav{
-  background-color: #570000;
-  width: 75%;
-  border: 10px double black;
-  border-radius: 12px;
-  padding: 10px;
-  margin: 10px;
-}
-
-.buttonHi{
-  background-color: #fbf4e3;
-  border:none;
-  color: #570000;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-family: sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 12px;
-  border: 3px solid black;
-  box-shadow: 3px 3px 2px grey;
-}
-.buttonAb{
-  background-color: #fbf4e3;
-  border:none;
-  color: #570000;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-family: sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 12px;
-  border: 3px solid black;
-  box-shadow: 3px 3px 2px grey;
-}
-.buttonHo{
-  background-color: #fbf4e3;
-  border:none;
-  color: #570000;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-family: sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 12px;
-  border: 3px solid black;
-  box-shadow: 3px 3px 2px grey;
-}
-
-table {
+table{
   width: 85%;
   border: 10px double black;
   border-radius: 12px;
   box-shadow: 3px 3px 2px grey;
-  width: 80%;
-  height: 85px;
+  width:80%;
+  height: 170;
 }
-
-td {
+td{
   border-spacing: 16%;
   text-align:center;
   vertical-align:middle;
   height: 85px;
   width:85px;
 }
-
 button{
   background-color: #570000;
   border:none;
@@ -136,9 +67,8 @@ button{
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
 }
-
-h3 {
-  font-family: sans-serif;
+h3{
+  font-family: monospace;
   color: black;
   font-size: 25px;
   font-weight: bold;
