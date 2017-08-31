@@ -1,5 +1,11 @@
 'use strict';
 
+//checks to make sure there is at least one player name stored in local memory
+// if there isn't, changes the "play again" to redirect the user to the home page instead of the game page.
+if (!localStorage.nameArray) {
+  var button = document.getElementById('playAgainButton');
+  button.setAttribute('href', 'index.html');
+}
 var fillerHighScores = [
   {userName: 'Jon', score: 45, word:'PARTY'},
   {userName: 'Daenerys', score: 34, word:'DANCE'},
