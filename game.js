@@ -80,9 +80,11 @@ function startTimeMeter() {
   }
 }
 
-var lockedInTiles = document.getElementsByClassName('lockedIn');
-for (var i = 0; i < lockedInTiles.length; i++){
-  lockedInTiles[i].addEventListener('click', removeTile);
+function addLockedInListeners(){
+  var lockedInTiles = document.getElementsByClassName('lockedIn');
+  for (var i = 0; i < lockedInTiles.length; i++){
+    lockedInTiles[i].addEventListener('click', removeTile);
+  }
 }
 
 function removeTile(event) {
@@ -197,11 +199,14 @@ function initiateGame () {
   generateUpcomingLetters();
   invisibleToVisible();
   startTimeMeter();
+  addLockedInListeners();
   numberOfLettersSelected = 0;
   gameCount = 61;
   letterCount = 16 - (3 * numberOfLettersSelected);
   meterFullness = 100;
   gameCounter = setInterval(timer, 1000);
+  var gameTimer = document.getElementById('gameTimer');
+  gameTimer.innerHTML = '60';
   addListeners();
 }
 
@@ -226,6 +231,7 @@ function makeEndgameNavOptions() {
 function endGame() {
   clearInterval(gameCounter);
   clearInterval(meterCounter);
+  var lockedInTiles = document.getElementsByClassName('lockedIn');
   for (var i = 0; i < lockedInTiles.length; i++){
     lockedInTiles[i].removeEventListener('click', removeTile);
   }
