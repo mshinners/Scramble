@@ -3,8 +3,8 @@ var target;
 //each create an object with our name, favorite word, & blurb about us?
 var michelle = {dev:'Michelle', faveWord: 'Merge', blurb: 'Coding is fun!'};
 var michael = {dev:'Michael', faveWord: 'Hodor', blurb: 'Mike enjoys hiking, camping and generally being outdoors. Father of two sons, foster-father to nine more and counting! He looks forward to a rewarding career in Development.'};
-var nathan = {dev:'Nathan', faveWord: 'Volta', blurb: 'Hi Momma!'};
-var shannon = {dev:'Shannon', faveWord: 'Vavre', blurb: 'Thanks for playing!'};
+var nathan = {dev:'Nathan', faveWord: 'Volta', blurb: 'Nathan is a Seattle native, an opera fan, and a giant nerd. His favorite food is pickles, he prefers dogs to cats, and he idolizes Jean-Luc Picard.'};
+var shannon = {dev:'Shannon', faveWord: 'Varve', blurb: 'Shannon loves to learn new things and help others learn as well; it’s how she ended up working in elementary education for two years. Shannon is excited to be a part of the Code Fellows community and feed her love of coding alongside amazing people.'};
 var people = [michelle, michael, nathan, shannon];
 
 //get all of the elements with a class name of profile & add an eventListener
