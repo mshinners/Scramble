@@ -53,6 +53,19 @@ var lettersChosen = [];
 
 var word;
 
+var meterFullness = 100;
+
+function startTimeMeter(){
+  var counter = setInterval(timer, 10);
+
+  function timer() {
+    var meterDisplay = document.getElementById('fillMeter');
+    meterFullness -= (100 / (400 - (75 * numberOfLettersSelected)));
+    var meterWidth = 'width: ' + meterFullness + '%';
+    meterDisplay.setAttribute('style', meterWidth);
+  }
+}
+
 var lockedInTiles = document.getElementsByClassName('lockedIn');
 for (var i = 0; i < lockedInTiles.length; i++){
   lockedInTiles[i].addEventListener('click', removeTile);
@@ -61,12 +74,16 @@ for (var i = 0; i < lockedInTiles.length; i++){
 function removeTile(event) {
   numberOfLettersSelected --;
   event.target.innerText = '';
+  event.target.removeAttribute('class', 'hover');
+  event.target.setAttribute('class', 'noHover');
   var number = event.target.getAttribute('lockedIn');
   var upcoming = document.getElementById('upcoming ' + number);
   var current = document.getElementById('current ' + number);
   current.addEventListener('click', lockIn);
   upcoming.setAttribute('style', 'visibility: visible');
   current.setAttribute('style', 'visibility: visible');
+  changeTimerWidth();
+  console.log(numberOfLettersSelected);
 }
 
 //starts the game timer.
@@ -88,12 +105,6 @@ function startLetterTimer() {
 
   function timer() {
     letterCount --;
-    var meterDisplay = document.getElementById('fillMeter');
-    for (var i = 0; i < 4; i++) {
-      var meterWidth = 'width: ' + (((letterCount * 8) + 6) - (2 * i)) + 'px';
-      console.log(meterWidth);
-      meterDisplay.setAttribute('style', meterWidth);
-    }
     if (letterCount <= 0) {
       clearInterval(letterCounter);
       resetLetterTimer();
@@ -116,6 +127,7 @@ function generateRandomLetter() {
 
 function resetLetterTimer() {
   letterCount = 16 - (3 * numberOfLettersSelected);
+  meterFullness = 100;
   startLetterTimer();
 }
 
@@ -145,6 +157,7 @@ function makeNewTiles() {
   upcomingBecomesCurrent();
   generateUpcomingLetters();
   letterCount = 16 - (3 * numberOfLettersSelected);
+  meterFullness = 100;
 }
 
 function invisibleToVisible () {
@@ -181,9 +194,11 @@ function initiateGame () {
   generateCurrentLetters();
   generateUpcomingLetters();
   invisibleToVisible();
+  startTimeMeter();
   numberOfLettersSelected = 0;
   gameCount = 61;
   letterCount = 16 - (3 * numberOfLettersSelected);
+  meterFullness = 100;
   gameCounter = setInterval(timer, 1000);
   addListeners();
 }
@@ -294,6 +309,8 @@ function lockIn(event) {
   event.target.removeEventListener('click', lockIn);
   upcomingPartner.setAttribute('style', 'visibility: hidden;');
   event.target.setAttribute('style', 'visibility: hidden;');
+  lock.removeAttribute('class', 'noHover');
+  lock.setAttribute('class', 'lockedIn hover');
   numberOfLettersSelected ++;
   if (numberOfLettersSelected === 5) {
     endGame();
@@ -301,6 +318,7 @@ function lockIn(event) {
     upcomingBecomesCurrent();
     generateUpcomingLetters();
     letterCount = 16 - (3 * numberOfLettersSelected);
+    meterFullness = 100;
   }
   changeTimerWidth();
 }
@@ -308,8 +326,9 @@ function lockIn(event) {
 //working to adjust div width to be max value of inner div width as more letters are selected
 function changeTimerWidth(){
   var letterTimerDiv = document.getElementById('letterTimer');
-  var divWidth = 'width: ' + (letterCount * 12) + 'px';
+  var divWidth = 'width: ' + ( 50 - (numberOfLettersSelected * 8)) + '%';
   letterTimerDiv.setAttribute('style', divWidth);
+  console.log(divWidth);
 }
 
 function wordIsLegal() {
