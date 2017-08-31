@@ -82,13 +82,6 @@ function timer() {
   }
 }
 
-//working here to adjust div width to be max value of inner div width as more letters are selected
-function changeTimerWidth(){
-  var letterTimerDiv = document.getElementById('letterTimer');
-  var divWidth = 'width: ' + 'px';
-  letterTimerDiv.setAttribute('style', '');
-}
-
 function startLetterTimer() {
 
   var letterCounter = setInterval(timer, 250);
@@ -96,7 +89,7 @@ function startLetterTimer() {
   function timer() {
     letterCount --;
     var meterDisplay = document.getElementById('fillMeter');
-    var meterWidth = 'width: ' + (letterCount * 13) + 'px';
+    var meterWidth = 'width: ' + (letterCount * 12.5) + 'px';
     meterDisplay.setAttribute('style', meterWidth);
     if (letterCount <= 0) {
       clearInterval(letterCounter);
@@ -306,7 +299,16 @@ function lockIn(event) {
     generateUpcomingLetters();
     letterCount = 16 - (3 * numberOfLettersSelected);
   }
+  changeTimerWidth();
 }
+
+//working to adjust div width to be max value of inner div width as more letters are selected
+function changeTimerWidth(){
+  var letterTimerDiv = document.getElementById('letterTimer');
+  var divWidth = 'width: ' + (letterCount * 12.5) + 'px';
+  letterTimerDiv.setAttribute('style', divWidth);
+}
+
 
 function wordIsLegal() {
   var letterToCheck = document.getElementById('lockedIn 1');

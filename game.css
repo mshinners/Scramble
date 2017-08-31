@@ -13,7 +13,7 @@ body {
 }
 
 #letterTimer {
-  width: 195px;
+  width: 200px;
   height: 20px;
   overflow: auto;
   border: 2px solid black;
@@ -22,7 +22,7 @@ body {
 #fillMeter {
   float: left;
   background-color: red;
-  width: 195px;
+  width: 200px;
   height: 20px;
 }
 
