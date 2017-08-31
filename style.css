@@ -1,8 +1,6 @@
-/*header, aside, section, footer, {
-  display: block*/
-}
 * {
   box-sizing: border-box;
+  outline: 0px;
 }
 body {
   background-image: url("imgs/background.jpg");

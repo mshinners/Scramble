@@ -56,5 +56,4 @@ function printHiScores() {
     table.appendChild(tr);
   }
 }
-
 printHiScores();
