@@ -5,6 +5,8 @@
 if (!localStorage.nameArray) {
   var button = document.getElementById('playAgainButton');
   button.setAttribute('href', 'index.html');
+  button = document.getElementById('playButton');
+  button.innerText = 'Play Game!';
 }
 var fillerHighScores = [
   {userName: 'Jon', score: 45, word:'PARTY'},
