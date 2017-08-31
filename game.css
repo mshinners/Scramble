@@ -41,6 +41,20 @@ header{
   height: 20px;
 }
 
+#letterTimer {
+  width: 120px;
+  height: 20px;
+  overflow: auto;
+  border: 2px solid black;
+}
+
+#fillMeter {
+  float: left;
+  background-color: red;
+  width: 120px;
+  height: 20px;
+}
+
 .current{
   font-family: "scramble";
   src: url(scramble.ttf);
