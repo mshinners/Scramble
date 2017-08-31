@@ -1,16 +1,24 @@
 'use strict';
 
+//checks to make sure there is at least one player name stored in local memory
+// if there isn't, changes the "play again" to redirect the user to the home page instead of the game page.
+if (!localStorage.nameArray) {
+  var button = document.getElementById('playAgainButton');
+  button.setAttribute('href', 'index.html');
+  button = document.getElementById('playButton');
+  button.innerText = 'Play Game!';
+}
 var fillerHighScores = [
-  {userName: 'Jon', score: 45, word:'party'},
-  {userName: 'Daenerys', score: 34, word:'dance'},
-  {userName: 'Tyrion', score: 59, word:'happy'},
-  {userName: 'Sandor', score: 34, word:'smile'},
-  {userName: 'Cersei', score: 27, word:'grins'},
-  {userName: 'Arya', score: 48, word:'beers'},
-  {userName: 'Tormund', score: 33, word:'laugh'},
-  {userName: 'Jaime', score: 26, word:'wines'},
-  {userName: 'Hodor', score: 9, word:'hodor'},
-  {userName: 'Petyr', score: 20, word:'shout'}
+  {userName: 'Jon', score: 75, word:'PARTY'},
+  {userName: 'Daenerys', score: 64, word:'DANCE'},
+  {userName: 'Tyrion', score: 89, word:'HAPPY'},
+  {userName: 'Sandor', score: 64, word:'SMILE'},
+  {userName: 'Cersei', score: 57, word:'GRINS'},
+  {userName: 'Arya', score: 78, word:'BEERS'},
+  {userName: 'Tormund', score: 63, word:'LAUGH'},
+  {userName: 'Jaime', score: 56, word:'WINES'},
+  {userName: 'Sansa', score: 57, word:'MUSIC'},
+  {userName: 'Petyr', score: 50, word:'SHOUT'}
 ];
 
 var highScoreList = [];
