@@ -143,15 +143,26 @@ h5 {
   left: 450px;
   background-image: url("imgs/wood.jpg");
   visibility: hidden;
+  border-radius: 10px;
+  /*color: #E3CE9F;*/
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Caveat', cursive;
+  border-style: outset;
+  border-color: #E3CE9F;
+  border-width: 7px;
+  padding-left: 20px;
 }
 
 #favWordWord {
   font-family: "scramble";
   font-size: 40px;
+  margin-left: 20px;
+  background-color: #E3CE9F;
 }
 mark {
   background-color: #E3CE9F;
 }
-.current {
+/*.current {
   background-color: #E3CE9F;
-}
+}*/
