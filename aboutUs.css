@@ -1,6 +1,3 @@
-/*header, aside, section, footer, {
-  display: block
-}*/
 * {
   box-sizing: border-box;
 }
@@ -21,52 +18,6 @@ h1{
   font-style: normal;
   font-size: 60px;
 }
-/*.current{
-  font-family: "scramble";
-  font-style: normal;
-  font-size: 80px;
-  border: 2px solid black;
-  padding: 30px;
-}
-.upcoming{
-  font-family: "scramble";
-  font-style: normal;
-  font-size: 80px;
-  border: 2px solid black;
-  padding: 30px;
-}
-.lockedin{
-  font-family: "scramble";
-  font-style: normal;
-  font-size: 80px;
-  border: 2px solid black;
-  padding: 30px;
-}
-h3{
-  color: red;
-}
-.greeting {
-  text-align: center;
-}
-table {
-  margin: auto;
-}*/
-/*
-td {
-  padding: 10px;
-}
-.upcoming {
-  font-size: 42px;
-}
-.current {
-  font-size: 42px;
-}
-.current:hover {
-  cursor: pointer;
-}
-.lockedIn {
-  font-size: 42px;
-}*/
 .profile {
   padding-bottom: 30px 0px 20px 50px;
   display: inline;
@@ -115,11 +66,6 @@ img:hover {
   display: inline;
   float: right;
 }
-/*.displayInline {
-  width: 65%;
-  display: inline-block;
-  overflow: auto;
-}*/
 .topSector {
   width: 100%;
   float: left;
@@ -173,8 +119,61 @@ h5 {
   top: 330px;
   left: 450px;
   line-height: 45px;
-
 }
 mark {
   background-color: #E3CE9F;
 }
+/*header, aside, section, footer, {
+display: block
+}*/
+/*.current{
+font-family: "scramble";
+font-style: normal;
+font-size: 80px;
+border: 2px solid black;
+padding: 30px;
+}
+.upcoming{
+font-family: "scramble";
+font-style: normal;
+font-size: 80px;
+border: 2px solid black;
+padding: 30px;
+}
+.lockedin{
+font-family: "scramble";
+font-style: normal;
+font-size: 80px;
+border: 2px solid black;
+padding: 30px;
+}
+h3{
+color: red;
+}
+.greeting {
+text-align: center;
+}
+table {
+margin: auto;
+}*/
+/*
+td {
+padding: 10px;
+}
+.upcoming {
+font-size: 42px;
+}
+.current {
+font-size: 42px;
+}
+.current:hover {
+cursor: pointer;
+}
+.lockedIn {
+font-size: 42px;
+}
+.displayInline {
+width: 65%;
+display: inline-block;
+overflow: auto;
+}*/
