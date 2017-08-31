@@ -4,9 +4,6 @@
 header, body, footer {
   display: block;
 }
-*{
-  outline: 0px;
-}
 body {
   background-image: url("imgs/background.jpg");
   background-size: cover;
@@ -36,7 +33,7 @@ h1{
   text-align: center;
   margin-top: 2%;
 }
-.buttonAb {
+.buttonHo {
   background-color: #E3CE9F;
   border:none;
   color: #570000;
@@ -54,7 +51,7 @@ h1{
   box-shadow: 3px 3px 2px grey;
   outline: 0px;
 }
-.buttonHo {
+.buttonHi{
   background-color: #E3CE9F;
   border:none;
   color: #570000;
@@ -64,7 +61,25 @@ h1{
   display: inline-block;
   font-family: sans-serif;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: bolder;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 2px grey;
+  outline: 0px;
+}
+.buttonAb {
+  background-color: #E3CE9F;
+  border:none;
+  color: #570000;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 12px;
