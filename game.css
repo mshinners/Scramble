@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-image: url("imgs/background.jpg");
   background-size: cover;
@@ -6,6 +10,20 @@ body {
   font-family: "scramble";
   font-style: normal;
   src: url(scramble.ttf);
+}
+
+#letterTimer {
+  width: 200px;
+  height: 20px;
+  overflow: auto;
+  border: 1px solid black;
+}
+
+#fillMeter {
+  float: left;
+  background-color: red;
+  width: 200px;
+  height: 20px;
 }
 
 .greeting{

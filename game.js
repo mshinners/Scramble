@@ -88,7 +88,9 @@ function startLetterTimer() {
 
   function timer() {
     letterCount --;
-    // var letterCountDisplay = document.getElementById('letterTimer');
+    var letterCountDisplay = document.getElementById('letterTimer');
+    var width = 'width: ' + letterCount + 'px';
+    letterCountDisplay.setAttribute('style', width);
     // letterCountDisplay.innerHTML = letterCount;
     if (letterCount <= 0) {
       clearInterval(letterCounter);
