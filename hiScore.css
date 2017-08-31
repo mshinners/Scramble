@@ -115,6 +115,8 @@ table{
 #buttonPosition{
   float: right;
   margin-right: 10%;
+  margin-bottom: 1%;
+  margin-top: 1%;
 }
 mark{
   background-color: #E3CE9F;
