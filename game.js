@@ -205,6 +205,8 @@ function initiateGame () {
   letterCount = 16 - (3 * numberOfLettersSelected);
   meterFullness = 100;
   gameCounter = setInterval(timer, 1000);
+  var gameTimer = document.getElementById('gameTimer');
+  gameTimer.innerHTML = '60';
   addListeners();
 }
 
