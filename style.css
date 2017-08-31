@@ -76,11 +76,8 @@ mark{
 }
 #nameEntry{
   text-align: center;
-  /*border-radius: 12px;
-  border: 2px solid black;*/
   margin:0;
   outline: 0px;
-
 }
 #welcome{
   text-align: center;
@@ -127,64 +124,3 @@ mark{
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
   outline: 0px;
-/*}
-input{
-  width: 400x;
-}
-tr{
- width: 400px;
-}
-td{
-  width: 700px;
-}
-.greeting {
-  text-align: center;
-}
-
-table {
-  margin: auto;
-}
-
-td {
-  padding: 10px;
-}
-
-.upcoming {
-  font-size: 42px;
-}
-
-.current {
-  font-size: 42px;
-}
-
-.current:hover {
-  cursor: pointer;
-}
-
-h1 {
-  text-align: center;
-  margin-top: 50px;
-}
-
-.ourProfiles {
-  padding: 50px 0 20px 50px;
-}
-
-.profile {
-  padding-bottom: 30px;
-}
-
-.displayInline {
-  width: 65%;
-  display: inline-block;
-  overflow: auto;
-}
-
-.learnMore {
-  text-transform: capitalize;
-  display: inline;
-}
-
-.learnMore:hover{
-  cursor: pointer;
-}*/
