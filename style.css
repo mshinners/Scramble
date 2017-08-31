@@ -15,6 +15,8 @@ header{
   background-color: #570000;
   border: 2px solid black;
   border-radius: 12px;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 #rules, #save{
   background-color: #570000;
@@ -32,6 +34,7 @@ header{
   border-radius: 12px;
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
+  outline: 0px;
 }
 #GET-name{
   width: 40%;
@@ -44,7 +47,7 @@ header{
 }
 #rules{
   float: left;
-  margin-left: 100px;
+  margin-left: 18%;
 }
 label{
   font-family: "scramble";
@@ -55,11 +58,13 @@ h1{
   font-family: "scramble";
   font-style: normal;
   font-size: 90px;
+  text-align: center;
 }
 h2{
   font-family: 'Playfair Display', serif;
   font-size: 40px;
   text-align: center;
+  margin-bottom: 0;
 }
 #scram{
   font-family: "scramble";
@@ -71,8 +76,11 @@ mark{
 }
 #nameEntry{
   text-align: center;
-  border-radius: 12px;
-  border: 2px solid black;
+  /*border-radius: 12px;
+  border: 2px solid black;*/
+  margin:0;
+  outline: 0px;
+
 }
 #welcome{
   text-align: center;
@@ -82,6 +90,7 @@ mark{
   font-size: 20px;
   font-weight: bold;
   border-style: 2px solid black;
+  margin: 0;
 }
 .buttonHi{
   background-color: #E3CE9F;
@@ -99,6 +108,7 @@ mark{
   border-radius: 12px;
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
+  outline: 0px;
 }
 .buttonAb {
   background-color: #E3CE9F;
@@ -116,7 +126,8 @@ mark{
   border-radius: 12px;
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
-}
+  outline: 0px;
+/*}
 input{
   width: 400x;
 }
@@ -176,4 +187,4 @@ h1 {
 
 .learnMore:hover{
   cursor: pointer;
-}
+}*/

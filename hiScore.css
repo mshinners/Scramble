@@ -4,6 +4,9 @@
 header, body, footer {
   display: block;
 }
+*{
+  outline: 0px;
+}
 body {
   background-image: url("imgs/background.jpg");
   background-size: cover;
