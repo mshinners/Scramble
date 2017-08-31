@@ -28,7 +28,7 @@ header{
 }
 
 #letterTimer {
-  width: 120px;
+  width: 50%;
   height: 20px;
   overflow: auto;
   border: 2px solid black;
@@ -37,7 +37,6 @@ header{
 #fillMeter {
   float: left;
   background-color: red;
-  width: 120px;
   height: 20px;
 }
 

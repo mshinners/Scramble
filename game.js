@@ -69,6 +69,8 @@ function removeTile(event) {
   current.addEventListener('click', lockIn);
   upcoming.setAttribute('style', 'visibility: visible');
   current.setAttribute('style', 'visibility: visible');
+  changeTimerWidth();
+  console.log(numberOfLettersSelected);
 }
 
 //starts the game timer.
@@ -91,8 +93,9 @@ function startLetterTimer() {
   function timer() {
     letterCount --;
     var meterDisplay = document.getElementById('fillMeter');
-    for (var i = 0; i < 4; i++) {
-      var meterWidth = 'width: ' + (((letterCount * 8) + 6) - (2 * i)) + 'px';
+    for (var i = 0; i < 100; i++) {
+      var meterWidth = 'width: ' + (100) + '%';
+      // var meterWidth = 'width: ' + (((letterCount * 8) + 6) - (2 * i)) + 'px';
       meterDisplay.setAttribute('style', meterWidth);
     }
     if (letterCount <= 0) {
@@ -311,8 +314,9 @@ function lockIn(event) {
 //working to adjust div width to be max value of inner div width as more letters are selected
 function changeTimerWidth(){
   var letterTimerDiv = document.getElementById('letterTimer');
-  var divWidth = 'width: ' + (letterCount * 12) + 'px';
+  var divWidth = 'width: ' + ( 50 - (numberOfLettersSelected * 8)) + '%';
   letterTimerDiv.setAttribute('style', divWidth);
+  console.log(divWidth);
 }
 
 function wordIsLegal() {
