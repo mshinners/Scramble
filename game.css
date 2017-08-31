@@ -47,6 +47,15 @@ header{
   font-style: normal;
   font-size: 80px;
 }
+
+.current:hover, .hover {
+  cursor: pointer;
+}
+
+.noHover {
+  cursor: default;
+}
+
 .upcoming{
   font-family: "scramble";
   src: url(scramble.ttf);

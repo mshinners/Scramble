@@ -61,6 +61,8 @@ for (var i = 0; i < lockedInTiles.length; i++){
 function removeTile(event) {
   numberOfLettersSelected --;
   event.target.innerText = '';
+  event.target.removeAttribute('class', 'hover');
+  event.target.setAttribute('class', 'noHover');
   var number = event.target.getAttribute('lockedIn');
   var upcoming = document.getElementById('upcoming ' + number);
   var current = document.getElementById('current ' + number);
@@ -91,7 +93,6 @@ function startLetterTimer() {
     var meterDisplay = document.getElementById('fillMeter');
     for (var i = 0; i < 4; i++) {
       var meterWidth = 'width: ' + (((letterCount * 8) + 6) - (2 * i)) + 'px';
-      console.log(meterWidth);
       meterDisplay.setAttribute('style', meterWidth);
     }
     if (letterCount <= 0) {
@@ -294,6 +295,8 @@ function lockIn(event) {
   event.target.removeEventListener('click', lockIn);
   upcomingPartner.setAttribute('style', 'visibility: hidden;');
   event.target.setAttribute('style', 'visibility: hidden;');
+  lock.removeAttribute('class', 'noHover');
+  lock.setAttribute('class', 'lockedIn hover');
   numberOfLettersSelected ++;
   if (numberOfLettersSelected === 5) {
     endGame();
