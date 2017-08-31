@@ -1,3 +1,6 @@
+* {
+  outline: 0px;
+}
 header, body, footer {
   display: block;
 }
@@ -34,15 +37,15 @@ th{
   font-style: normal;
   font-size: 40px;
   font-weight: bolder;
-  border-bottom: 3px solid black;
 }
 td {
-   border-bottom: 3px solid black;
+   border-bottom: 2px solid black;
    font-family: monospace;
    color: black;
    font-size: 25px;
    font-weight: bold;
    text-align: center;
+
 }
 table{
    border: 20px double black;
