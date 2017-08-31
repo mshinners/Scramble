@@ -13,6 +13,11 @@ body {
   font-style: normal;
   src: url(scramble.ttf);
 }
+@font-face{
+ font-family:"digital-clock-font";
+ src: url("put_the_location_to_your_font.ttf or .otf");
+}
+
 #greeting{
   font-family: "scramble";
   src: url(scramble.ttf);
@@ -46,6 +51,10 @@ mark{
   height: 20px;
 }
 
+#gameTimer{
+  font-family:"digital-clock-font";
+  font-size: 10px;
+}
 #letterTimer {
   width: 50%;
   height: 20px;
@@ -151,11 +160,11 @@ mark{
   outline: 0px;
 }
 table {
-  width: 85%;
+  width: 75%;
   border: 10px double black;
   border-radius: 12px;
   box-shadow: 3px 3px 2px grey;
-  width: 80%;
+  /*width: 75%;*/
   height: 85px;
   align: center;
   margin-left: 10%;
@@ -167,7 +176,7 @@ td {
   text-align:center;
   vertical-align:middle;
   height: 85px;
-  width:85px;
+  width:75px;
 }
 #letterTimer{
   margin-left: 10%;
@@ -205,7 +214,7 @@ button{
   border-radius: 12px;
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
-  width:80%;
+  width:75%;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -224,4 +233,8 @@ h3 {
   color: black;
   font-size: 22px;
   font-weight: bold;
+}
+#userMessage{
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
