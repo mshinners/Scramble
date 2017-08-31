@@ -1,6 +1,6 @@
-header, aside, section, footer, {
+/*header, aside, section, footer, {
   display: block
-}
+}*/
 * {
   box-sizing: border-box;
 }
@@ -21,7 +21,7 @@ h1{
   font-style: normal;
   font-size: 60px;
 }
-.current{
+/*.current{
   font-family: "scramble";
   font-style: normal;
   font-size: 80px;
@@ -50,8 +50,8 @@ h3{
 }
 table {
   margin: auto;
-}
-
+}*/
+/*
 td {
   padding: 10px;
 }
@@ -66,7 +66,7 @@ td {
 }
 .lockedIn {
   font-size: 42px;
-}
+}*/
 .profile {
   padding-bottom: 30px 0px 20px 50px;
   display: inline;
@@ -74,10 +74,10 @@ td {
 img {
   display: inline;
   width: 290px;
-  opacity: 1.0;
+  opacity: 0.5;
 }
 img:hover {
-  opacity: 0.5;
+  opacity: 1.0;
 }
 .michelle {
   margin: 5px;
@@ -115,11 +115,11 @@ img:hover {
   display: inline;
   float: right;
 }
-.displayInline {
+/*.displayInline {
   width: 65%;
   display: inline-block;
   overflow: auto;
-}
+}*/
 .topSector {
   width: 100%;
   float: left;
@@ -137,14 +137,13 @@ h5 {
 }
 #learnMoreWindow {
   width: 38%;
-  height: 200px;
+  height: 220px;
   position: absolute;
   top: 300px;
   left: 450px;
   background-image: url("imgs/wood.jpg");
   visibility: hidden;
-  border-radius: 10px;
-  /*color: #E3CE9F;*/
+  border-radius: 20px;
   font-size: 24px;
   font-weight: 700;
   font-family: 'Caveat', cursive;
@@ -152,8 +151,13 @@ h5 {
   border-color: #E3CE9F;
   border-width: 7px;
   padding-left: 20px;
+  overflow: hidden;
+  text-shadow:
+  -1px -1px 0 #E3CE9F,
+  1px -1px 0 #E3CE9F,
+  -1px 1px 0 #E3CE9F,
+  1px 1px 0 #E3CE9F;
 }
-
 #favWordWord {
   font-family: "scramble";
   font-size: 40px;
@@ -163,6 +167,3 @@ h5 {
 mark {
   background-color: #E3CE9F;
 }
-/*.current {
-  background-color: #E3CE9F;
-}*/
