@@ -82,15 +82,15 @@ h5 {
   font-size: 18px;
 }
 #learnMoreWindow {
-  width: 38%;
-  height: 220px;
+  width: 42%;
+  height: 280px;
   position: absolute;
   top: 300px;
-  left: 450px;
-  background-image: url("imgs/wood.jpg");
+  left: 420px;
+  background-image: url("wood3.jpg");
   visibility: hidden;
   border-radius: 20px;
-  font-size: 150%;
+  font-size: 190%;
   font-weight: 700;
   font-family: 'Caveat', cursive;
   border-style: outset;
