@@ -13,6 +13,11 @@ body {
   font-style: normal;
   src: url(scramble.ttf);
 }
+header{
+  background-color: #570000;
+  border: 2px solid black;
+  border-radius: 12px;
+}
 #rules, #save{
   background-color: #570000;
   border:none;
@@ -30,19 +35,33 @@ body {
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
 }
+#GET-name{
+  width: 40%;
+  height: 40px;
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid black;
+  /*font-family: sans-serif;
+  font-size: 20px;*/
+}
 #rules{
   float: left;
-  margin-left: 50px;
+  margin-left: 100px;
 }
 label{
   font-family: "scramble";
   font-style: normal;
-  font-size: 25px;
+  font-size: 45px;
 }
 h1{
   font-family: "scramble";
   font-style: normal;
-  font-size: 80px;
+  font-size: 90px;
+}
+h2{
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  text-align: center;
 }
 #scram{
   font-family: "scramble";
@@ -53,7 +72,9 @@ mark{
   background-color: #E3CE9F;
 }
 #nameEntry{
-
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid black;
 }
 #welcome{
   text-align: center;
@@ -62,6 +83,41 @@ mark{
   font-family: sans-serif;
   font-size: 20px;
   font-weight: bold;
+  border-style: 2px solid black;
+}
+.buttonHi{
+  background-color: #E3CE9F;
+  border:none;
+  color: #570000;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 2px grey;
+}
+.buttonAb {
+  background-color: #E3CE9F;
+  border:none;
+  color: #570000;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 2px grey;
 }
 input{
   width: 400x;

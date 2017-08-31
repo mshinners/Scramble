@@ -17,6 +17,14 @@ body {
   src: url(scramble.ttf);
   font-style: normal;
   font-size: 80px;
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+header{
+  background-color: #570000;
+  border: 2px solid black;
+  border-radius: 12px;
 }
 
 #letterTimer {
@@ -55,20 +63,20 @@ body {
   height: 85px;
 }
 
-.nav{
+/*.nav{
   background-color: #570000;
   width: 75%;
   border: 10px double black;
   border-radius: 12px;
-  padding: 10px;
-  margin: 10px;
-}
+  padding: 5px;
+  margin: 5px;
+}*/
 
 .buttonHi{
   background-color: #fbf4e3;
   border:none;
   color: #570000;
-  padding: 15px 32px;
+  padding: 10px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -81,11 +89,12 @@ body {
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
 }
-.buttonAb{
+
+.buttonAb {
   background-color: #fbf4e3;
   border:none;
   color: #570000;
-  padding: 15px 32px;
+  padding: 10px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -98,11 +107,12 @@ body {
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
 }
-.buttonHo{
+
+.buttonHo {
   background-color: #fbf4e3;
   border:none;
   color: #570000;
-  padding: 15px 32px;
+  padding: 10px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -114,6 +124,7 @@ body {
   border-radius: 12px;
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
+  float: right;
 }
 
 table {
@@ -158,4 +169,11 @@ h3 {
   font-weight: bold;
   text-align: center;
   margin: 0;
+}
+
+#results{
+  font-family: sans-serif;
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
 }

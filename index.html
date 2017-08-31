@@ -4,25 +4,20 @@
     <meta charset="utf-8">
     <link rel= "stylesheet" type= "text/css" href= "style.css"/>
     <link href="https://daneden.github.io/animate.css/"/>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <title>Scramble Home</title>
   </head>
   <body>
     <header>
       <div class="nav">
-        <table class="navTable">
-          <tr>
-            <td>
-              <a href="hiScore.html">HIGH SCORES</a>
-            </td>
-            <td>
-              <a href="aboutUs.html">ABOUT US</a>
-            </td>
-          </tr>
-        </table>
+          <a href="hiScore.html"><button class="buttonHi" type="button">HIGH SCORES</button></a>
+          <a href="aboutUs.html"><button class="buttonAb" type="button">ABOUT US</button></a>
+        </div>
       </div>
       <h1><mark>SCRAMBLE</mark></h1>
     </header>
-    <h2 id="welcome">Welcome to <mark id="scram">SCRAMBLE</mark>, the fast-paced word constructing game for the whole family!</h2>
+    <h2 id="welcome"><i>Welcome to </i><mark id="scram">SCRAMBLE</mark></h2>
+    <h2><i> the fast-paced word constructing game for the whole family!</i></h2>
     <ul id="listOfRules" style="visibility:hidden;">
       <li>You will have 60 seconds to construct a 5-letter word. Go for maximum points!</li>
       <li>Your final score is a combination of the word's value and the amount of time left on the clock, so work quickly!</li>
@@ -31,21 +26,21 @@
       <li>Choose your letters carefully! Once you lock in a letter in a position, there's no turning back!</li>
       <li>If you run out of time or use an incorrect word, your score will be zero.</li>
     </ul>
-      <table>
+      <!-- <table>
         <tr>
-          <td>
+          <td> -->
             <form id="nameEntry">
             <label><mark>Enter</mark> <mark>your</mark> <mark>name</mark></label>
-            <input id="GET-name" type="text" name="name" required>
-          </td>
+            <br><input id="GET-name" type="text" name="name" required>
+          <!-- </td>
         </tr>
         <tr>
-          <td>
+          <td> -->
             <button id="rules" onclick="showRules()" type="button">Show Rules</button>
             <input id="save" type="submit" value="PLAY GAME !">
-          </td>
+          <!-- </td>
         </tr>
-      </table>
+      </table> -->
     </form>
     </body>
   <script src="index.js"></script>
