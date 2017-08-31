@@ -9,16 +9,16 @@ if (!localStorage.nameArray) {
   button.innerText = 'Play Game!';
 }
 var fillerHighScores = [
-  {userName: 'Jon', score: 45, word:'PARTY'},
-  {userName: 'Daenerys', score: 34, word:'DANCE'},
-  {userName: 'Tyrion', score: 59, word:'HAPPY'},
-  {userName: 'Sandor', score: 34, word:'SMILE'},
-  {userName: 'Cersei', score: 27, word:'GRINS'},
-  {userName: 'Arya', score: 48, word:'BEERS'},
-  {userName: 'Tormund', score: 33, word:'LAUGH'},
-  {userName: 'Jaime', score: 26, word:'WINES'},
-  {userName: 'Sansa', score: 27, word:'MUSIC'},
-  {userName: 'Petyr', score: 20, word:'SHOUT'}
+  {userName: 'Jon', score: 75, word:'PARTY'},
+  {userName: 'Daenerys', score: 64, word:'DANCE'},
+  {userName: 'Tyrion', score: 89, word:'HAPPY'},
+  {userName: 'Sandor', score: 64, word:'SMILE'},
+  {userName: 'Cersei', score: 57, word:'GRINS'},
+  {userName: 'Arya', score: 78, word:'BEERS'},
+  {userName: 'Tormund', score: 63, word:'LAUGH'},
+  {userName: 'Jaime', score: 56, word:'WINES'},
+  {userName: 'Sansa', score: 57, word:'MUSIC'},
+  {userName: 'Petyr', score: 50, word:'SHOUT'}
 ];
 
 var highScoreList = [];
