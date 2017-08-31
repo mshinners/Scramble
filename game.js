@@ -89,7 +89,7 @@ function startLetterTimer() {
   function timer() {
     letterCount --;
     var letterCountDisplay = document.getElementById('letterTimer');
-    letterCountDisplay.innerHTML = letterCount;
+    // letterCountDisplay.innerHTML = letterCount;
     if (letterCount <= 0) {
       clearInterval(letterCounter);
       resetLetterTimer();

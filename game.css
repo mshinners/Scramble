@@ -7,6 +7,11 @@ body {
   font-style: normal;
   src: url(scramble.ttf);
 }
+
+meter {
+  /*appearance: none;*/
+}
+
 .greeting{
   font-family: "scramble";
   src: url(scramble.ttf);
