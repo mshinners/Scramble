@@ -55,8 +55,22 @@ var word;
 
 var meterFullness = 100;
 
-function startTimeMeter(){
-  var counter = setInterval(timer, 10);
+var gameCounter;
+
+var meterCounter;
+
+function timer() {
+  gameCount --;
+  var gameCountDisplay = document.getElementById('gameTimer');
+  gameCountDisplay.innerHTML = gameCount;
+  if (gameCount <= 0) {
+    clearInterval(gameCounter);
+    endGame();
+  }
+}
+
+function startTimeMeter() {
+  meterCounter = setInterval(timer, 10);
 
   function timer() {
     var meterDisplay = document.getElementById('fillMeter');
@@ -82,21 +96,7 @@ function removeTile(event) {
   current.addEventListener('click', lockIn);
   upcoming.setAttribute('style', 'visibility: visible');
   current.setAttribute('style', 'visibility: visible');
-  changeTimerWidth();
-  console.log(numberOfLettersSelected);
-}
-
-//starts the game timer.
-var gameCounter;
-
-function timer() {
-  gameCount --;
-  var gameCountDisplay = document.getElementById('gameTimer');
-  gameCountDisplay.innerHTML = gameCount;
-  if (gameCount <= 0) {
-    clearInterval(gameCounter);
-    endGame();
-  }
+  adjustTimerWidth();
 }
 
 function startLetterTimer() {
@@ -173,6 +173,8 @@ function invisibleToVisible () {
   letter.setAttribute('style', 'visibility: visible;');
   var game = document.getElementById('gameTimer');
   game.setAttribute('style', 'visibility: visible;');
+  var newTilesButton = document.getElementById('newLettersButton');
+  newTilesButton.setAttribute('style', 'opacity: 1;');
 }
 
 function deleteGameResults () {
@@ -223,6 +225,7 @@ function makeEndgameNavOptions() {
 
 function endGame() {
   clearInterval(gameCounter);
+  clearInterval(meterCounter);
   for (var i = 0; i < lockedInTiles.length; i++){
     lockedInTiles[i].removeEventListener('click', removeTile);
   }
@@ -243,6 +246,8 @@ function endGame() {
   lett.setAttribute('style', 'visibility: hidden;');
   var game = document.getElementById('gameTimer');
   game.setAttribute('style', 'visibility: hidden;');
+  var timer = document.getElementById('fillMeter');
+  timer.setAttribute('style', 'visibility: hidden');
   if (numberOfLettersSelected === 5 && wordIsLegal()) {
     calculateFinalScore();
     makePlayerObject();
@@ -312,6 +317,7 @@ function lockIn(event) {
   lock.removeAttribute('class', 'noHover');
   lock.setAttribute('class', 'lockedIn hover');
   numberOfLettersSelected ++;
+  adjustTimerWidth();
   if (numberOfLettersSelected === 5) {
     endGame();
   } else {
@@ -320,15 +326,12 @@ function lockIn(event) {
     letterCount = 16 - (3 * numberOfLettersSelected);
     meterFullness = 100;
   }
-  changeTimerWidth();
 }
 
-//working to adjust div width to be max value of inner div width as more letters are selected
-function changeTimerWidth(){
+function adjustTimerWidth(){
   var letterTimerDiv = document.getElementById('letterTimer');
   var divWidth = 'width: ' + ( 50 - (numberOfLettersSelected * 8)) + '%';
   letterTimerDiv.setAttribute('style', divWidth);
-  console.log(divWidth);
 }
 
 function wordIsLegal() {
