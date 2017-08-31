@@ -4,7 +4,7 @@ var target;
 var michelle = {dev:'Michelle', faveWord: 'Merge', blurb: 'Coding is fun!'};
 var michael = {dev:'Michael', faveWord: 'Hodor', blurb: 'Mike enjoys hiking, camping and generally being outdoors. Father of two sons, foster-father to nine more and counting! He looks forward to a rewarding career in Development.'};
 var nathan = {dev:'Nathan', faveWord: 'Volta', blurb: 'Hi Momma!'};
-var shannon = {dev:'Shannon', faveWord: 'Vavre', blurb: 'Thanks for playing!'};
+var shannon = {dev:'Shannon', faveWord: 'Varve', blurb: 'Thanks for playing!'};
 var people = [michelle, michael, nathan, shannon];
 
 //get all of the elements with a class name of profile & add an eventListener

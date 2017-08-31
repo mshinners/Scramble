@@ -6,6 +6,47 @@
   font-style: normal;
   src: url(scramble.ttf);
 }
+header{
+  background-color: #570000 ;
+  border: 2px solid black;
+  border-radius: 12px;
+}
+.buttonHo {
+  background-color: #E3CE9F ;
+  border:none;
+  color: #570000 ;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 2px grey;
+  outline: 0px;
+}
+.buttonHi{
+  background-color: #E3CE9F ;
+  border:none;
+  color: #570000 ;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 2px grey;
+  outline: 0px;
+}
 body {
   background-image: url("imgs/background.jpg");
   background-size: cover;
@@ -24,7 +65,7 @@ h1{
 }
 img {
   display: inline;
-  width: 290px;
+  width: 100%;
   opacity: 0.5;
 }
 img:hover {
@@ -38,6 +79,7 @@ img:hover {
   margin-left: 65px;
   display: inline;
   float: left;
+  width: 20%;
 }
 .michael {
   margin: 5px;
@@ -47,6 +89,7 @@ img:hover {
   margin-left: 65px;
   display: inline;
   float: left;
+  width: 20%;
 }
 .nathan {
   margin: 5px;
@@ -56,6 +99,7 @@ img:hover {
   margin-right: 65px;
   display: inline;
   float: right;
+  width: 20%;
 }
 .shannon {
   margin: 5px;
@@ -65,6 +109,7 @@ img:hover {
   margin-right: 65px;
   display: inline;
   float: right;
+  width: 20%;
 }
 .topSector {
   width: 100%;
@@ -87,17 +132,20 @@ h5 {
   position: absolute;
   top: 300px;
   left: 420px;
-  background-image: url("imgs/wood3.jpg");
+  background-image: url("imgs/wood.jpg");
   visibility: hidden;
   border-radius: 20px;
   border-color: #E3CE9F;
   border-width: 7px;
-  padding-left: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: top: 2px;
   overflow: hidden;
   font-size: 190%;
   font-weight: 700;
   font-family: 'Caveat', cursive;
   border-style: outset;
+  text-align: justify;
   text-shadow:
   -1px -1px 0 #E3CE9F,
   1px -1px 0 #E3CE9F,
