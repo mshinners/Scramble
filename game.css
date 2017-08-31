@@ -12,6 +12,14 @@ body {
   src: url(scramble.ttf);
   font-style: normal;
   font-size: 80px;
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+header{
+  background-color: #570000;
+  border: 2px solid black;
+  border-radius: 12px;
 }
 
 .current{
@@ -36,14 +44,14 @@ body {
   height: 85px;
 }
 
-.nav{
+/*.nav{
   background-color: #570000;
   width: 75%;
   border: 10px double black;
   border-radius: 12px;
   padding: 5px;
   margin: 5px;
-}
+}*/
 
 .buttonHi{
   background-color: #fbf4e3;
