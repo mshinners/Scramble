@@ -53,24 +53,11 @@ var lettersChosen = [];
 
 var word;
 
-var lockedInTiles = document.getElementsByClassName('lockedIn');
-for (var i = 0; i < lockedInTiles.length; i++){
-  lockedInTiles[i].addEventListener('click', removeTile);
-}
+var meterFullness = 100;
 
-function removeTile(event) {
-  numberOfLettersSelected --;
-  event.target.innerText = '';
-  var number = event.target.getAttribute('lockedIn');
-  var upcoming = document.getElementById('upcoming ' + number);
-  var current = document.getElementById('current ' + number);
-  current.addEventListener('click', lockIn);
-  upcoming.setAttribute('style', 'visibility: visible');
-  current.setAttribute('style', 'visibility: visible');
-}
-
-//starts the game timer.
 var gameCounter;
+
+var meterCounter;
 
 function timer() {
   gameCount --;
@@ -82,14 +69,44 @@ function timer() {
   }
 }
 
+function startTimeMeter() {
+  meterCounter = setInterval(timer, 10);
+
+  function timer() {
+    var meterDisplay = document.getElementById('fillMeter');
+    meterFullness -= (100 / (400 - (75 * numberOfLettersSelected)));
+    var meterWidth = 'width: ' + meterFullness + '%';
+    meterDisplay.setAttribute('style', meterWidth);
+  }
+}
+
+function addLockedInListeners(){
+  var lockedInTiles = document.getElementsByClassName('lockedIn');
+  for (var i = 0; i < lockedInTiles.length; i++){
+    lockedInTiles[i].addEventListener('click', removeTile);
+  }
+}
+
+function removeTile(event) {
+  numberOfLettersSelected --;
+  event.target.innerText = '';
+  event.target.removeAttribute('class', 'hover');
+  event.target.setAttribute('class', 'noHover');
+  var number = event.target.getAttribute('lockedIn');
+  var upcoming = document.getElementById('upcoming ' + number);
+  var current = document.getElementById('current ' + number);
+  current.addEventListener('click', lockIn);
+  upcoming.setAttribute('style', 'visibility: visible');
+  current.setAttribute('style', 'visibility: visible');
+  adjustTimerWidth();
+}
+
 function startLetterTimer() {
 
   var letterCounter = setInterval(timer, 250);
 
   function timer() {
     letterCount --;
-    var letterCountDisplay = document.getElementById('letterTimer');
-    letterCountDisplay.innerHTML = letterCount;
     if (letterCount <= 0) {
       clearInterval(letterCounter);
       resetLetterTimer();
@@ -112,6 +129,7 @@ function generateRandomLetter() {
 
 function resetLetterTimer() {
   letterCount = 16 - (3 * numberOfLettersSelected);
+  meterFullness = 100;
   startLetterTimer();
 }
 
@@ -141,6 +159,7 @@ function makeNewTiles() {
   upcomingBecomesCurrent();
   generateUpcomingLetters();
   letterCount = 16 - (3 * numberOfLettersSelected);
+  meterFullness = 100;
 }
 
 function invisibleToVisible () {
@@ -156,6 +175,8 @@ function invisibleToVisible () {
   letter.setAttribute('style', 'visibility: visible;');
   var game = document.getElementById('gameTimer');
   game.setAttribute('style', 'visibility: visible;');
+  var newTilesButton = document.getElementById('newLettersButton');
+  newTilesButton.setAttribute('style', 'opacity: 1;');
 }
 
 function deleteGameResults () {
@@ -177,10 +198,15 @@ function initiateGame () {
   generateCurrentLetters();
   generateUpcomingLetters();
   invisibleToVisible();
+  startTimeMeter();
+  addLockedInListeners();
   numberOfLettersSelected = 0;
   gameCount = 61;
   letterCount = 16 - (3 * numberOfLettersSelected);
+  meterFullness = 100;
   gameCounter = setInterval(timer, 1000);
+  var gameTimer = document.getElementById('gameTimer');
+  gameTimer.innerHTML = '60';
   addListeners();
 }
 
@@ -204,6 +230,8 @@ function makeEndgameNavOptions() {
 
 function endGame() {
   clearInterval(gameCounter);
+  clearInterval(meterCounter);
+  var lockedInTiles = document.getElementsByClassName('lockedIn');
   for (var i = 0; i < lockedInTiles.length; i++){
     lockedInTiles[i].removeEventListener('click', removeTile);
   }
@@ -224,6 +252,8 @@ function endGame() {
   lett.setAttribute('style', 'visibility: hidden;');
   var game = document.getElementById('gameTimer');
   game.setAttribute('style', 'visibility: hidden;');
+  var timer = document.getElementById('fillMeter');
+  timer.setAttribute('style', 'visibility: hidden');
   if (numberOfLettersSelected === 5 && wordIsLegal()) {
     calculateFinalScore();
     makePlayerObject();
@@ -290,14 +320,24 @@ function lockIn(event) {
   event.target.removeEventListener('click', lockIn);
   upcomingPartner.setAttribute('style', 'visibility: hidden;');
   event.target.setAttribute('style', 'visibility: hidden;');
+  lock.removeAttribute('class', 'noHover');
+  lock.setAttribute('class', 'lockedIn hover');
   numberOfLettersSelected ++;
+  adjustTimerWidth();
   if (numberOfLettersSelected === 5) {
     endGame();
   } else {
     upcomingBecomesCurrent();
     generateUpcomingLetters();
     letterCount = 16 - (3 * numberOfLettersSelected);
+    meterFullness = 100;
   }
+}
+
+function adjustTimerWidth(){
+  var letterTimerDiv = document.getElementById('letterTimer');
+  var divWidth = 'width: ' + ( 50 - (numberOfLettersSelected * 8)) + '%';
+  letterTimerDiv.setAttribute('style', divWidth);
 }
 
 function wordIsLegal() {

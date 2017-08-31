@@ -4,49 +4,34 @@
     <meta charset="utf-8">
     <link rel= "stylesheet" type= "text/css" href= "style.css"/>
     <link href="https://daneden.github.io/animate.css/"/>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <title>Scramble Home</title>
   </head>
   <body>
     <header>
       <div class="nav">
-        <table class="navTable">
-          <tr>
-            <td>
-              <a href="hiScore.html">HIGH SCORES</a>
-            </td>
-            <td>
-              <a href="aboutUs.html">ABOUT US</a>
-            </td>
-          </tr>
-        </table>
+        <a href="index.html"><button class="buttonHo" type="button"> HOME</button></a>
+        <a href="hiScore.html"><button class="buttonHi" type="button">HIGH SCORES</button></a>
+        <a href="aboutUs.html"><button class="buttonAb" type="button">ABOUT US</button></a>
       </div>
-      <h1><mark>SCRAMBLE</mark></h1>
     </header>
-    <h2 id="welcome">Welcome to <mark id="scram">SCRAMBLE</mark>, the fast-paced word constructing game for the whole family!</h2>
-    <ul id="listOfRules" style="visibility:hidden;">
-      <li>You will have 60 seconds to construct a 5-letter word. Go for maximum points!</li>
-      <li>Your final score is a combination of the word's value and the amount of time left on the clock, so work quickly!</li>
-      <li>Every 3 seconds, you will have your choice of up to five random letters to choose from to form your word. Click on them to lock in your letter with its position into your final word.</li>
-      <li>Each time your new letter choices become available, up to five new random letters will appear. Keep an eye on these; they will become your next available choices!</li>
-      <li>Choose your letters carefully! Once you lock in a letter in a position, there's no turning back!</li>
-      <li>If you run out of time or use an incorrect word, your score will be zero.</li>
-    </ul>
-      <table>
-        <tr>
-          <td>
-            <form id="nameEntry">
-            <label><mark>Enter</mark> <mark>your</mark> <mark>name</mark></label>
-            <input id="GET-name" type="text" name="name" required>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <button id="rules" onclick="showRules()" type="button">Show Rules</button>
-            <input id="save" type="submit" value="PLAY GAME !">
-          </td>
-        </tr>
-      </table>
-    </form>
+      <h2 id="welcome"><i>Welcome to </i></h2><h1><mark>SCRAMBLE</mark></h1>
+      <h2><i> the fast-paced word constructing game for the whole family!</i></h2>
+      <ul id="listOfRules" style="visibility:hidden;">
+        <li>You will have 60 seconds to construct a 5-letter word. Each letter has a point value displayed on the tile.</li>
+        <li>Your final score factors in the amount of time left on the clock. The faster you work, the higher your score!</li>
+        <li>You can only select one letter at a time, so choose wisely. Click on the tile you want to move it into the 'Selected Tiles' row. Its position in the 'Choose Tiles' row will be the same as in your final word.</li>
+        <li>You can see the upcoming letter choices in the 'Future Tiles' row at the top of the page. Once the meter bar at the bottom of the page runs out, these will become your new letters to choose from.</li>
+        <li>Looking for a specific letter but it's just not coming? Click the 'New Tiles' button to generate new letters in the 'Future Tiles' row.</li>
+        <li>If you want to remove a selected letter, click on the one you wish to remove in the 'Selected Tiles' row.</li>
+        <li>If you run out of time or use an incorrect word, your score will be zero. <em>Remember: no proper nouns or abbreviations!</em></li>
+      </ul>
+      <form id="nameEntry">
+        <label><mark>Enter</mark> <mark>your</mark> <mark>name</mark></label>
+        <br><input maxlength="16" id="GET-name" type="text" name="name" required placeholder="Max 16 Characters">
+        <button id="rules" onclick="showRules()" type="button">Show Rules</button>
+        <input id="save" type="submit" value="Play Game !">
+      </form>
     </body>
   <script src="index.js"></script>
  </html>

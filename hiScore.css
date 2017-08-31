@@ -1,3 +1,6 @@
+* {
+  outline: 0px;
+}
 header, body, footer {
   display: block;
 }
@@ -11,19 +14,78 @@ body {
   src: url(scramble.ttf);
 }
 header{
-  margin-top: 100px;
-  padding-bottom: 50px;
-}
+  background-color: #570000;
+  border: 2px solid black;
+  border-radius: 12px;
+  }
+  mark{
+    background-color: #E3CE9F;
+  }
 h1{
   font-family: "scramble";
   font-style: normal;
   font-size: 80px;
   display: inline;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 #content{
   text-align: center;
+  margin-top: 2%;
+}
+.buttonHo {
+  background-color: #E3CE9F;
+  border:none;
+  color: #570000;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 2px grey;
+  outline: 0px;
+}
+.buttonHi{
+  background-color: #E3CE9F;
+  border:none;
+  color: #570000;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 2px grey;
+  outline: 0px;
+}
+.buttonAb {
+  background-color: #E3CE9F;
+  border:none;
+  color: #570000;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 2px grey;
+  outline: 0px;
 }
 th{
   color: #570000;
@@ -31,15 +93,15 @@ th{
   font-style: normal;
   font-size: 40px;
   font-weight: bolder;
-  border-bottom: 3px solid black;
 }
 td {
-   border-bottom: 3px solid black;
+   border-bottom: 2px solid black;
    font-family: monospace;
    color: black;
    font-size: 25px;
    font-weight: bold;
    text-align: center;
+
 }
 table{
    border: 20px double black;
@@ -68,6 +130,8 @@ table{
 #buttonPosition{
   float: right;
   margin-right: 10%;
+  margin-bottom: 1%;
+  margin-top: 1%;
 }
 mark{
   background-color: #E3CE9F;

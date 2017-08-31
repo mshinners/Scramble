@@ -1,8 +1,6 @@
-/*header, aside, section, footer, {
-  display: block*/
-}
 * {
   box-sizing: border-box;
+  outline: 0px;
 }
 body {
   background-image: url("imgs/background.jpg");
@@ -12,6 +10,13 @@ body {
   font-family: "scramble";
   font-style: normal;
   src: url(scramble.ttf);
+}
+header{
+  background-color: #570000;
+  border: 2px solid black;
+  border-radius: 12px;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 #rules, #save{
   background-color: #570000;
@@ -29,20 +34,40 @@ body {
   border-radius: 12px;
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
+  outline: 0px;
+}
+#GET-name{
+  width: 40%;
+  height: 40px;
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid black;
+  font-size: 30px;
+
 }
 #rules{
   float: left;
-  margin-left: 50px;
+  margin-left: 20%;
 }
 label{
   font-family: "scramble";
   font-style: normal;
-  font-size: 25px;
+  font-size: 45px;
 }
 h1{
   font-family: "scramble";
   font-style: normal;
-  font-size: 80px;
+  font-size: 90px;
+  text-align: center;
+  margin-top: 1%;
+  margin-bottom: 1%;
+
+}
+h2{
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 0;
 }
 #scram{
   font-family: "scramble";
@@ -53,73 +78,77 @@ mark{
   background-color: #E3CE9F;
 }
 #nameEntry{
-
+  text-align: center;
+  margin:0;
+  outline: 0px;
 }
 #welcome{
   text-align: center;
+  margin-top: 20px;
 }
 #listOfRules{
   font-family: sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  border-style: 2px solid black;
+  margin: 0;
+  padding: 3% 5%;
+  line-height: 95%;
+}
+.buttonHo {
+  background-color: #E3CE9F;
+  border:none;
+  color: #570000;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: sans-serif;
   font-size: 20px;
   font-weight: bold;
-}
-input{
-  width: 400x;
-}
-tr{
- width: 400px;
-}
-td{
-  width: 700px;
-}
-.greeting {
-  text-align: center;
-}
-
-table {
-  margin: auto;
-}
-
-td {
-  padding: 10px;
-}
-
-.upcoming {
-  font-size: 42px;
-}
-
-.current {
-  font-size: 42px;
-}
-
-.current:hover {
+  margin: 4px 2px;
   cursor: pointer;
+  border-radius: 12px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 2px grey;
+  outline: 0px;
 }
-
-h1 {
+.buttonHi{
+  background-color: #E3CE9F;
+  border:none;
+  color: #570000;
+  padding: 5px 15px;
   text-align: center;
-  margin-top: 50px;
-}
-
-.ourProfiles {
-  padding: 50px 0 20px 50px;
-}
-
-.profile {
-  padding-bottom: 30px;
-}
-
-.displayInline {
-  width: 65%;
+  text-decoration: none;
   display: inline-block;
-  overflow: auto;
-}
-
-.learnMore {
-  text-transform: capitalize;
-  display: inline;
-}
-
-.learnMore:hover{
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 4px 2px;
   cursor: pointer;
+  border-radius: 12px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 2px grey;
+  outline: 0px;
+}
+.buttonAb {
+  background-color: #E3CE9F;
+  border:none;
+  color: #570000;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 2px grey;
+  outline: 0px;
+}
+#save{
+  margin-right: 12%;
 }
