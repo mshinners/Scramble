@@ -88,6 +88,8 @@ mark{
   font-weight: bold;
   border-style: 2px solid black;
   margin: 0;
+  padding: 1% 5%;
+  line-height: 2;
 }
 .buttonHi{
   background-color: #E3CE9F;
