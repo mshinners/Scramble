@@ -13,6 +13,11 @@ body {
   font-style: normal;
   src: url(scramble.ttf);
 }
+header{
+  background-color: #570000;
+  border: 2px solid black;
+  border-radius: 12px;
+}
 #rules, #save{
   background-color: #570000;
   border:none;
@@ -30,6 +35,10 @@ body {
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
 }
+#GET-name{
+  width: 40%;
+  height: 40px;
+}
 #rules{
   float: left;
   margin-left: 100px;
@@ -37,7 +46,7 @@ body {
 label{
   font-family: "scramble";
   font-style: normal;
-  font-size: 35px;
+  font-size: 45px;
 }
 h1{
   font-family: "scramble";
@@ -45,7 +54,7 @@ h1{
   font-size: 90px;
 }
 h2{
-  font-family: sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 40px;
   text-align: center;
 }
@@ -58,7 +67,7 @@ mark{
   background-color: #E3CE9F;
 }
 #nameEntry{
-
+  text-align: center;
 }
 #welcome{
   text-align: center;
@@ -73,7 +82,7 @@ mark{
   background-color: #E3CE9F;
   border:none;
   color: #570000;
-  padding: 10px 25px;
+  padding: 5px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -90,7 +99,7 @@ mark{
   background-color: #fbf4e3;
   border:none;
   color: #570000;
-  padding: 10px 25px;
+  padding: 5px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
