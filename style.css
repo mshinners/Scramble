@@ -42,11 +42,11 @@ header{
   text-align: center;
   border-radius: 12px;
   border: 2px solid black;
-  
+
 }
 #rules{
   float: left;
-  margin-left: 10%;
+  margin-left: 20%;
 }
 label{
   font-family: "scramble";
@@ -130,5 +130,5 @@ mark{
   outline: 0px;
 }
 #save{
-  margin-right: 10%;
+  margin-right: 12%;
 }
