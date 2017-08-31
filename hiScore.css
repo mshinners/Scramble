@@ -17,19 +17,60 @@ body {
   src: url(scramble.ttf);
 }
 header{
-  margin-top: 100px;
-  padding-bottom: 50px;
-}
+  background-color: #570000;
+  border: 2px solid black;
+  border-radius: 12px;
+  }
+  mark{
+    background-color: #E3CE9F;
+  }
 h1{
   font-family: "scramble";
   font-style: normal;
   font-size: 80px;
   display: inline;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 #content{
   text-align: center;
+  margin-top: 2%;
+}
+.buttonAb {
+  background-color: #E3CE9F;
+  border:none;
+  color: #570000;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 2px grey;
+  outline: 0px;
+}
+.buttonHo {
+  background-color: #E3CE9F;
+  border:none;
+  color: #570000;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 2px grey;
+  outline: 0px;
 }
 th{
   color: #570000;
