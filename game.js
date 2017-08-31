@@ -90,7 +90,7 @@ function startLetterTimer() {
     letterCount --;
     var meterDisplay = document.getElementById('fillMeter');
     for (var i = 0; i < 4; i++) {
-      var meterWidth = 'width: ' + ((letterCount * 8) - (2 * i)) + 'px';
+      var meterWidth = 'width: ' + (((letterCount * 8) + 6) - (2 * i)) + 'px';
       console.log(meterWidth);
       meterDisplay.setAttribute('style', meterWidth);
     }
