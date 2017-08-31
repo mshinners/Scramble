@@ -144,7 +144,7 @@ h5 {
   background-image: url("imgs/wood.jpg");
   visibility: hidden;
   border-radius: 20px;
-  font-size: 24px;
+  font-size: 150%;
   font-weight: 700;
   font-family: 'Caveat', cursive;
   border-style: outset;
@@ -163,6 +163,17 @@ h5 {
   font-size: 40px;
   margin-left: 20px;
   background-color: #E3CE9F;
+}
+.clickHere p {
+  font-family: "scramble";
+  font-size: 30px;
+  text-align: center;
+  width: 35%;
+  position: absolute;
+  top: 330px;
+  left: 450px;
+  line-height: 45px;
+
 }
 mark {
   background-color: #E3CE9F;
