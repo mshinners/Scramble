@@ -17,11 +17,11 @@ body {
   font-family: "scramble";
   src: url(scramble.ttf);
   font-style: normal;
-  font-size: 45px;
-  margin-left: 20%;
+  font-size: 30px;
+  align: center;
+  margin-left: 60%;
   margin-bottom: 1%;
   margin-top: 1%;
-  display: inline-block;
 }
 header{
   background-color: #570000;
@@ -150,7 +150,6 @@ mark{
   box-shadow: 3px 3px 2px grey;
   outline: 0px;
 }
-
 table {
   width: 85%;
   border: 10px double black;
@@ -158,6 +157,9 @@ table {
   box-shadow: 3px 3px 2px grey;
   width: 80%;
   height: 85px;
+  align: center;
+  margin-left: 10%;
+  margin-right: 20%
 }
 
 td {
@@ -166,6 +168,9 @@ td {
   vertical-align:middle;
   height: 85px;
   width:85px;
+}
+#letterTimer{
+  margin-left: 10%;
 }
 button{
   background-color: #570000;
@@ -201,6 +206,8 @@ button{
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
   width:80%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 h3 {
