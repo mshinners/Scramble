@@ -60,7 +60,7 @@ header{
 }
 h1{
   text-align: center;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 5px;
   font-family: "scramble";
   font-style: normal;
@@ -132,6 +132,7 @@ h5 {
   font-family: "scramble";
   font-style: normal;
   font-size: 18px;
+  width: 180%;
 }
 #learnMoreWindow {
   width: 42%;
@@ -175,7 +176,7 @@ h5 {
   background-color: #E3CE9F;
 }
 .clickHere p {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display";
   font-size: 40px;
   text-align: center;
   margin-bottom: 0;
@@ -183,7 +184,6 @@ h5 {
   position: absolute;
   top: 330px;
   left: 450px;
-  /*line-height: 45px;*/
 }
 mark {
   background-color: #E3CE9F;
