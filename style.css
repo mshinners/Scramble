@@ -42,12 +42,11 @@ header{
   text-align: center;
   border-radius: 12px;
   border: 2px solid black;
-  /*font-family: sans-serif;
-  font-size: 20px;*/
+  
 }
 #rules{
   float: left;
-  margin-left: 18%;
+  margin-left: 10%;
 }
 label{
   font-family: "scramble";
@@ -59,6 +58,9 @@ h1{
   font-style: normal;
   font-size: 90px;
   text-align: center;
+  margin-top: 1%;
+  margin-bottom: 1%;
+
 }
 h2{
   font-family: 'Playfair Display', serif;
@@ -84,7 +86,7 @@ mark{
 }
 #listOfRules{
   font-family: sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   border-style: 2px solid black;
   margin: 0;
@@ -126,3 +128,7 @@ mark{
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
   outline: 0px;
+}
+#save{
+  margin-right: 10%;
+}
