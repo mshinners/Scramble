@@ -133,7 +133,7 @@ h5 {
   top: 300px;
   left: 420px;
   background-image: url("imgs/wood.jpg");
-  /*visibility: hidden;*/
+  visibility: hidden;
   border-radius: 20px;
   border-color: #E3CE9F;
   border-width: 7px;
@@ -152,16 +152,14 @@ h5 {
   1px 1px 0 #E3CE9F;
 }
 #faveword {
-  padding-top: 50px;
+  padding-top: 0px;
   padding-bottom: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 0px;
 }
 #blurb {
   padding-top: 0px;
   padding-bottom: 0px;
   margin-top: 0px;
-  margin-bottom: 0px;
 }
 #favWordWord {
   font-family: "scramble";
@@ -170,17 +168,11 @@ h5 {
   background-color: #E3CE9F;
 }
 .clickHere p {
-  font-family: 'Caveat', cursive;
-  font-size: 300%;
-  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
   text-align: center;
-  text-shadow:
-  -1px -1px 0 #E3CE9F,
-  1px -1px 0 #E3CE9F,
-  -1px 1px 0 #E3CE9F,
-  1px 1px 0 #E3CE9F;
+  margin-bottom: 0;
   width: 35%;
-  background-color: none;
   position: absolute;
   top: 330px;
   left: 450px;
