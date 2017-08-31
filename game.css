@@ -13,6 +13,11 @@ body {
   font-style: normal;
   src: url(scramble.ttf);
 }
+@font-face{
+ font-family:"digital-clock-font";
+ src: url("put_the_location_to_your_font.ttf or .otf");
+}
+
 #greeting{
   font-family: "scramble";
   src: url(scramble.ttf);
@@ -46,6 +51,10 @@ mark{
   height: 20px;
 }
 
+#gameTimer{
+  font-family:"digital-clock-font";
+  font-size: 10px;
+}
 #letterTimer {
   width: 50%;
   height: 20px;
