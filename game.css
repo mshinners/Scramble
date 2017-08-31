@@ -13,16 +13,16 @@ body {
 }
 
 #letterTimer {
-  width: 200px;
+  width: 195px;
   height: 20px;
   overflow: auto;
-  border: 1px solid black;
+  border: 2px solid black;
 }
 
 #fillMeter {
   float: left;
   background-color: red;
-  width: 200px;
+  width: 195px;
   height: 20px;
 }
 

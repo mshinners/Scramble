@@ -82,16 +82,22 @@ function timer() {
   }
 }
 
+//working here to adjust div width to be max value of inner div width as more letters are selected
+function changeTimerWidth(){
+  var letterTimerDiv = document.getElementById('letterTimer');
+  var divWidth = 'width: ' + 'px';
+  letterTimerDiv.setAttribute('style', '');
+}
+
 function startLetterTimer() {
 
   var letterCounter = setInterval(timer, 250);
 
   function timer() {
     letterCount --;
-    var letterCountDisplay = document.getElementById('letterTimer');
-    var width = 'width: ' + letterCount + 'px';
-    letterCountDisplay.setAttribute('style', width);
-    // letterCountDisplay.innerHTML = letterCount;
+    var meterDisplay = document.getElementById('fillMeter');
+    var meterWidth = 'width: ' + (letterCount * 13) + 'px';
+    meterDisplay.setAttribute('style', meterWidth);
     if (letterCount <= 0) {
       clearInterval(letterCounter);
       resetLetterTimer();
