@@ -83,15 +83,16 @@ mark{
 }
 #welcome{
   text-align: center;
+  margin-top: 20px;
 }
 #listOfRules{
   font-family: sans-serif;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: bold;
   border-style: 2px solid black;
   margin: 0;
-  padding: 1% 5%;
-  line-height: 2;
+  padding: 3% 5%;
+  line-height: 95%;
 }
 .buttonHi{
   background-color: #E3CE9F;
