@@ -14,8 +14,8 @@ body {
   src: url(scramble.ttf);
 }
 @font-face{
- font-family:"digital-clock-font";
- src: url("put_the_location_to_your_font.ttf or .otf");
+ font-family:"digital-7";
+ src: url("digital-7.ttf");
 }
 
 #greeting{
@@ -47,13 +47,14 @@ mark{
 #fillMeter {
   float: left;
   background-color: red;
-  width: 120px;
   height: 20px;
 }
 
 #gameTimer{
-  font-family:"digital-clock-font";
-  font-size: 10px;
+  font-family:"digital-7";
+  font-size: 60px;
+  font-weight: bold;
+  margin-left: 10%;
 }
 #letterTimer {
   width: 50%;
@@ -62,11 +63,11 @@ mark{
   border: 2px solid black;
 }
 
-#fillMeter {
+/*#fillMeter {
   float: left;
   background-color: red;
   height: 20px;
-}
+}*/
 
 .current{
   font-family: "scramble";
@@ -160,14 +161,14 @@ mark{
   outline: 0px;
 }
 table {
-  width: 75%;
+  width: 60%;
   border: 10px double black;
   border-radius: 12px;
   box-shadow: 3px 3px 2px grey;
   /*width: 75%;*/
   height: 85px;
   align: center;
-  margin-left: 10%;
+  margin-left: 20%;
   margin-right: 20%
 }
 
@@ -179,7 +180,7 @@ td {
   width:75px;
 }
 #letterTimer{
-  margin-left: 10%;
+  margin-left: 20%;
 }
 button{
   background-color: #570000;
@@ -214,8 +215,8 @@ button{
   border-radius: 12px;
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
-  width:75%;
-  margin-left: 10%;
+  width:60%;
+  margin-left: 20%;
   margin-right: 10%;
 }
 
@@ -233,6 +234,9 @@ h3 {
   color: black;
   font-size: 22px;
   font-weight: bold;
+  float:right;
+  margin-right: 7%;
+  margin-top: 2%;
 }
 #userMessage{
   margin-top: 1%;
