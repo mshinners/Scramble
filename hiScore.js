@@ -9,7 +9,7 @@ var fillerHighScores = [
   {userName: 'Arya', score: 48, word:'beers'},
   {userName: 'Tormund', score: 33, word:'laugh'},
   {userName: 'Jaime', score: 26, word:'wines'},
-  {userName: 'Sansa', score: 27, word:'music'},
+  {userName: 'Hodor', score: 9, word:'hodor'},
   {userName: 'Petyr', score: 20, word:'shout'}
 ];
 
@@ -48,18 +48,4 @@ function printHiScores() {
     table.appendChild(tr);
   }
 }
-
 printHiScores();
-
-//
-// [i].score
-
-// X create an object that is the score & userName
-//     ordered list = no need for position number (automatic)
-//
-// store obj in array (in localStorage)
-//
-// sort the array by score value
-//
-// if array has more than 10, pop last item
-//store in local storage
