@@ -92,7 +92,6 @@ mark{
   padding: 10px 25px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-family: sans-serif;
   font-size: 20px;
   font-weight: bold;
@@ -102,6 +101,7 @@ mark{
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
   outline: 0px;
+  display: inline-block;
 }
 
 .buttonAb {
