@@ -53,6 +53,19 @@ var lettersChosen = [];
 
 var word;
 
+var meterFullness = 100;
+
+function startTimeMeter(){
+  var counter = setInterval(timer, 10);
+
+  function timer() {
+    var meterDisplay = document.getElementById('fillMeter');
+    meterFullness -= (100 / (400 - (75 * numberOfLettersSelected)));
+    var meterWidth = 'width: ' + meterFullness + '%';
+    meterDisplay.setAttribute('style', meterWidth);
+  }
+}
+
 var lockedInTiles = document.getElementsByClassName('lockedIn');
 for (var i = 0; i < lockedInTiles.length; i++){
   lockedInTiles[i].addEventListener('click', removeTile);
@@ -92,12 +105,6 @@ function startLetterTimer() {
 
   function timer() {
     letterCount --;
-    var meterDisplay = document.getElementById('fillMeter');
-    for (var i = 0; i < 100; i++) {
-      var meterWidth = 'width: ' + (100) + '%';
-      // var meterWidth = 'width: ' + (((letterCount * 8) + 6) - (2 * i)) + 'px';
-      meterDisplay.setAttribute('style', meterWidth);
-    }
     if (letterCount <= 0) {
       clearInterval(letterCounter);
       resetLetterTimer();
@@ -120,6 +127,7 @@ function generateRandomLetter() {
 
 function resetLetterTimer() {
   letterCount = 16 - (3 * numberOfLettersSelected);
+  meterFullness = 100;
   startLetterTimer();
 }
 
@@ -149,6 +157,7 @@ function makeNewTiles() {
   upcomingBecomesCurrent();
   generateUpcomingLetters();
   letterCount = 16 - (3 * numberOfLettersSelected);
+  meterFullness = 100;
 }
 
 function invisibleToVisible () {
@@ -185,9 +194,11 @@ function initiateGame () {
   generateCurrentLetters();
   generateUpcomingLetters();
   invisibleToVisible();
+  startTimeMeter();
   numberOfLettersSelected = 0;
   gameCount = 61;
   letterCount = 16 - (3 * numberOfLettersSelected);
+  meterFullness = 100;
   gameCounter = setInterval(timer, 1000);
   addListeners();
 }
@@ -307,6 +318,7 @@ function lockIn(event) {
     upcomingBecomesCurrent();
     generateUpcomingLetters();
     letterCount = 16 - (3 * numberOfLettersSelected);
+    meterFullness = 100;
   }
   changeTimerWidth();
 }
