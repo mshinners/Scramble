@@ -80,10 +80,12 @@ function startTimeMeter() {
   }
 }
 
-var lockedInTiles = document.getElementsByClassName('lockedIn');
-for (var i = 0; i < lockedInTiles.length; i++){
-  lockedInTiles[i].addEventListener('click', removeTile);
-}
+// function addLockedInListeners(){
+  var lockedInTiles = document.getElementsByClassName('lockedIn');
+  for (var i = 0; i < lockedInTiles.length; i++){
+    lockedInTiles[i].addEventListener('click', removeTile);
+  }
+// }
 
 function removeTile(event) {
   numberOfLettersSelected --;
@@ -197,6 +199,7 @@ function initiateGame () {
   generateUpcomingLetters();
   invisibleToVisible();
   startTimeMeter();
+  // addLockedInListeners();
   numberOfLettersSelected = 0;
   gameCount = 61;
   letterCount = 16 - (3 * numberOfLettersSelected);
