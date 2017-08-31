@@ -1,16 +1,16 @@
 'use strict';
 
 var fillerHighScores = [
-  {userName: 'Jon', score: 45, word:'party'},
-  {userName: 'Daenerys', score: 34, word:'dance'},
-  {userName: 'Tyrion', score: 59, word:'happy'},
-  {userName: 'Sandor', score: 34, word:'smile'},
-  {userName: 'Cersei', score: 27, word:'grins'},
-  {userName: 'Arya', score: 48, word:'beers'},
-  {userName: 'Tormund', score: 33, word:'laugh'},
-  {userName: 'Jaime', score: 26, word:'wines'},
-  {userName: 'Sansa', score: 27, word:'music'},
-  {userName: 'Petyr', score: 20, word:'shout'}
+  {userName: 'Jon', score: 45, word:'PARTY'},
+  {userName: 'Daenerys', score: 34, word:'DANCE'},
+  {userName: 'Tyrion', score: 59, word:'HAPPY'},
+  {userName: 'Sandor', score: 34, word:'SMILE'},
+  {userName: 'Cersei', score: 27, word:'GRINS'},
+  {userName: 'Arya', score: 48, word:'BEERS'},
+  {userName: 'Tormund', score: 33, word:'LAUGH'},
+  {userName: 'Jaime', score: 26, word:'WINES'},
+  {userName: 'Sansa', score: 27, word:'MUSIC'},
+  {userName: 'Petyr', score: 20, word:'SHOUT'}
 ];
 
 var highScoreList = [];
