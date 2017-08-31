@@ -90,14 +90,14 @@ h5 {
   background-image: url("imgs/wood3.jpg");
   visibility: hidden;
   border-radius: 20px;
-  font-size: 190%;
-  font-weight: 700;
-  font-family: 'Caveat', cursive;
-  border-style: outset;
   border-color: #E3CE9F;
   border-width: 7px;
   padding-left: 20px;
   overflow: hidden;
+  font-size: 190%;
+  font-weight: 700;
+  font-family: 'Caveat', cursive;
+  border-style: outset;
   text-shadow:
   -1px -1px 0 #E3CE9F,
   1px -1px 0 #E3CE9F,
