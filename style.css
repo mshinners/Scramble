@@ -1,37 +1,76 @@
-header, aside, section, footer, {
-  display: block
+/*header, aside, section, footer, {
+  display: block*/
 }
 * {
   box-sizing: border-box;
 }
-
+body {
+  background-image: url("imgs/background.jpg");
+  background-size: cover;
+}
 @font-face {
   font-family: "scramble";
   font-style: normal;
   src: url(scramble.ttf);
 }
+#rules, #save{
+  background-color: #570000;
+  border:none;
+  color: #fbf4e3;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 2px grey;
+}
+#rules{
+  float: left;
+  margin-left: 50px;
+}
+label{
+  font-family: "scramble";
+  font-style: normal;
+  font-size: 25px;
+}
 h1{
   font-family: "scramble";
   font-style: normal;
-  font-size: 60px;
-}
-.current{
-  font-family: "scramble";
-  font-style: normal;
   font-size: 80px;
 }
-.upcoming{
+#scram{
   font-family: "scramble";
   font-style: normal;
-  font-size: 80px;
+  font-size: 40px;
 }
-.lockedin{
-  font-family: "scramble";
-  font-style: normal;
-  font-size: 80px;
+mark{
+  background-color: #E3CE9F;
 }
-h3{
-  color: red;
+#nameEntry{
+
+}
+#welcome{
+  text-align: center;
+}
+#listOfRules{
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+input{
+  width: 400x;
+}
+tr{
+ width: 400px;
+}
+td{
+  width: 700px;
 }
 .greeting {
   text-align: center;
@@ -57,10 +96,6 @@ td {
   cursor: pointer;
 }
 
-.lockedIn {
-  font-size: 42px;
-}
-
 h1 {
   text-align: center;
   margin-top: 50px;
@@ -72,11 +107,6 @@ h1 {
 
 .profile {
   padding-bottom: 30px;
-}
-
-img {
-  display: inline;
-  width: 30%;
 }
 
 .displayInline {

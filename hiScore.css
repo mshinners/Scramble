@@ -1,0 +1,74 @@
+header, body, footer {
+  display: block;
+}
+body {
+  background-image: url("imgs/background.jpg");
+  background-size: cover;
+}
+@font-face {
+  font-family: "scramble";
+  font-style: normal;
+  src: url(scramble.ttf);
+}
+header{
+  margin-top: 100px;
+  padding-bottom: 50px;
+}
+h1{
+  font-family: "scramble";
+  font-style: normal;
+  font-size: 80px;
+  display: inline;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#content{
+  text-align: center;
+}
+th{
+  color: #570000;
+  font-family: "scramble";
+  font-style: normal;
+  font-size: 40px;
+  font-weight: bolder;
+  border-bottom: 3px solid black;
+}
+td {
+   border-bottom: 3px solid black;
+   font-family: monospace;
+   color: black;
+   font-size: 25px;
+   font-weight: bold;
+   text-align: center;
+}
+table{
+   border: 20px double black;
+   border-radius: 12px;
+   box-shadow: 3px 3px 2px grey;
+   width: 80%;
+   margin: auto;
+}
+.button1{
+  background-color: #570000;
+  border:none;
+  color: #fbf4e3;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 2px grey;
+}
+#buttonPosition{
+  float: right;
+  margin-right: 10%;
+}
+mark{
+  background-color: #E3CE9F;
+}

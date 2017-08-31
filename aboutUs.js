@@ -1,46 +1,49 @@
 'use strict';
 var target;
 //each create an object with our name, favorite word, & blurb about us?
-var michelle = {name:'Michelle', faveWord: 'word', blurb: 'This is what Michelle says'};
-var michael = {name:'Michael', faveWord: 'word', blurb: 'This is what Michael says'};
-var nathan = {name:'Nathan', faveWord: 'word', blurb: 'This is what Nathan says'};
-var shannon = {name:'Shannon', faveWord: 'word', blurb: 'This is what Shannon says'};
+var michelle = {dev:'Michelle', faveWord: 'Merge', blurb: 'Coding is fun!'};
+var michael = {dev:'Michael', faveWord: 'Hodor', blurb: 'Mike enjoys hiking, camping and generally being outdoors. Father of two sons, foster-father to nine more and counting! He looks forward to a rewarding career in Development.'};
+var nathan = {dev:'Nathan', faveWord: 'Djinn', blurb: 'Hi Momma!'};
+var shannon = {dev:'Shannon', faveWord: 'Sassy', blurb: 'Thanks for playing!'};
 //Store objects in an array
 var people = [michelle, michael, nathan, shannon];
 
 //get all of the elements with a class name of profile & add an eventListener
-var learnMore = document.getElementsByClassName('learnMore');
+var aboutUs = document.getElementsByTagName('img');
 for (var i = 0; i < people.length; i++){
-  learnMore[i].addEventListener('click', createProfile);
-  learnMore[i].addEventListener('mouseover', changeText);
-  learnMore[i].addEventListener('mouseout', originalText);
+  aboutUs[i].addEventListener('mouseover', createProfile);
+  aboutUs[i].addEventListener('mouseout', removeProfile);
 }
-
-//target = the 'learn more' link
+//get the correct Person object
 function createProfile(event) {
-  var profile = document.getElementsByClassName(event.target.id)[0];
-  event.target.removeEventListener('click', createProfile);
-  //get the correct Person object
+  var devProfile = document.getElementById(event.target.id);
   for (var i = 0; i < people.length; i++){
-    if (event.target.id === people[i].name.toLowerCase()){
+    if (event.target.id === people[i].dev.toLowerCase()){
       target = people[i];
     }
   }
-  var paragraph = document.createElement('div');
-  paragraph.setAttribute('class', 'displayInline');
+  //to populate the Learn more text field
+  var paragraph = document.getElementById('learnMoreWindow');
+  paragraph.setAttribute('style', 'visibility: visible');
   var faveWord = document.createElement('p');
-  faveWord.innerText = target.faveWord;
+  faveWord.innerText = 'My Favorite Five-letter Word: ';
+  var favWordWord = document.createElement('span');
+  favWordWord.setAttribute('id', 'favWordWord');
+  favWordWord.innerText = target.faveWord;
+  faveWord.appendChild(favWordWord);
+  faveWord.setAttribute('id', 'faveWord');
   paragraph.appendChild(faveWord);
   var blurb = document.createElement('p');
   blurb.innerText = target.blurb;
+  blurb.setAttribute('id', 'blurb');
   paragraph.appendChild(blurb);
-  profile.appendChild(paragraph);
-}
-
-function changeText() {
-  event.target.innerText = 'Learn more';
-}
-
-function originalText() {
-  event.target.innerText = event.target.id;
-}
+};
+//Removes info from text
+function removeProfile(event) {
+  var cutProfile = document.getElementById('learnMoreWindow');
+  var faveWord = document.getElementById('faveWord');
+  var blurb = document.getElementById('blurb');
+  cutProfile.setAttribute('style', 'visibility: hidden');
+  cutProfile.removeChild(faveWord);
+  cutProfile.removeChild(blurb);
+};

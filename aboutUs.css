@@ -10,10 +10,13 @@ header, aside, section, footer, {
   src: url(scramble.ttf);
 }
 body {
-  background-image: url("background.jpg");
-  opacity: 1.5;
+  background-image: url("imgs/background.jpg");
+  background-size: cover;
 }
 h1{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 5px;
   font-family: "scramble";
   font-style: normal;
   font-size: 60px;
@@ -45,7 +48,6 @@ h3{
 .greeting {
   text-align: center;
 }
-
 table {
   margin: auto;
 }
@@ -53,52 +55,114 @@ table {
 td {
   padding: 10px;
 }
-
 .upcoming {
   font-size: 42px;
 }
-
 .current {
   font-size: 42px;
 }
-
 .current:hover {
   cursor: pointer;
 }
-
 .lockedIn {
   font-size: 42px;
 }
-
-h1 {
-  text-align: center;
-  margin-top: 50px;
-}
-
-.ourProfiles {
-  padding: 50px 0 20px 50px;
-}
-
 .profile {
-  padding-bottom: 30px;
+  padding-bottom: 30px 0px 20px 50px;
+  display: inline;
 }
-
 img {
   display: inline;
-  width: 30%;
+  width: 290px;
+  opacity: 1.0;
 }
-
+img:hover {
+  opacity: 0.5;
+}
+.michelle {
+  margin: 5px;
+  margin-top: 5px;
+  padding: 5px;
+  padding-top: 5px;
+  margin-left: 65px;
+  display: inline;
+  float: left;
+}
+.michael {
+  margin: 5px;
+  margin-top: 5px;
+  padding: 5px;
+  padding-top: 5px;
+  margin-left: 65px;
+  display: inline;
+  float: left;
+}
+.nathan {
+  margin: 5px;
+  margin-top: 5px;
+  padding: 5px;
+  padding-top: 5px;
+  margin-right: 65px;
+  display: inline;
+  float: right;
+}
+.shannon {
+  margin: 5px;
+  margin-top: 5px;
+  padding: 5px;
+  padding-top: 5px;
+  margin-right: 65px;
+  display: inline;
+  float: right;
+}
 .displayInline {
   width: 65%;
   display: inline-block;
   overflow: auto;
 }
-
-.learnMore {
-  text-transform: capitalize;
-  display: inline;
+.topSector {
+  width: 100%;
+  float: left;
+}
+.bottomSector {
+  width: 100%;
+  float: right;
+}
+h5 {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-family: "scramble";
+  font-style: normal;
+  font-size: 18px;
+}
+#learnMoreWindow {
+  width: 38%;
+  height: 200px;
+  position: absolute;
+  top: 300px;
+  left: 450px;
+  background-image: url("imgs/wood.jpg");
+  visibility: hidden;
+  border-radius: 10px;
+  /*color: #E3CE9F;*/
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Caveat', cursive;
+  border-style: outset;
+  border-color: #E3CE9F;
+  border-width: 7px;
+  padding-left: 20px;
 }
 
-.learnMore:hover{
-  cursor: pointer;
+#favWordWord {
+  font-family: "scramble";
+  font-size: 40px;
+  margin-left: 20px;
+  background-color: #E3CE9F;
 }
+mark {
+  background-color: #E3CE9F;
+}
+/*.current {
+  background-color: #E3CE9F;
+}*/
