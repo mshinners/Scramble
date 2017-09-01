@@ -80,25 +80,10 @@ function startTimeMeter() {
   }
 }
 
-function addLockedInListeners(){
-  var lockedInTiles = document.getElementsByClassName('lockedIn');
-  for (var i = 0; i < lockedInTiles.length; i++){
-    lockedInTiles[i].addEventListener('click', removeTile);
-  }
-}
-
-function removeTile(event) {
-  numberOfLettersSelected --;
-  event.target.innerText = '';
-  event.target.removeAttribute('class', 'hover');
-  event.target.setAttribute('class', 'noHover');
-  var number = event.target.getAttribute('lockedIn');
-  var upcoming = document.getElementById('upcoming ' + number);
-  var current = document.getElementById('current ' + number);
-  current.addEventListener('click', lockIn);
-  upcoming.setAttribute('style', 'visibility: visible');
-  current.setAttribute('style', 'visibility: visible');
-  adjustTimerWidth();
+function adjustTimerWidth() {
+  var letterTimerDiv = document.getElementById('letterTimer');
+  var divWidth = 'width: ' + ( 50 - (numberOfLettersSelected * 8)) + '%';
+  letterTimerDiv.setAttribute('style', divWidth);
 }
 
 function startLetterTimer() {
@@ -162,6 +147,56 @@ function makeNewTiles() {
   meterFullness = 100;
 }
 
+function lockIn(event) {
+  var which = event.target.getAttribute('currentColumn');
+  var lock = document.getElementById('lockedIn ' + which);
+  var upcomingPartner = document.getElementById('upcoming ' + which);
+  lock.innerHTML = event.target.innerHTML;
+  event.target.removeEventListener('click', lockIn);
+  upcomingPartner.setAttribute('style', 'visibility: hidden;');
+  event.target.setAttribute('style', 'visibility: hidden;');
+  lock.removeAttribute('class', 'noHover');
+  lock.setAttribute('class', 'lockedIn hover');
+  numberOfLettersSelected ++;
+  adjustTimerWidth();
+  if (numberOfLettersSelected === 5) {
+    endGame();
+  } else {
+    upcomingBecomesCurrent();
+    generateUpcomingLetters();
+    letterCount = 16 - (3 * numberOfLettersSelected);
+    meterFullness = 100;
+  }
+}
+
+function removeTile(event) {
+  numberOfLettersSelected --;
+  event.target.innerText = '';
+  event.target.removeAttribute('class', 'hover');
+  event.target.setAttribute('class', 'noHover');
+  var number = event.target.getAttribute('lockedIn');
+  var upcoming = document.getElementById('upcoming ' + number);
+  var current = document.getElementById('current ' + number);
+  current.addEventListener('click', lockIn);
+  upcoming.setAttribute('style', 'visibility: visible');
+  current.setAttribute('style', 'visibility: visible');
+  adjustTimerWidth();
+}
+
+function wordIsLegal() {
+  var letterToCheck = document.getElementById('lockedIn 1');
+  chosenWord = letterToCheck.innerHTML;
+  for (var i = 2; i < 6; i++) {
+    letterToCheck = document.getElementById('lockedIn ' + i);
+    chosenWord = chosenWord + letterToCheck.innerHTML;
+  }
+  if (legalWords.includes(chosenWord.toLowerCase())) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function invisibleToVisible () {
   for (var i = 1; i < 6; i++) {
     var cell = document.getElementById('upcoming ' + i);
@@ -177,21 +212,6 @@ function invisibleToVisible () {
   game.setAttribute('style', 'visibility: visible;');
   var newTilesButton = document.getElementById('newLettersButton');
   newTilesButton.setAttribute('style', 'opacity: 1;');
-}
-
-function deleteGameResults () {
-  var results = document.getElementById('results');
-  var p = document.getElementById('userMessage');
-  results.removeChild(p);
-  var link = document.getElementById('link');
-  results.removeChild(link);
-  var playAgain = document.getElementById('playAgain');
-  results.removeChild(playAgain);
-  for (var i = 1; i < 6; i++) {
-    var cell = document.getElementById('lockedIn ' + i);
-    cell.innerHTML = '';
-  }
-  initiateGame();
 }
 
 function initiateGame () {
@@ -214,29 +234,11 @@ function initiateGame () {
   addListeners();
 }
 
-function makeEndgameNavOptions() {
-  var results = document.getElementById('results');
-  var playAgain = document.createElement('button');
-  playAgain.setAttribute('id', 'playAgain');
-  playAgain.setAttribute('type', 'button');
-  playAgain.innerHTML = 'Play Again!';
-  playAgain.setAttribute('onclick', 'deleteGameResults()');
-  results.appendChild(playAgain);
-  var link = document.createElement('a');
-  link.setAttribute('id', 'link');
-  link.setAttribute('href', 'hiScore.html');
-  results.appendChild(link);
-  var highScore = document.createElement('button');
-  highScore.innerHTML = 'View the High Scores';
-  highScore.setAttribute('type', 'button');
-  link.appendChild(highScore);
-}
-
 function endGame() {
   clearInterval(gameCounter);
   clearInterval(meterCounter);
   var lockedInTiles = document.getElementsByClassName('lockedIn');
-  for (var i = 0; i < lockedInTiles.length; i++){
+  for (var i = 0; i < lockedInTiles.length; i++) {
     lockedInTiles[i].removeEventListener('click', removeTile);
   }
   for (var i = 1; i < 6; i ++) {
@@ -270,6 +272,38 @@ function endGame() {
   makeEndgameNavOptions();
 }
 
+function makeEndgameNavOptions() {
+  var results = document.getElementById('results');
+  var playAgain = document.createElement('button');
+  playAgain.setAttribute('id', 'playAgain');
+  playAgain.setAttribute('type', 'button');
+  playAgain.innerHTML = 'Play Again!';
+  playAgain.setAttribute('onclick', 'deleteGameResults()');
+  results.appendChild(playAgain);
+  var link = document.createElement('a');
+  link.setAttribute('id', 'link');
+  link.setAttribute('href', 'hiScore.html');
+  results.appendChild(link);
+  var highScore = document.createElement('button');
+  highScore.innerHTML = 'View the High Scores';
+  highScore.setAttribute('type', 'button');
+  link.appendChild(highScore);
+}
+
+function deleteGameResults () {
+  var results = document.getElementById('results');
+  var p = document.getElementById('userMessage');
+  results.removeChild(p);
+  var link = document.getElementById('link');
+  results.removeChild(link);
+  var playAgain = document.getElementById('playAgain');
+  results.removeChild(playAgain);
+  for (var i = 1; i < 6; i++) {
+    var cell = document.getElementById('lockedIn ' + i);
+    cell.innerHTML = '';
+  }
+  initiateGame();
+}
 function printValid() {
   var allNames = JSON.parse(localStorage.nameArray);
   var playerName = allNames[allNames.length - 1];
@@ -315,57 +349,14 @@ function calculateFinalScore() {
   word = lettersChosen.join('');
 }
 
-//target = the td (tile) that was clicked on
-function lockIn(event) {
-  var which = event.target.getAttribute('currentColumn');
-  var lock = document.getElementById('lockedIn ' + which);
-  var upcomingPartner = document.getElementById('upcoming ' + which);
-  lock.innerHTML = event.target.innerHTML;
-  event.target.removeEventListener('click', lockIn);
-  upcomingPartner.setAttribute('style', 'visibility: hidden;');
-  event.target.setAttribute('style', 'visibility: hidden;');
-  lock.removeAttribute('class', 'noHover');
-  lock.setAttribute('class', 'lockedIn hover');
-  numberOfLettersSelected ++;
-  adjustTimerWidth();
-  if (numberOfLettersSelected === 5) {
-    endGame();
-  } else {
-    upcomingBecomesCurrent();
-    generateUpcomingLetters();
-    letterCount = 16 - (3 * numberOfLettersSelected);
-    meterFullness = 100;
-  }
-}
-
-function adjustTimerWidth(){
-  var letterTimerDiv = document.getElementById('letterTimer');
-  var divWidth = 'width: ' + ( 50 - (numberOfLettersSelected * 8)) + '%';
-  letterTimerDiv.setAttribute('style', divWidth);
-}
-
-function wordIsLegal() {
-  var letterToCheck = document.getElementById('lockedIn 1');
-  chosenWord = letterToCheck.innerHTML;
-  for (var i = 2; i < 6; i++) {
-    letterToCheck = document.getElementById('lockedIn ' + i);
-    chosenWord = chosenWord + letterToCheck.innerHTML;
-  }
-  if (legalWords.includes(chosenWord.toLowerCase())) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function makePlayerObject(){
+function makePlayerObject() {
   var userNameList = JSON.parse(localStorage.nameArray);
   var playerName = userNameList[userNameList.length - 1];
-  if (localStorage.winners){
+  if (localStorage.winners) {
     winners = JSON.parse(localStorage.winners);
   }
 
-  function userScore(playerName, totalScore, word){
+  function userScore(playerName, totalScore, word) {
     this.userName = playerName;
     this.score = totalScore;
     this.word = word;
@@ -383,6 +374,13 @@ function addListeners () {
   }
   var button = document.getElementById('newLettersButton');
   button.addEventListener('click', makeNewTiles);
+}
+
+function addLockedInListeners() {
+  var lockedInTiles = document.getElementsByClassName('lockedIn');
+  for (var i = 0; i < lockedInTiles.length; i++) {
+    lockedInTiles[i].addEventListener('click', removeTile);
+  }
 }
 
 initiateGame();
