@@ -200,7 +200,10 @@ function initiateGame () {
   invisibleToVisible();
   startTimeMeter();
   addLockedInListeners();
-  word = '';
+  chosenWord = '';
+  lettersChosen = [];
+  wordScore = 0;
+  totalScore = 0;
   numberOfLettersSelected = 0;
   gameCount = 61;
   letterCount = 16 - (3 * numberOfLettersSelected);
