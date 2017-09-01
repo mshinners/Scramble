@@ -1,26 +1,24 @@
 * {
   outline: 0px;
 }
-header, body, footer {
-  display: block;
-}
+
 body {
   background-image: url("imgs/background.jpg");
   background-size: cover;
 }
+
 @font-face {
   font-family: "scramble";
   font-style: normal;
   src: url(scramble.ttf);
 }
+
 header{
   background-color: #570000;
   border: 2px solid black;
   border-radius: 12px;
-  }
-  mark{
-    background-color: #E3CE9F;
-  }
+}
+
 h1{
   font-family: "scramble";
   font-style: normal;
@@ -29,13 +27,14 @@ h1{
   margin-top: 2%;
   margin-bottom: 2%;
 }
+
 #content{
   text-align: center;
   margin-top: 2%;
 }
+
 .buttonHo {
   background-color: #E3CE9F;
-  border:none;
   color: #570000;
   padding: 5px 15px;
   text-align: center;
@@ -49,11 +48,10 @@ h1{
   border-radius: 12px;
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
-  outline: 0px;
 }
+
 .buttonHi{
   background-color: #E3CE9F;
-  border:none;
   color: #570000;
   padding: 5px 15px;
   text-align: center;
@@ -67,11 +65,10 @@ h1{
   border-radius: 12px;
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
-  outline: 0px;
 }
+
 .buttonAb {
   background-color: #E3CE9F;
-  border:none;
   color: #570000;
   padding: 5px 15px;
   text-align: center;
@@ -85,8 +82,8 @@ h1{
   border-radius: 12px;
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
-  outline: 0px;
 }
+
 th{
   color: #570000;
   font-family: "scramble";
@@ -94,6 +91,7 @@ th{
   font-size: 40px;
   font-weight: bolder;
 }
+
 td {
    border-bottom: 2px solid black;
    font-family: monospace;
@@ -101,8 +99,8 @@ td {
    font-size: 25px;
    font-weight: bold;
    text-align: center;
-
 }
+
 table{
    border: 20px double black;
    border-radius: 12px;
@@ -110,9 +108,9 @@ table{
    width: 80%;
    margin: auto;
 }
+
 .button1{
   background-color: #570000;
-  border:none;
   color: #fbf4e3;
   padding: 15px 32px;
   text-align: center;
@@ -127,12 +125,14 @@ table{
   border: 3px solid black;
   box-shadow: 3px 3px 2px grey;
 }
+
 #buttonPosition{
   float: right;
   margin-right: 10%;
   margin-bottom: 1%;
   margin-top: 1%;
 }
+
 mark{
   background-color: #E3CE9F;
 }
