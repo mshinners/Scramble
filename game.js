@@ -304,6 +304,7 @@ function deleteGameResults () {
   }
   initiateGame();
 }
+
 function printValid() {
   var allNames = JSON.parse(localStorage.nameArray);
   var playerName = allNames[allNames.length - 1];
